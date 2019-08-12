@@ -2,13 +2,13 @@
     <a href="https://gitstar-ranking.com/repositories"> <img src="https://badgen.net/badge/Rank/20?icon=github&color=4ab8a1"></a>
     <a href="assets/download.md"> <img src="https://badgen.net/badge/OvO/%E7%A6%BB%E7%BA%BF%E4%B8%8B%E8%BD%BD?icon=telegram&color=4ab8a1"></a>
     <a href="https://cyc2018.github.io/CS-Notes"> <img src="https://badgen.net/badge/CyC/%E5%9C%A8%E7%BA%BF%E9%98%85%E8%AF%BB?icon=sourcegraph&color=4ab8a1"></a>
-    <a href="#微信公众号"> <img src="https://badgen.net/badge/%e5%85%ac%e4%bc%97%e5%8f%b7/CyC2018?icon=rss&color=4ab8a1"></a>
+    <a href="#微信公眾號"> <img src="https://badgen.net/badge/%e5%85%ac%e4%bc%97%e5%8f%b7/CyC2018?icon=rss&color=4ab8a1"></a>
 </div>
 <br>
 
-| &nbsp;算法&nbsp; | 操作系统 | &nbsp;网络&nbsp;|面向对象| &nbsp;&nbsp;数据库&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;Java&nbsp;&nbsp;&nbsp;|         系统设计| &nbsp;&nbsp;&nbsp;工具&nbsp;&nbsp;&nbsp; |编码实践| &nbsp;&nbsp;&nbsp;后记&nbsp;&nbsp;&nbsp; |
+| &nbsp;算法&nbsp; | 操作系統 | &nbsp;網絡&nbsp;|面向對象| &nbsp;&nbsp;數據庫&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;Java&nbsp;&nbsp;&nbsp;|         系統設計| &nbsp;&nbsp;&nbsp;工具&nbsp;&nbsp;&nbsp; |編碼實踐| &nbsp;&nbsp;&nbsp;後記&nbsp;&nbsp;&nbsp; |
 | :---: | :----: | :---: | :----: | :----: | :----: | :----: | :----: | :----: | :----: |
-| [:pencil2:](#pencil2-算法) | [:computer:](#computer-操作系统) | [:cloud:](#cloud-网络) | [:art:](#art-面向对象) | [:floppy_disk:](#floppy_disk-数据库) |[:coffee:](#coffee-java)| [:bulb:](#bulb-系统设计) |[:wrench:](#wrench-工具)| [:watermelon:](#watermelon-编码实践) |[:memo:](#memo-后记)|
+| [:pencil2:](#pencil2-算法) | [:computer:](#computer-操作系統) | [:cloud:](#cloud-網絡) | [:art:](#art-面向對象) | [:floppy_disk:](#floppy_disk-數據庫) |[:coffee:](#coffee-java)| [:bulb:](#bulb-系統設計) |[:wrench:](#wrench-工具)| [:watermelon:](#watermelon-編碼實踐) |[:memo:](#memo-後記)|
 
 <br>
 
@@ -20,114 +20,114 @@
 
 ## :pencil2: 算法
 
-- [剑指 Offer 题解](https://github.com/CyC2018/CS-Notes/blob/master/notes/剑指%20Offer%20题解%20-%20目录.md)
-- [Leetcode 题解](https://github.com/CyC2018/CS-Notes/blob/master/notes/Leetcode%20题解%20-%20目录.md)
-- [算法](https://github.com/CyC2018/CS-Notes/blob/master/notes/算法%20-%20目录.md)
+- [劍指 Offer 題解](https://github.com/CyC2018/CS-Notes/blob/master/notes/劍指%20Offer%20題解%20-%20目錄.md)
+- [Leetcode 題解](https://github.com/CyC2018/CS-Notes/blob/master/notes/Leetcode%20題解%20-%20目錄.md)
+- [算法](https://github.com/CyC2018/CS-Notes/blob/master/notes/算法%20-%20目錄.md)
 
-## :computer: 操作系统
+## :computer: 操作系統
 
-- [计算机操作系统](https://github.com/CyC2018/CS-Notes/blob/master/notes/计算机操作系统%20-%20目录.md)
+- [計算機操作系統](https://github.com/CyC2018/CS-Notes/blob/master/notes/計算機操作系統%20-%20目錄.md)
 - [Linux](https://github.com/CyC2018/CS-Notes/blob/master/notes/Linux.md)
 
-## :cloud: 网络 
+## :cloud: 網絡 
 
-- [计算机网络](https://github.com/CyC2018/CS-Notes/blob/master/notes/计算机网络%20-%20目录.md)
+- [計算機網絡](https://github.com/CyC2018/CS-Notes/blob/master/notes/計算機網絡%20-%20目錄.md)
 - [HTTP](https://github.com/CyC2018/CS-Notes/blob/master/notes/HTTP.md)
 - [Socket](https://github.com/CyC2018/CS-Notes/blob/master/notes/Socket.md)
 
-## :art: 面向对象
+## :art: 面向對象
 
-- [设计模式](https://github.com/CyC2018/CS-Notes/blob/master/notes/设计模式.md)
-- [面向对象思想](https://github.com/CyC2018/CS-Notes/blob/master/notes/面向对象思想.md)
+- [設計模式](https://github.com/CyC2018/CS-Notes/blob/master/notes/設計模式.md)
+- [面向對象思想](https://github.com/CyC2018/CS-Notes/blob/master/notes/面向對象思想.md)
 
-## :floppy_disk: 数据库
+## :floppy_disk: 數據庫
 
-- [数据库系统原理](https://github.com/CyC2018/CS-Notes/blob/master/notes/数据库系统原理.md)
+- [數據庫系統原理](https://github.com/CyC2018/CS-Notes/blob/master/notes/數據庫系統原理.md)
 - [SQL](https://github.com/CyC2018/CS-Notes/blob/master/notes/SQL.md)
-- [Leetcode-Database 题解](https://github.com/CyC2018/CS-Notes/blob/master/notes/Leetcode-Database%20题解.md)
+- [Leetcode-Database 題解](https://github.com/CyC2018/CS-Notes/blob/master/notes/Leetcode-Database%20題解.md)
 - [MySQL](https://github.com/CyC2018/CS-Notes/blob/master/notes/MySQL.md)
 - [Redis](https://github.com/CyC2018/CS-Notes/blob/master/notes/Redis.md)
 
 ## :coffee: Java
 
-- [Java 基础](https://github.com/CyC2018/CS-Notes/blob/master/notes/Java%20基础.md)
+- [Java 基礎](https://github.com/CyC2018/CS-Notes/blob/master/notes/Java%20基礎.md)
 - [Java 容器](https://github.com/CyC2018/CS-Notes/blob/master/notes/Java%20容器.md)
-- [Java 并发](https://github.com/CyC2018/CS-Notes/blob/master/notes/Java%20并发.md)
-- [Java 虚拟机](https://github.com/CyC2018/CS-Notes/blob/master/notes/Java%20虚拟机.md)
+- [Java 併發](https://github.com/CyC2018/CS-Notes/blob/master/notes/Java%20併發.md)
+- [Java 虛擬機](https://github.com/CyC2018/CS-Notes/blob/master/notes/Java%20虛擬機.md)
 - [Java I/O](https://github.com/CyC2018/CS-Notes/blob/master/notes/Java%20IO.md)
 
-## :bulb: 系统设计 
+## :bulb: 系統設計 
 
-- [系统设计基础](https://github.com/CyC2018/CS-Notes/blob/master/notes/系统设计基础.md)
-- [分布式](https://github.com/CyC2018/CS-Notes/blob/master/notes/分布式.md)
+- [系統設計基礎](https://github.com/CyC2018/CS-Notes/blob/master/notes/系統設計基礎.md)
+- [分佈式](https://github.com/CyC2018/CS-Notes/blob/master/notes/分佈式.md)
 - [集群](https://github.com/CyC2018/CS-Notes/blob/master/notes/集群.md)
-- [攻击技术](https://github.com/CyC2018/CS-Notes/blob/master/notes/攻击技术.md)
-- [缓存](https://github.com/CyC2018/CS-Notes/blob/master/notes/缓存.md)
-- [消息队列](https://github.com/CyC2018/CS-Notes/blob/master/notes/消息队列.md)
+- [攻擊技術](https://github.com/CyC2018/CS-Notes/blob/master/notes/攻擊技術.md)
+- [緩存](https://github.com/CyC2018/CS-Notes/blob/master/notes/緩存.md)
+- [消息隊列](https://github.com/CyC2018/CS-Notes/blob/master/notes/消息隊列.md)
 
 ## :wrench: 工具 
 
 - [Git](https://github.com/CyC2018/CS-Notes/blob/master/notes/Git.md)
 - [Docker](https://github.com/CyC2018/CS-Notes/blob/master/notes/Docker.md)
-- [构建工具](https://github.com/CyC2018/CS-Notes/blob/master/notes/构建工具.md)
-- [正则表达式](https://github.com/CyC2018/CS-Notes/blob/master/notes/正则表达式.md)
+- [構建工具](https://github.com/CyC2018/CS-Notes/blob/master/notes/構建工具.md)
+- [正則表達式](https://github.com/CyC2018/CS-Notes/blob/master/notes/正則表達式.md)
 
-## :watermelon: 编码实践 
+## :watermelon: 編碼實踐 
 
-- [代码可读性](https://github.com/CyC2018/CS-Notes/blob/master/notes/代码可读性.md)
-- [代码风格规范](https://github.com/CyC2018/CS-Notes/blob/master/notes/代码风格规范.md)
+- [代碼可讀性](https://github.com/CyC2018/CS-Notes/blob/master/notes/代碼可讀性.md)
+- [代碼風格規範](https://github.com/CyC2018/CS-Notes/blob/master/notes/代碼風格規範.md)
 
-## :memo: 后记
+## :memo: 後記
 
-### 更多内容
+### 更多內容
 
-- 内推：[Job-Recommend](https://github.com/CyC2018/Job-Recommend)
-- 简历模版：[Markdown-Resume](https://github.com/CyC2018/Markdown-Resume)
-- 面经：[2018 这一年](https://www.nowcoder.com/discuss/137593)
-- 简历：https://cyc2018.github.io
-- 小专栏：[后端面试进阶指南](https://xiaozhuanlan.com/CyC2018)
+- 內推：[Job-Recommend](https://github.com/CyC2018/Job-Recommend)
+- 簡歷模版：[Markdown-Resume](https://github.com/CyC2018/Markdown-Resume)
+- 面經：[2018 這一年](https://www.nowcoder.com/discuss/137593)
+- 簡歷：https://cyc2018.github.io
+- 小專欄：[後端面試進階指南](https://xiaozhuanlan.com/CyC2018)
 - QQ 交流群：[857210598](assets/group.png)
 
 ### 工具
 
 - Github Pages：[docsify](https://docsify.js.org/#/)
-- 云笔记：[为知笔记](http://www.wiz.cn/)
-- 绘图：[draw.io](https://www.draw.io/)
+- 雲筆記：[為知筆記](http://www.wiz.cn/)
+- 繪圖：[draw.io](https://www.draw.io/)
 - Logo：[logomakr](https://logomakr.com/)
 
-### 微信公众号
+### 微信公眾號
 
-更多精彩内容将发布在微信公众号 CyC2018 上，你也可以在公众号后台和我交流学习和求职相关的问题。另外，公众号提供了该项目的 PDF 等离线阅读版本，后台回复 "下载" 即可领取。公众号也提供了一份技术面试复习大纲，不仅系统整理了面试知识点，而且标注了各个知识点的重要程度，从而帮你理清多而杂的面试知识点，后台回复 "大纲" 即可领取。我基本是按照这个大纲来进行复习的，对我拿到了 BAT 头条等 Offer 起到很大的帮助。你们完全可以和我一样根据大纲上列的知识点来进行复习，就不用看很多不重要的内容，也可以知道哪些内容很重要从而多安排一些复习时间。
+更多精彩內容將發佈在微信公眾號 CyC2018 上，你也可以在公眾號後臺和我交流學習和求職相關的問題。另外，公眾號提供了該項目的 PDF 等離線閱讀版本，後臺回覆 "下載" 即可領取。公眾號也提供了一份技術面試複習大綱，不僅系統整理了面試知識點，而且標註了各個知識點的重要程度，從而幫你理清多而雜的面試知識點，後臺回覆 "大綱" 即可領取。我基本是按照這個大綱來進行復習的，對我拿到了 BAT 頭條等 Offer 起到很大的幫助。你們完全可以和我一樣根據大綱上列的知識點來進行復習，就不用看很多不重要的內容，也可以知道哪些內容很重要從而多安排一些複習時間。
 
 <br>
 
-<div align="center"><img width="300px" src="https://cs-notes-1256109796.cos.ap-guangzhou.myqcloud.com/other/公众号海报6.png"></img></div>
+<div align="center"><img width="300px" src="https://cs-notes-1256109796.cos.ap-guangzhou.myqcloud.com/other/公眾號海報6.png"></img></div>
 
 ### 排版
 
-笔记内容按照 [中文文案排版指北](https://github.com/sparanoid/chinese-copywriting-guidelines) 进行排版，以保证内容的可读性。
+筆記內容按照 [中文文案排版指北](https://github.com/sparanoid/chinese-copywriting-guidelines) 進行排版，以保證內容的可讀性。
 
-不使用 `![]()` 这种方式来引用图片，而是用 `<img>` 标签。一方面是为了能够控制图片以合适的大小显示，另一方面是因为 [GFM](https://github.github.com/gfm/) 不支持 `<center> ![]() </center>` 这种方法让图片居中显示，只能使用 `<div align="center"> <img src=""/> </div>` 达到居中的效果。
+不使用 `![]()` 這種方式來引用圖片，而是用 `<img>` 標籤。一方面是為了能夠控制圖片以合適的大小顯示，另一方面是因為 [GFM](https://github.github.com/gfm/) 不支持 `<center> ![]() </center>` 這種方法讓圖片居中顯示，只能使用 `<div align="center"> <img src=""/> </div>` 達到居中的效果。
 
-在线排版工具：[Text-Typesetting](https://github.com/CyC2018/Text-Typesetting)。
+在線排版工具：[Text-Typesetting](https://github.com/CyC2018/Text-Typesetting)。
 
-### 上传方案
+### 上傳方案
 
-为了方便将本地笔记内容上传到 Github 上，实现了一整套自动化上传方案，包括提取图片、Markdown 文档转换、Git 同步。进行 Markdown 文档转换是因为 Github 使用的 GFM 不支持 MathJax 公式和 TOC 标记，所以需要替换 MathJax 公式为 CodeCogs 的云服务和重新生成 TOC 目录。
+為了方便將本地筆記內容上傳到 Github 上，實現了一整套自動化上傳方案，包括提取圖片、Markdown 文檔轉換、Git 同步。進行 Markdown 文檔轉換是因為 Github 使用的 GFM 不支持 MathJax 公式和 TOC 標記，所以需要替換 MathJax 公式為 CodeCogs 的雲服務和重新生成 TOC 目錄。
 
-GFM 转换工具：[GFM-Converter](https://github.com/CyC2018/GFM-Converter)。
+GFM 轉換工具：[GFM-Converter](https://github.com/CyC2018/GFM-Converter)。
 
 ### License
 
-本仓库内容 **不是** 将网上的资料随意拼凑而来，除了少部分引用书上和技术文档的原文，其余都是我的原创。在您引用本仓库内容或者对内容进行修改演绎时，请署名并以相同方式共享，谢谢。
+本倉庫內容 **不是** 將網上的資料隨意拼湊而來，除了少部分引用書上和技術文檔的原文，其餘都是我的原創。在您引用本倉庫內容或者對內容進行修改演繹時，請署名並以相同方式共享，謝謝。
 
-转载文章请在开头明显处标明该页面地址，公众号等其它转载请联系 zhengyc101@163.com。
+轉載文章請在開頭明顯處標明該頁面地址，公眾號等其它轉載請聯繫 zhengyc101@163.com。
 
-<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a>
+<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知識共享許可協議" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a>
 
-### 致谢
+### 致謝
 
-感谢以下人员对本仓库做出的贡献，当然不仅仅只有这些贡献者，这里就不一一列举了。如果你希望被添加到这个名单中，并且提交过 Issue 或者 PR，请与我联系。
+感謝以下人員對本倉庫做出的貢獻，當然不僅僅只有這些貢獻者，這裡就不一一列舉了。如果你希望被添加到這個名單中，並且提交過 Issue 或者 PR，請與我聯繫。
 
 <a href="https://github.com/linw7">
     <img src="https://avatars3.githubusercontent.com/u/21679154?s=400&v=4" width="50px">

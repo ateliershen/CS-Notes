@@ -1,34 +1,34 @@
 <!-- GFM-TOC -->
-* [素数分解](#素数分解)
+* [素數分解](#素數分解)
 * [整除](#整除)
-* [最大公约数最小公倍数](#最大公约数最小公倍数)
-    * [1. 生成素数序列](#1-生成素数序列)
-    * [2. 最大公约数](#2-最大公约数)
-    * [3. 使用位操作和减法求解最大公约数](#3-使用位操作和减法求解最大公约数)
-* [进制转换](#进制转换)
-    * [1. 7 进制](#1-7-进制)
-    * [2. 16 进制](#2-16-进制)
-    * [3. 26 进制](#3-26-进制)
-* [阶乘](#阶乘)
-    * [1. 统计阶乘尾部有多少个 0](#1-统计阶乘尾部有多少个-0)
-* [字符串加法减法](#字符串加法减法)
-    * [1. 二进制加法](#1-二进制加法)
+* [最大公約數最小公倍數](#最大公約數最小公倍數)
+    * [1. 生成素數序列](#1-生成素數序列)
+    * [2. 最大公約數](#2-最大公約數)
+    * [3. 使用位操作和減法求解最大公約數](#3-使用位操作和減法求解最大公約數)
+* [進制轉換](#進制轉換)
+    * [1. 7 進制](#1-7-進制)
+    * [2. 16 進制](#2-16-進制)
+    * [3. 26 進制](#3-26-進制)
+* [階乘](#階乘)
+    * [1. 統計階乘尾部有多少個 0](#1-統計階乘尾部有多少個-0)
+* [字符串加法減法](#字符串加法減法)
+    * [1. 二進制加法](#1-二進制加法)
     * [2. 字符串加法](#2-字符串加法)
-* [相遇问题](#相遇问题)
-    * [1. 改变数组元素使所有的数组元素都相等](#1-改变数组元素使所有的数组元素都相等)
-* [多数投票问题](#多数投票问题)
-    * [1. 数组中出现次数多于 n / 2 的元素](#1-数组中出现次数多于-n--2-的元素)
+* [相遇問題](#相遇問題)
+    * [1. 改變數組元素使所有的數組元素都相等](#1-改變數組元素使所有的數組元素都相等)
+* [多數投票問題](#多數投票問題)
+    * [1. 數組中出現次數多於 n / 2 的元素](#1-數組中出現次數多於-n--2-的元素)
 * [其它](#其它)
-    * [1. 平方数](#1-平方数)
+    * [1. 平方數](#1-平方數)
     * [2. 3 的 n 次方](#2-3-的-n-次方)
-    * [3. 乘积数组](#3-乘积数组)
-    * [4. 找出数组中的乘积最大的三个数](#4-找出数组中的乘积最大的三个数)
+    * [3. 乘積數組](#3-乘積數組)
+    * [4. 找出數組中的乘積最大的三個數](#4-找出數組中的乘積最大的三個數)
 <!-- GFM-TOC -->
 
 
-# 素数分解
+# 素數分解
 
-每一个数都可以分解成素数的乘积，例如 84 = 2<sup>2</sup> \* 3<sup>1</sup> \* 5<sup>0</sup> \* 7<sup>1</sup> \* 11<sup>0</sup> \* 13<sup>0</sup> \* 17<sup>0</sup> \* …
+每一個數都可以分解成素數的乘積，例如 84 = 2<sup>2</sup> \* 3<sup>1</sup> \* 5<sup>0</sup> \* 7<sup>1</sup> \* 11<sup>0</sup> \* 13<sup>0</sup> \* 17<sup>0</sup> \* …
 
 # 整除
 
@@ -36,19 +36,19 @@
 
 令 y = 2<sup>n0</sup> \* 3<sup>n1</sup> \* 5<sup>n2</sup> \* 7<sup>n3</sup> \* 11<sup>n4</sup> \* …
 
-如果 x 整除 y（y mod x == 0），则对于所有 i，mi <= ni。
+如果 x 整除 y（y mod x == 0），則對於所有 i，mi <= ni。
 
-# 最大公约数最小公倍数
+# 最大公約數最小公倍數
 
-x 和 y 的最大公约数为：gcd(x,y) =  2<sup>min(m0,n0)</sup> \* 3<sup>min(m1,n1)</sup> \* 5<sup>min(m2,n2)</sup> \* ...
+x 和 y 的最大公約數為：gcd(x,y) =  2<sup>min(m0,n0)</sup> \* 3<sup>min(m1,n1)</sup> \* 5<sup>min(m2,n2)</sup> \* ...
 
-x 和 y 的最小公倍数为：lcm(x,y) =  2<sup>max(m0,n0)</sup> \* 3<sup>max(m1,n1)</sup> \* 5<sup>max(m2,n2)</sup> \* ...
+x 和 y 的最小公倍數為：lcm(x,y) =  2<sup>max(m0,n0)</sup> \* 3<sup>max(m1,n1)</sup> \* 5<sup>max(m2,n2)</sup> \* ...
 
-## 1. 生成素数序列
+## 1. 生成素數序列
 
 [204. Count Primes (Easy)](https://leetcode.com/problems/count-primes/description/)
 
-埃拉托斯特尼筛法在每次找到一个素数时，将能被素数整除的数排除掉。
+埃拉託斯特尼篩法在每次找到一個素數時，將能被素數整除的數排除掉。
 
 ```java
 public int countPrimes(int n) {
@@ -59,7 +59,7 @@ public int countPrimes(int n) {
             continue;
         }
         count++;
-        // 从 i * i 开始，因为如果 k < i，那么 k * i 在之前就已经被去除过了
+        // 從 i * i 開始，因為如果 k < i，那麼 k * i 在之前就已經被去除過了
         for (long j = (long) (i) * i; j < n; j += i) {
             notPrimes[(int) j] = true;
         }
@@ -68,7 +68,7 @@ public int countPrimes(int n) {
 }
 ```
 
-## 2. 最大公约数
+## 2. 最大公約數
 
 ```java
 int gcd(int a, int b) {
@@ -76,7 +76,7 @@ int gcd(int a, int b) {
 }
 ```
 
-最小公倍数为两数的乘积除以最大公约数。
+最小公倍數為兩數的乘積除以最大公約數。
 
 ```java
 int lcm(int a, int b) {
@@ -84,18 +84,18 @@ int lcm(int a, int b) {
 }
 ```
 
-## 3. 使用位操作和减法求解最大公约数
+## 3. 使用位操作和減法求解最大公約數
 
-[编程之美：2.7](#)
+[編程之美：2.7](#)
 
-对于 a 和 b 的最大公约数 f(a, b)，有：
+對於 a 和 b 的最大公約數 f(a, b)，有：
 
-- 如果 a 和 b 均为偶数，f(a, b) = 2\*f(a/2, b/2);
-- 如果 a 是偶数 b 是奇数，f(a, b) = f(a/2, b);
-- 如果 b 是偶数 a 是奇数，f(a, b) = f(a, b/2);
-- 如果 a 和 b 均为奇数，f(a, b) = f(b, a-b);
+- 如果 a 和 b 均為偶數，f(a, b) = 2\*f(a/2, b/2);
+- 如果 a 是偶數 b 是奇數，f(a, b) = f(a/2, b);
+- 如果 b 是偶數 a 是奇數，f(a, b) = f(a, b/2);
+- 如果 a 和 b 均為奇數，f(a, b) = f(b, a-b);
 
-乘 2 和除 2 都可以转换为移位操作。
+乘 2 和除 2 都可以轉換為移位操作。
 
 ```java
 public int gcd(int a, int b) {
@@ -118,9 +118,9 @@ public int gcd(int a, int b) {
 }
 ```
 
-# 进制转换
+# 進制轉換
 
-## 1. 7 进制
+## 1. 7 進制
 
 [504. Base 7 (Easy)](https://leetcode.com/problems/base-7/description/)
 
@@ -143,7 +143,7 @@ public String convertToBase7(int num) {
 }
 ```
 
-Java 中 static String toString(int num, int radix) 可以将一个整数转换为 radix 进制表示的字符串。
+Java 中 static String toString(int num, int radix) 可以將一個整數轉換為 radix 進製表示的字符串。
 
 ```java
 public String convertToBase7(int num) {
@@ -151,7 +151,7 @@ public String convertToBase7(int num) {
 }
 ```
 
-## 2. 16 进制
+## 2. 16 進制
 
 [405. Convert a Number to Hexadecimal (Easy)](https://leetcode.com/problems/convert-a-number-to-hexadecimal/description/)
 
@@ -169,7 +169,7 @@ Output:
 "ffffffff"
 ```
 
-负数要用它的补码形式。
+負數要用它的補碼形式。
 
 ```java
 public String toHex(int num) {
@@ -178,13 +178,13 @@ public String toHex(int num) {
     StringBuilder sb = new StringBuilder();
     while (num != 0) {
         sb.append(map[num & 0b1111]);
-        num >>>= 4; // 因为考虑的是补码形式，因此符号位就不能有特殊的意义，需要使用无符号右移，左边填 0
+        num >>>= 4; // 因為考慮的是補碼形式，因此符號位就不能有特殊的意義，需要使用無符號右移，左邊填 0
     }
     return sb.reverse().toString();
 }
 ```
 
-## 3. 26 进制
+## 3. 26 進制
 
 [168. Excel Sheet Column Title (Easy)](https://leetcode.com/problems/excel-sheet-column-title/description/)
 
@@ -198,7 +198,7 @@ public String toHex(int num) {
 28 -> AB
 ```
 
-因为是从 1 开始计算的，而不是从 0 开始，因此需要对 n 执行 -1 操作。
+因為是從 1 開始計算的，而不是從 0 開始，因此需要對 n 執行 -1 操作。
 
 ```java
 public String convertToTitle(int n) {
@@ -210,15 +210,15 @@ public String convertToTitle(int n) {
 }
 ```
 
-# 阶乘
+# 階乘
 
-## 1. 统计阶乘尾部有多少个 0
+## 1. 統計階乘尾部有多少個 0
 
 [172. Factorial Trailing Zeroes (Easy)](https://leetcode.com/problems/factorial-trailing-zeroes/description/)
 
-尾部的 0 由 2 * 5 得来，2 的数量明显多于 5 的数量，因此只要统计有多少个 5 即可。
+尾部的 0 由 2 * 5 得來，2 的數量明顯多於 5 的數量，因此只要統計有多少個 5 即可。
 
-对于一个数 N，它所包含 5 的个数为：N/5 + N/5<sup>2</sup> + N/5<sup>3</sup> + ...，其中 N/5 表示不大于 N 的数中 5 的倍数贡献一个 5，N/5<sup>2</sup> 表示不大于 N 的数中 5<sup>2</sup> 的倍数再贡献一个 5 ...。
+對於一個數 N，它所包含 5 的個數為：N/5 + N/5<sup>2</sup> + N/5<sup>3</sup> + ...，其中 N/5 表示不大於 N 的數中 5 的倍數貢獻一個 5，N/5<sup>2</sup> 表示不大於 N 的數中 5<sup>2</sup> 的倍數再貢獻一個 5 ...。
 
 ```java
 public int trailingZeroes(int n) {
@@ -226,11 +226,11 @@ public int trailingZeroes(int n) {
 }
 ```
 
-如果统计的是 N! 的二进制表示中最低位 1 的位置，只要统计有多少个 2 即可，该题目出自 [编程之美：2.2](#) 。和求解有多少个 5 一样，2 的个数为 N/2 + N/2<sup>2</sup> + N/2<sup>3</sup> + ...
+如果統計的是 N! 的二進制表示中最低位 1 的位置，只要統計有多少個 2 即可，該題目出自 [編程之美：2.2](#) 。和求解有多少個 5 一樣，2 的個數為 N/2 + N/2<sup>2</sup> + N/2<sup>3</sup> + ...
 
-# 字符串加法减法
+# 字符串加法減法
 
-## 1. 二进制加法
+## 1. 二進制加法
 
 [67. Add Binary (Easy)](https://leetcode.com/problems/add-binary/description/)
 
@@ -262,7 +262,7 @@ public String addBinary(String a, String b) {
 
 [415. Add Strings (Easy)](https://leetcode.com/problems/add-strings/description/)
 
-字符串的值为非负整数。
+字符串的值為非負整數。
 
 ```java
 public String addStrings(String num1, String num2) {
@@ -278,9 +278,9 @@ public String addStrings(String num1, String num2) {
 }
 ```
 
-# 相遇问题
+# 相遇問題
 
-## 1. 改变数组元素使所有的数组元素都相等
+## 1. 改變數組元素使所有的數組元素都相等
 
 [462. Minimum Moves to Equal Array Elements II (Medium)](https://leetcode.com/problems/minimum-moves-to-equal-array-elements-ii/description/)
 
@@ -297,17 +297,17 @@ Only two moves are needed (remember each move increments or decrements one eleme
 [1,2,3]  =>  [2,2,3]  =>  [2,2,2]
 ```
 
-每次可以对一个数组元素加一或者减一，求最小的改变次数。
+每次可以對一個數組元素加一或者減一，求最小的改變次數。
 
-这是个典型的相遇问题，移动距离最小的方式是所有元素都移动到中位数。理由如下：
+這是個典型的相遇問題，移動距離最小的方式是所有元素都移動到中位數。理由如下：
 
-设 m 为中位数。a 和 b 是 m 两边的两个元素，且 b > a。要使 a 和 b 相等，它们总共移动的次数为 b - a，这个值等于 (b - m) + (m - a)，也就是把这两个数移动到中位数的移动次数。
+設 m 為中位數。a 和 b 是 m 兩邊的兩個元素，且 b > a。要使 a 和 b 相等，它們總共移動的次數為 b - a，這個值等於 (b - m) + (m - a)，也就是把這兩個數移動到中位數的移動次數。
 
-设数组长度为 N，则可以找到 N/2 对 a 和 b 的组合，使它们都移动到 m 的位置。
+設數組長度為 N，則可以找到 N/2 對 a 和 b 的組合，使它們都移動到 m 的位置。
 
 **解法 1** 
 
-先排序，时间复杂度：O(NlogN)
+先排序，時間複雜度：O(NlogN)
 
 ```java
 public int minMoves2(int[] nums) {
@@ -325,7 +325,7 @@ public int minMoves2(int[] nums) {
 
 **解法 2** 
 
-使用快速选择找到中位数，时间复杂度 O(N)
+使用快速選擇找到中位數，時間複雜度 O(N)
 
 ```java
 public int minMoves2(int[] nums) {
@@ -374,13 +374,13 @@ private void swap(int[] nums, int i, int j) {
 }
 ```
 
-# 多数投票问题
+# 多數投票問題
 
-## 1. 数组中出现次数多于 n / 2 的元素
+## 1. 數組中出現次數多於 n / 2 的元素
 
 [169. Majority Element (Easy)](https://leetcode.com/problems/majority-element/description/)
 
-先对数组排序，最中间那个数出现次数一定多于 n / 2。
+先對數組排序，最中間那個數出現次數一定多於 n / 2。
 
 ```java
 public int majorityElement(int[] nums) {
@@ -389,7 +389,7 @@ public int majorityElement(int[] nums) {
 }
 ```
 
-可以利用 Boyer-Moore Majority Vote Algorithm 来解决这个问题，使得时间复杂度为 O(N)。可以这么理解该算法：使用 cnt 来统计一个元素出现的次数，当遍历到的元素和统计元素不相等时，令 cnt--。如果前面查找了 i 个元素，且 cnt == 0，说明前 i 个元素没有 majority，或者有 majority，但是出现的次数少于 i / 2，因为如果多于 i / 2 的话 cnt 就一定不会为 0。此时剩下的 n - i 个元素中，majority 的数目依然多于 (n - i) / 2，因此继续查找就能找出 majority。
+可以利用 Boyer-Moore Majority Vote Algorithm 來解決這個問題，使得時間複雜度為 O(N)。可以這麼理解該算法：使用 cnt 來統計一個元素出現的次數，當遍歷到的元素和統計元素不相等時，令 cnt--。如果前面查找了 i 個元素，且 cnt == 0，說明前 i 個元素沒有 majority，或者有 majority，但是出現的次數少於 i / 2，因為如果多於 i / 2 的話 cnt 就一定不會為 0。此時剩下的 n - i 個元素中，majority 的數目依然多於 (n - i) / 2，因此繼續查找就能找出 majority。
 
 ```java
 public int majorityElement(int[] nums) {
@@ -404,7 +404,7 @@ public int majorityElement(int[] nums) {
 
 # 其它
 
-## 1. 平方数
+## 1. 平方數
 
 [367. Valid Perfect Square (Easy)](https://leetcode.com/problems/valid-perfect-square/description/)
 
@@ -415,9 +415,9 @@ Returns: True
 
 平方序列：1,4,9,16,..
 
-间隔：3,5,7,...
+間隔：3,5,7,...
 
-间隔为等差数列，使用这个特性可以得到从 1 开始的平方序列。
+間隔為等差數列，使用這個特性可以得到從 1 開始的平方序列。
 
 ```java
 public boolean isPerfectSquare(int num) {
@@ -440,7 +440,7 @@ public boolean isPowerOfThree(int n) {
 }
 ```
 
-## 3. 乘积数组
+## 3. 乘積數組
 
 [238. Product of Array Except Self (Medium)](https://leetcode.com/problems/product-of-array-except-self/description/)
 
@@ -448,9 +448,9 @@ public boolean isPowerOfThree(int n) {
 For example, given [1,2,3,4], return [24,12,8,6].
 ```
 
-给定一个数组，创建一个新数组，新数组的每个元素为原始数组中除了该位置上的元素之外所有元素的乘积。
+給定一個數組，創建一個新數組，新數組的每個元素為原始數組中除了該位置上的元素之外所有元素的乘積。
 
-要求时间复杂度为 O(N)，并且不能使用除法。
+要求時間複雜度為 O(N)，並且不能使用除法。
 
 ```java
 public int[] productExceptSelf(int[] nums) {
@@ -471,7 +471,7 @@ public int[] productExceptSelf(int[] nums) {
 }
 ```
 
-## 4. 找出数组中的乘积最大的三个数
+## 4. 找出數組中的乘積最大的三個數
 
 [628. Maximum Product of Three Numbers (Easy)](https://leetcode.com/problems/maximum-product-of-three-numbers/description/)
 
@@ -509,10 +509,10 @@ public int maximumProduct(int[] nums) {
 
 
 
-# 微信公众号
+# 微信公眾號
 
 
-更多精彩内容将发布在微信公众号 CyC2018 上，你也可以在公众号后台和我交流学习和求职相关的问题。另外，公众号提供了该项目的 PDF 等离线阅读版本，后台回复 "下载" 即可领取。公众号也提供了一份技术面试复习大纲，不仅系统整理了面试知识点，而且标注了各个知识点的重要程度，从而帮你理清多而杂的面试知识点，后台回复 "大纲" 即可领取。我基本是按照这个大纲来进行复习的，对我拿到了 BAT 头条等 Offer 起到很大的帮助。你们完全可以和我一样根据大纲上列的知识点来进行复习，就不用看很多不重要的内容，也可以知道哪些内容很重要从而多安排一些复习时间。
+更多精彩內容將發佈在微信公眾號 CyC2018 上，你也可以在公眾號後臺和我交流學習和求職相關的問題。另外，公眾號提供了該項目的 PDF 等離線閱讀版本，後臺回覆 "下載" 即可領取。公眾號也提供了一份技術面試複習大綱，不僅系統整理了面試知識點，而且標註了各個知識點的重要程度，從而幫你理清多而雜的面試知識點，後臺回覆 "大綱" 即可領取。我基本是按照這個大綱來進行復習的，對我拿到了 BAT 頭條等 Offer 起到很大的幫助。你們完全可以和我一樣根據大綱上列的知識點來進行復習，就不用看很多不重要的內容，也可以知道哪些內容很重要從而多安排一些複習時間。
 
 
-<br><div align="center"><img width="320px" src="https://cs-notes-1256109796.cos.ap-guangzhou.myqcloud.com/other/公众号海报6.png"></img></div>
+<br><div align="center"><img width="320px" src="https://cs-notes-1256109796.cos.ap-guangzhou.myqcloud.com/other/公眾號海報6.png"></img></div>

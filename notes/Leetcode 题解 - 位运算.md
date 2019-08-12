@@ -1,17 +1,17 @@
 <!-- GFM-TOC -->
-* [1. 统计两个数的二进制表示有多少位不同](#1-统计两个数的二进制表示有多少位不同)
-* [2. 数组中唯一一个不重复的元素](#2-数组中唯一一个不重复的元素)
-* [3. 找出数组中缺失的那个数](#3-找出数组中缺失的那个数)
-* [4. 数组中不重复的两个元素](#4-数组中不重复的两个元素)
-* [5. 翻转一个数的比特位](#5-翻转一个数的比特位)
-* [6. 不用额外变量交换两个整数](#6-不用额外变量交换两个整数)
-* [7. 判断一个数是不是 2 的 n 次方](#7-判断一个数是不是-2-的-n-次方)
-* [8.  判断一个数是不是 4 的 n 次方](#8--判断一个数是不是-4-的-n-次方)
-* [9. 判断一个数的位级表示是否不会出现连续的 0 和 1](#9-判断一个数的位级表示是否不会出现连续的-0-和-1)
-* [10. 求一个数的补码](#10-求一个数的补码)
-* [11. 实现整数的加法](#11-实现整数的加法)
-* [12. 字符串数组最大乘积](#12-字符串数组最大乘积)
-* [13. 统计从 0 \~ n 每个数的二进制表示中 1 的个数](#13-统计从-0-\~-n-每个数的二进制表示中-1-的个数)
+* [1. 統計兩個數的二進制表示有多少位不同](#1-統計兩個數的二進制表示有多少位不同)
+* [2. 數組中唯一一個不重複的元素](#2-數組中唯一一個不重複的元素)
+* [3. 找出數組中缺失的那個數](#3-找出數組中缺失的那個數)
+* [4. 數組中不重複的兩個元素](#4-數組中不重複的兩個元素)
+* [5. 翻轉一個數的比特位](#5-翻轉一個數的比特位)
+* [6. 不用額外變量交換兩個整數](#6-不用額外變量交換兩個整數)
+* [7. 判斷一個數是不是 2 的 n 次方](#7-判斷一個數是不是-2-的-n-次方)
+* [8.  判斷一個數是不是 4 的 n 次方](#8--判斷一個數是不是-4-的-n-次方)
+* [9. 判斷一個數的位級表示是否不會出現連續的 0 和 1](#9-判斷一個數的位級表示是否不會出現連續的-0-和-1)
+* [10. 求一個數的補碼](#10-求一個數的補碼)
+* [11. 實現整數的加法](#11-實現整數的加法)
+* [12. 字符串數組最大乘積](#12-字符串數組最大乘積)
+* [13. 統計從 0 \~ n 每個數的二進制表示中 1 的個數](#13-統計從-0-\~-n-每個數的二進制表示中-1-的個數)
 <!-- GFM-TOC -->
 
 
@@ -25,41 +25,41 @@ x ^ 1s = ~x     x & 1s = x      x | 1s = 1s
 x ^ x = 0       x & x = x       x | x = x
 ```
 
-- 利用 x ^ 1s = \~x 的特点，可以将位级表示翻转；利用 x ^ x = 0 的特点，可以将三个数中重复的两个数去除，只留下另一个数。
-- 利用 x & 0s = 0 和 x & 1s = x 的特点，可以实现掩码操作。一个数 num 与 mask：00111100 进行位与操作，只保留 num 中与 mask 的 1 部分相对应的位。
-- 利用 x | 0s = x 和 x | 1s = 1s 的特点，可以实现设值操作。一个数 num 与 mask：00111100 进行位或操作，将 num 中与 mask 的 1 部分相对应的位都设置为 1。
+- 利用 x ^ 1s = \~x 的特點，可以將位級表示翻轉；利用 x ^ x = 0 的特點，可以將三個數中重複的兩個數去除，只留下另一個數。
+- 利用 x & 0s = 0 和 x & 1s = x 的特點，可以實現掩碼操作。一個數 num 與 mask：00111100 進行位與操作，只保留 num 中與 mask 的 1 部分相對應的位。
+- 利用 x | 0s = x 和 x | 1s = 1s 的特點，可以實現設值操作。一個數 num 與 mask：00111100 進行位或操作，將 num 中與 mask 的 1 部分相對應的位都設置為 1。
 
-位与运算技巧：
+位與運算技巧：
 
-- n&(n-1) 去除 n 的位级表示中最低的那一位。例如对于二进制表示 10110100，减去 1 得到 10110011，这两个数相与得到 10110000。
-- n&(-n) 得到 n 的位级表示中最低的那一位。-n 得到 n 的反码加 1，对于二进制表示 10110100，-n 得到 01001100，相与得到 00000100。
-- n-n&(\~n+1) 去除 n 的位级表示中最高的那一位。
+- n&(n-1) 去除 n 的位級表示中最低的那一位。例如對於二進制表示 10110100，減去 1 得到 10110011，這兩個數相與得到 10110000。
+- n&(-n) 得到 n 的位級表示中最低的那一位。-n 得到 n 的反碼加 1，對於二進制表示 10110100，-n 得到 01001100，相與得到 00000100。
+- n-n&(\~n+1) 去除 n 的位級表示中最高的那一位。
 
-移位运算：
+移位運算：
 
-- \>\> n 为算术右移，相当于除以 2<sup>n</sup>；
-- \>\>\> n 为无符号右移，左边会补上 0。
-- &lt;&lt; n 为算术左移，相当于乘以 2<sup>n</sup>。
+- \>\> n 為算術右移，相當於除以 2<sup>n</sup>；
+- \>\>\> n 為無符號右移，左邊會補上 0。
+- &lt;&lt; n 為算術左移，相當於乘以 2<sup>n</sup>。
 
-** mask 计算** 
+** mask 計算** 
 
-要获取 111111111，将 0 取反即可，\~0。
+要獲取 111111111，將 0 取反即可，\~0。
 
-要得到只有第 i 位为 1 的 mask，将 1 向左移动 i-1 位即可，1&lt;&lt;(i-1) 。例如 1&lt;&lt;4 得到只有第 5 位为 1 的 mask ：00010000。
+要得到只有第 i 位為 1 的 mask，將 1 向左移動 i-1 位即可，1&lt;&lt;(i-1) 。例如 1&lt;&lt;4 得到只有第 5 位為 1 的 mask ：00010000。
 
-要得到 1 到 i 位为 1 的 mask，1&lt;&lt;(i+1)-1 即可，例如将 1&lt;&lt;(4+1)-1 = 00010000-1 = 00001111。
+要得到 1 到 i 位為 1 的 mask，1&lt;&lt;(i+1)-1 即可，例如將 1&lt;&lt;(4+1)-1 = 00010000-1 = 00001111。
 
-要得到 1 到 i 位为 0 的 mask，只需将 1 到 i 位为 1 的 mask 取反，即 \~(1&lt;&lt;(i+1)-1)。
+要得到 1 到 i 位為 0 的 mask，只需將 1 到 i 位為 1 的 mask 取反，即 \~(1&lt;&lt;(i+1)-1)。
 
 **Java 中的位操作** 
 
 ```html
-static int Integer.bitCount();           // 统计 1 的数量
-static int Integer.highestOneBit();      // 获得最高位
-static String toBinaryString(int i);     // 转换为二进制表示的字符串
+static int Integer.bitCount();           // 統計 1 的數量
+static int Integer.highestOneBit();      // 獲得最高位
+static String toBinaryString(int i);     // 轉換為二進制表示的字符串
 ```
 
-# 1. 统计两个数的二进制表示有多少位不同
+# 1. 統計兩個數的二進制表示有多少位不同
 
 [461. Hamming Distance (Easy)](https://leetcode.com/problems/hamming-distance/)
 
@@ -76,7 +76,7 @@ Explanation:
 The above arrows point to positions where the corresponding bits are different.
 ```
 
-对两个数进行异或操作，位级表示不同的那一位为 1，统计有多少个 1 即可。
+對兩個數進行異或操作，位級表示不同的那一位為 1，統計有多少個 1 即可。
 
 ```java
 public int hammingDistance(int x, int y) {
@@ -90,7 +90,7 @@ public int hammingDistance(int x, int y) {
 }
 ```
 
-使用 z&(z-1) 去除 z 位级表示最低的那一位。
+使用 z&(z-1) 去除 z 位級表示最低的那一位。
 
 ```java
 public int hammingDistance(int x, int y) {
@@ -104,7 +104,7 @@ public int hammingDistance(int x, int y) {
 }
 ```
 
-可以使用 Integer.bitcount() 来统计 1 个的个数。
+可以使用 Integer.bitcount() 來統計 1 個的個數。
 
 ```java
 public int hammingDistance(int x, int y) {
@@ -112,7 +112,7 @@ public int hammingDistance(int x, int y) {
 }
 ```
 
-# 2. 数组中唯一一个不重复的元素
+# 2. 數組中唯一一個不重複的元素
 
 [136. Single Number (Easy)](https://leetcode.com/problems/single-number/description/)
 
@@ -121,7 +121,7 @@ Input: [4,1,2,1,2]
 Output: 4
 ```
 
-两个相同的数异或的结果为 0，对所有数进行异或操作，最后的结果就是单独出现的那个数。
+兩個相同的數異或的結果為 0，對所有數進行異或操作，最後的結果就是單獨出現的那個數。
 
 ```java
 public int singleNumber(int[] nums) {
@@ -131,7 +131,7 @@ public int singleNumber(int[] nums) {
 }
 ```
 
-# 3. 找出数组中缺失的那个数
+# 3. 找出數組中缺失的那個數
 
 [268. Missing Number (Easy)](https://leetcode.com/problems/missing-number/description/)
 
@@ -140,7 +140,7 @@ Input: [3,0,1]
 Output: 2
 ```
 
-题目描述：数组元素在 0-n 之间，但是有一个数是缺失的，要求找到这个缺失的数。
+題目描述：數組元素在 0-n 之間，但是有一個數是缺失的，要求找到這個缺失的數。
 
 ```java
 public int missingNumber(int[] nums) {
@@ -152,15 +152,15 @@ public int missingNumber(int[] nums) {
 }
 ```
 
-# 4. 数组中不重复的两个元素
+# 4. 數組中不重複的兩個元素
 
 [260. Single Number III (Medium)](https://leetcode.com/problems/single-number-iii/description/)
 
-两个不相等的元素在位级表示上必定会有一位存在不同。
+兩個不相等的元素在位級表示上必定會有一位存在不同。
 
-将数组的所有元素异或得到的结果为不存在重复的两个元素异或的结果。
+將數組的所有元素異或得到的結果為不存在重複的兩個元素異或的結果。
 
-diff &= -diff 得到出 diff 最右侧不为 0 的位，也就是不存在重复的两个元素在位级表示上最右侧不同的那一位，利用这一位就可以将两个元素区分开来。
+diff &= -diff 得到出 diff 最右側不為 0 的位，也就是不存在重複的兩個元素在位級表示上最右側不同的那一位，利用這一位就可以將兩個元素區分開來。
 
 ```java
 public int[] singleNumber(int[] nums) {
@@ -176,7 +176,7 @@ public int[] singleNumber(int[] nums) {
 }
 ```
 
-# 5. 翻转一个数的比特位
+# 5. 翻轉一個數的比特位
 
 [190. Reverse Bits (Easy)](https://leetcode.com/problems/reverse-bits/description/)
 
@@ -192,7 +192,7 @@ public int reverseBits(int n) {
 }
 ```
 
-如果该函数需要被调用很多次，可以将 int 拆成 4 个 byte，然后缓存 byte 对应的比特位翻转，最后再拼接起来。
+如果該函數需要被調用很多次，可以將 int 拆成 4 個 byte，然後緩存 byte 對應的比特位翻轉，最後再拼接起來。
 
 ```java
 private static Map<Byte, Integer> cache = new HashMap<>();
@@ -221,9 +221,9 @@ private int reverseByte(byte b) {
 }
 ```
 
-# 6. 不用额外变量交换两个整数
+# 6. 不用額外變量交換兩個整數
 
-[程序员代码面试指南 ：P317](#)
+[程序員代碼面試指南 ：P317](#)
 
 ```java
 a = a ^ b;
@@ -231,11 +231,11 @@ b = a ^ b;
 a = a ^ b;
 ```
 
-# 7. 判断一个数是不是 2 的 n 次方
+# 7. 判斷一個數是不是 2 的 n 次方
 
 [231. Power of Two (Easy)](https://leetcode.com/problems/power-of-two/description/)
 
-二进制表示只有一个 1 存在。
+二進制表示只有一個 1 存在。
 
 ```java
 public boolean isPowerOfTwo(int n) {
@@ -243,7 +243,7 @@ public boolean isPowerOfTwo(int n) {
 }
 ```
 
-利用 1000 & 0111 == 0 这种性质，得到以下解法：
+利用 1000 & 0111 == 0 這種性質，得到以下解法：
 
 ```java
 public boolean isPowerOfTwo(int n) {
@@ -251,11 +251,11 @@ public boolean isPowerOfTwo(int n) {
 }
 ```
 
-# 8.  判断一个数是不是 4 的 n 次方
+# 8.  判斷一個數是不是 4 的 n 次方
 
 [342. Power of Four (Easy)](https://leetcode.com/problems/power-of-four/)
 
-这种数在二进制表示中有且只有一个奇数位为 1，例如 16（10000）。
+這種數在二進制表示中有且只有一個奇數位為 1，例如 16（10000）。
 
 ```java
 public boolean isPowerOfFour(int num) {
@@ -263,7 +263,7 @@ public boolean isPowerOfFour(int num) {
 }
 ```
 
-也可以使用正则表达式进行匹配。
+也可以使用正則表達式進行匹配。
 
 ```java
 public boolean isPowerOfFour(int num) {
@@ -271,7 +271,7 @@ public boolean isPowerOfFour(int num) {
 }
 ```
 
-# 9. 判断一个数的位级表示是否不会出现连续的 0 和 1
+# 9. 判斷一個數的位級表示是否不會出現連續的 0 和 1
 
 [693. Binary Number with Alternating Bits (Easy)](https://leetcode.com/problems/binary-number-with-alternating-bits/description/)
 
@@ -287,7 +287,7 @@ Explanation:
 The binary representation of 11 is: 1011.
 ```
 
-对于 1010 这种位级表示的数，把它向右移动 1 位得到 101，这两个数每个位都不同，因此异或得到的结果为 1111。
+對於 1010 這種位級表示的數，把它向右移動 1 位得到 101，這兩個數每個位都不同，因此異或得到的結果為 1111。
 
 ```java
 public boolean hasAlternatingBits(int n) {
@@ -296,7 +296,7 @@ public boolean hasAlternatingBits(int n) {
 }
 ```
 
-# 10. 求一个数的补码
+# 10. 求一個數的補碼
 
 [476. Number Complement (Easy)](https://leetcode.com/problems/number-complement/description/)
 
@@ -306,9 +306,9 @@ Output: 2
 Explanation: The binary representation of 5 is 101 (no leading zero bits), and its complement is 010. So you need to output 2.
 ```
 
-题目描述：不考虑二进制表示中的首 0 部分。
+題目描述：不考慮二進制表示中的首 0 部分。
 
-对于 00000101，要求补码可以将它与 00000111 进行异或操作。那么问题就转换为求掩码 00000111。
+對於 00000101，要求補碼可以將它與 00000111 進行異或操作。那麼問題就轉換為求掩碼 00000111。
 
 ```java
 public int findComplement(int num) {
@@ -320,7 +320,7 @@ public int findComplement(int num) {
 }
 ```
 
-可以利用 Java 的 Integer.highestOneBit() 方法来获得含有首 1 的数。
+可以利用 Java 的 Integer.highestOneBit() 方法來獲得含有首 1 的數。
 
 ```java
 public int findComplement(int num) {
@@ -331,7 +331,7 @@ public int findComplement(int num) {
 }
 ```
 
-对于 10000000 这样的数要扩展成 11111111，可以利用以下方法：
+對於 10000000 這樣的數要擴展成 11111111，可以利用以下方法：
 
 ```html
 mask |= mask >> 1    11000000
@@ -351,13 +351,13 @@ public int findComplement(int num) {
 }
 ```
 
-# 11. 实现整数的加法
+# 11. 實現整數的加法
 
 [371. Sum of Two Integers (Easy)](https://leetcode.com/problems/sum-of-two-integers/description/)
 
-a ^ b 表示没有考虑进位的情况下两数的和，(a & b) << 1 就是进位。
+a ^ b 表示沒有考慮進位的情況下兩數的和，(a & b) << 1 就是進位。
 
-递归会终止的原因是 (a & b) << 1 最右边会多一个 0，那么继续递归，进位最右边的 0 会慢慢增多，最后进位会变为 0，递归终止。
+遞歸會終止的原因是 (a & b) << 1 最右邊會多一個 0，那麼繼續遞歸，進位最右邊的 0 會慢慢增多，最後進位會變為 0，遞歸終止。
 
 ```java
 public int getSum(int a, int b) {
@@ -365,7 +365,7 @@ public int getSum(int a, int b) {
 }
 ```
 
-# 12. 字符串数组最大乘积
+# 12. 字符串數組最大乘積
 
 [318. Maximum Product of Word Lengths (Medium)](https://leetcode.com/problems/maximum-product-of-word-lengths/description/)
 
@@ -375,9 +375,9 @@ Return 16
 The two words can be "abcw", "xtfn".
 ```
 
-题目描述：字符串数组的字符串只含有小写字符。求解字符串数组中两个字符串长度的最大乘积，要求这两个字符串不能含有相同字符。
+題目描述：字符串數組的字符串只含有小寫字符。求解字符串數組中兩個字符串長度的最大乘積，要求這兩個字符串不能含有相同字符。
 
-本题主要问题是判断两个字符串是否含相同字符，由于字符串只含有小写字符，总共 26 位，因此可以用一个 32 位的整数来存储每个字符是否出现过。
+本題主要問題是判斷兩個字符串是否含相同字符，由於字符串只含有小寫字符，總共 26 位，因此可以用一個 32 位的整數來存儲每個字符是否出現過。
 
 ```java
 public int maxProduct(String[] words) {
@@ -400,11 +400,11 @@ public int maxProduct(String[] words) {
 }
 ```
 
-# 13. 统计从 0 \~ n 每个数的二进制表示中 1 的个数
+# 13. 統計從 0 \~ n 每個數的二進制表示中 1 的個數
 
 [338. Counting Bits (Medium)](https://leetcode.com/problems/counting-bits/description/)
 
-对于数字 6(110)，它可以看成是 4(100) 再加一个 2(10)，因此 dp[i] = dp[i&(i-1)] + 1;
+對於數字 6(110)，它可以看成是 4(100) 再加一個 2(10)，因此 dp[i] = dp[i&(i-1)] + 1;
 
 ```java
 public int[] countBits(int num) {
@@ -420,10 +420,10 @@ public int[] countBits(int num) {
 
 
 
-# 微信公众号
+# 微信公眾號
 
 
-更多精彩内容将发布在微信公众号 CyC2018 上，你也可以在公众号后台和我交流学习和求职相关的问题。另外，公众号提供了该项目的 PDF 等离线阅读版本，后台回复 "下载" 即可领取。公众号也提供了一份技术面试复习大纲，不仅系统整理了面试知识点，而且标注了各个知识点的重要程度，从而帮你理清多而杂的面试知识点，后台回复 "大纲" 即可领取。我基本是按照这个大纲来进行复习的，对我拿到了 BAT 头条等 Offer 起到很大的帮助。你们完全可以和我一样根据大纲上列的知识点来进行复习，就不用看很多不重要的内容，也可以知道哪些内容很重要从而多安排一些复习时间。
+更多精彩內容將發佈在微信公眾號 CyC2018 上，你也可以在公眾號後臺和我交流學習和求職相關的問題。另外，公眾號提供了該項目的 PDF 等離線閱讀版本，後臺回覆 "下載" 即可領取。公眾號也提供了一份技術面試複習大綱，不僅系統整理了面試知識點，而且標註了各個知識點的重要程度，從而幫你理清多而雜的面試知識點，後臺回覆 "大綱" 即可領取。我基本是按照這個大綱來進行復習的，對我拿到了 BAT 頭條等 Offer 起到很大的幫助。你們完全可以和我一樣根據大綱上列的知識點來進行復習，就不用看很多不重要的內容，也可以知道哪些內容很重要從而多安排一些複習時間。
 
 
-<br><div align="center"><img width="320px" src="https://cs-notes-1256109796.cos.ap-guangzhou.myqcloud.com/other/公众号海报6.png"></img></div>
+<br><div align="center"><img width="320px" src="https://cs-notes-1256109796.cos.ap-guangzhou.myqcloud.com/other/公眾號海報6.png"></img></div>

@@ -1,30 +1,30 @@
 <!-- GFM-TOC -->
-* [快速选择](#快速选择)
+* [快速選擇](#快速選擇)
 * [堆](#堆)
     * [1. Kth Element](#1-kth-element)
 * [桶排序](#桶排序)
-    * [1. 出现频率最多的 k 个元素](#1-出现频率最多的-k-个元素)
-    * [2. 按照字符出现次数对字符串排序](#2-按照字符出现次数对字符串排序)
-* [荷兰国旗问题](#荷兰国旗问题)
-    * [1. 按颜色进行排序](#1-按颜色进行排序)
+    * [1. 出現頻率最多的 k 個元素](#1-出現頻率最多的-k-個元素)
+    * [2. 按照字符出現次數對字符串排序](#2-按照字符出現次數對字符串排序)
+* [荷蘭國旗問題](#荷蘭國旗問題)
+    * [1. 按顏色進行排序](#1-按顏色進行排序)
 <!-- GFM-TOC -->
 
 
-# 快速选择
+# 快速選擇
 
-用于求解  **Kth Element**  问题，也就是第 K 个元素的问题。
+用於求解  **Kth Element**  問題，也就是第 K 個元素的問題。
 
-可以使用快速排序的 partition() 进行实现。需要先打乱数组，否则最坏情况下时间复杂度为 O(N<sup>2</sup>)。
+可以使用快速排序的 partition() 進行實現。需要先打亂數組，否則最壞情況下時間複雜度為 O(N<sup>2</sup>)。
 
 # 堆
 
-用于求解  **TopK Elements**  问题，也就是 K 个最小元素的问题。可以维护一个大小为 K 的最小堆，最小堆中的元素就是最小元素。最小堆需要使用大顶堆来实现，大顶堆表示堆顶元素是堆中最大元素。这是因为我们要得到 k 个最小的元素，因此当遍历到一个新的元素时，需要知道这个新元素是否比堆中最大的元素更小，更小的话就把堆中最大元素去除，并将新元素添加到堆中。所以我们需要很容易得到最大元素并移除最大元素，大顶堆就能很好满足这个要求。
+用於求解  **TopK Elements**  問題，也就是 K 個最小元素的問題。可以維護一個大小為 K 的最小堆，最小堆中的元素就是最小元素。最小堆需要使用大頂堆來實現，大頂堆表示堆頂元素是堆中最大元素。這是因為我們要得到 k 個最小的元素，因此當遍歷到一個新的元素時，需要知道這個新元素是否比堆中最大的元素更小，更小的話就把堆中最大元素去除，並將新元素添加到堆中。所以我們需要很容易得到最大元素並移除最大元素，大頂堆就能很好滿足這個要求。
 
-堆也可以用于求解 Kth Element 问题，得到了大小为 k 的最小堆之后，因为使用了大顶堆来实现，因此堆顶元素就是第 k 大的元素。
+堆也可以用於求解 Kth Element 問題，得到了大小為 k 的最小堆之後，因為使用了大頂堆來實現，因此堆頂元素就是第 k 大的元素。
 
-快速选择也可以求解 TopK Elements 问题，因为找到 Kth Element 之后，再遍历一次数组，所有小于等于 Kth Element 的元素都是 TopK Elements。
+快速選擇也可以求解 TopK Elements 問題，因為找到 Kth Element 之後，再遍歷一次數組，所有小於等於 Kth Element 的元素都是 TopK Elements。
 
-可以看到，快速选择和堆排序都可以求解 Kth Element 和 TopK Elements 问题。
+可以看到，快速選擇和堆排序都可以求解 Kth Element 和 TopK Elements 問題。
 
 ## 1. Kth Element
 
@@ -35,9 +35,9 @@ Input: [3,2,1,5,6,4] and k = 2
 Output: 5
 ```
 
-题目描述：找到倒数第 k 个的元素。
+題目描述：找到倒數第 k 個的元素。
 
-**排序** ：时间复杂度 O(NlogN)，空间复杂度 O(1)
+**排序** ：時間複雜度 O(NlogN)，空間複雜度 O(1)
 
 ```java
 public int findKthLargest(int[] nums, int k) {
@@ -46,21 +46,21 @@ public int findKthLargest(int[] nums, int k) {
 }
 ```
 
-**堆** ：时间复杂度 O(NlogK)，空间复杂度 O(K)。
+**堆** ：時間複雜度 O(NlogK)，空間複雜度 O(K)。
 
 ```java
 public int findKthLargest(int[] nums, int k) {
-    PriorityQueue<Integer> pq = new PriorityQueue<>(); // 小顶堆
+    PriorityQueue<Integer> pq = new PriorityQueue<>(); // 小頂堆
     for (int val : nums) {
         pq.add(val);
-        if (pq.size() > k)  // 维护堆的大小为 K
+        if (pq.size() > k)  // 維護堆的大小為 K
             pq.poll();
     }
     return pq.peek();
 }
 ```
 
-**快速选择** ：时间复杂度 O(N)，空间复杂度 O(1)
+**快速選擇** ：時間複雜度 O(N)，空間複雜度 O(1)
 
 ```java
 public int findKthLargest(int[] nums, int k) {
@@ -102,7 +102,7 @@ private void swap(int[] a, int i, int j) {
 
 # 桶排序
 
-## 1. 出现频率最多的 k 个元素
+## 1. 出現頻率最多的 k 個元素
 
 [347. Top K Frequent Elements (Medium)](https://leetcode.com/problems/top-k-frequent-elements/description/)
 
@@ -110,9 +110,9 @@ private void swap(int[] a, int i, int j) {
 Given [1,1,1,2,2,3] and k = 2, return [1,2].
 ```
 
-设置若干个桶，每个桶存储出现频率相同的数。桶的下标表示数出现的频率，即第 i 个桶中存储的数出现的频率为 i。
+設置若干個桶，每個桶存儲出現頻率相同的數。桶的下標表示數出現的頻率，即第 i 個桶中存儲的數出現的頻率為 i。
 
-把数都放到桶之后，从后向前遍历桶，最先得到的 k 个数就是出现频率最多的的 k 个数。
+把數都放到桶之後，從後向前遍歷桶，最先得到的 k 個數就是出現頻率最多的的 k 個數。
 
 ```java
 public List<Integer> topKFrequent(int[] nums, int k) {
@@ -143,7 +143,7 @@ public List<Integer> topKFrequent(int[] nums, int k) {
 }
 ```
 
-## 2. 按照字符出现次数对字符串排序
+## 2. 按照字符出現次數對字符串排序
 
 [451. Sort Characters By Frequency (Medium)](https://leetcode.com/problems/sort-characters-by-frequency/description/)
 
@@ -188,16 +188,16 @@ public String frequencySort(String s) {
 }
 ```
 
-# 荷兰国旗问题
+# 荷蘭國旗問題
 
-荷兰国旗包含三种颜色：红、白、蓝。
+荷蘭國旗包含三種顏色：紅、白、藍。
 
-有三种颜色的球，算法的目标是将这三种球按颜色顺序正确地排列。它其实是三向切分快速排序的一种变种，在三向切分快速排序中，每次切分都将数组分成三个区间：小于切分元素、等于切分元素、大于切分元素，而该算法是将数组分成三个区间：等于红色、等于白色、等于蓝色。
+有三種顏色的球，算法的目標是將這三種球按顏色順序正確地排列。它其實是三向切分快速排序的一種變種，在三向切分快速排序中，每次切分都將數組分成三個區間：小於切分元素、等於切分元素、大於切分元素，而該算法是將數組分成三個區間：等於紅色、等於白色、等於藍色。
 
 <div align="center"> <img src="pics/7a3215ec-6fb7-4935-8b0d-cb408208f7cb.png"/> </div><br>
 
 
-## 1. 按颜色进行排序
+## 1. 按顏色進行排序
 
 [75. Sort Colors (Medium)](https://leetcode.com/problems/sort-colors/description/)
 
@@ -206,7 +206,7 @@ Input: [2,0,2,1,1,0]
 Output: [0,0,1,1,2,2]
 ```
 
-题目描述：只有 0/1/2 三种颜色。
+題目描述：只有 0/1/2 三種顏色。
 
 ```java
 public void sortColors(int[] nums) {
@@ -232,10 +232,10 @@ private void swap(int[] nums, int i, int j) {
 
 
 
-# 微信公众号
+# 微信公眾號
 
 
-更多精彩内容将发布在微信公众号 CyC2018 上，你也可以在公众号后台和我交流学习和求职相关的问题。另外，公众号提供了该项目的 PDF 等离线阅读版本，后台回复 "下载" 即可领取。公众号也提供了一份技术面试复习大纲，不仅系统整理了面试知识点，而且标注了各个知识点的重要程度，从而帮你理清多而杂的面试知识点，后台回复 "大纲" 即可领取。我基本是按照这个大纲来进行复习的，对我拿到了 BAT 头条等 Offer 起到很大的帮助。你们完全可以和我一样根据大纲上列的知识点来进行复习，就不用看很多不重要的内容，也可以知道哪些内容很重要从而多安排一些复习时间。
+更多精彩內容將發佈在微信公眾號 CyC2018 上，你也可以在公眾號後臺和我交流學習和求職相關的問題。另外，公眾號提供了該項目的 PDF 等離線閱讀版本，後臺回覆 "下載" 即可領取。公眾號也提供了一份技術面試複習大綱，不僅系統整理了面試知識點，而且標註了各個知識點的重要程度，從而幫你理清多而雜的面試知識點，後臺回覆 "大綱" 即可領取。我基本是按照這個大綱來進行復習的，對我拿到了 BAT 頭條等 Offer 起到很大的幫助。你們完全可以和我一樣根據大綱上列的知識點來進行復習，就不用看很多不重要的內容，也可以知道哪些內容很重要從而多安排一些複習時間。
 
 
-<br><div align="center"><img width="320px" src="https://cs-notes-1256109796.cos.ap-guangzhou.myqcloud.com/other/公众号海报6.png"></img></div>
+<br><div align="center"><img width="320px" src="https://cs-notes-1256109796.cos.ap-guangzhou.myqcloud.com/other/公眾號海報6.png"></img></div>

@@ -1,25 +1,25 @@
 <!-- GFM-TOC -->
-* [1. 数组中两个数的和为给定值](#1-数组中两个数的和为给定值)
-* [2. 判断数组是否含有重复元素](#2-判断数组是否含有重复元素)
-* [3. 最长和谐序列](#3-最长和谐序列)
-* [4. 最长连续序列](#4-最长连续序列)
+* [1. 數組中兩個數的和為給定值](#1-數組中兩個數的和為給定值)
+* [2. 判斷數組是否含有重複元素](#2-判斷數組是否含有重複元素)
+* [3. 最長和諧序列](#3-最長和諧序列)
+* [4. 最長連續序列](#4-最長連續序列)
 <!-- GFM-TOC -->
 
 
-哈希表使用 O(N) 空间复杂度存储数据，并且以 O(1) 时间复杂度求解问题。
+哈希表使用 O(N) 空間複雜度存儲數據，並且以 O(1) 時間複雜度求解問題。
 
-- Java 中的  **HashSet**  用于存储一个集合，可以查找元素是否在集合中。如果元素有穷，并且范围不大，那么可以用一个布尔数组来存储一个元素是否存在。例如对于只有小写字符的元素，就可以用一个长度为 26 的布尔数组来存储一个字符集合，使得空间复杂度降低为 O(1)。
+- Java 中的  **HashSet**  用於存儲一個集合，可以查找元素是否在集合中。如果元素有窮，並且範圍不大，那麼可以用一個布爾數組來存儲一個元素是否存在。例如對於只有小寫字符的元素，就可以用一個長度為 26 的布爾數組來存儲一個字符集合，使得空間複雜度降低為 O(1)。
 
-- Java 中的  **HashMap**  主要用于映射关系，从而把两个元素联系起来。HashMap 也可以用来对元素进行计数统计，此时键为元素，值为计数。和 HashSet 类似，如果元素有穷并且范围不大，可以用整型数组来进行统计。在对一个内容进行压缩或者其它转换时，利用 HashMap 可以把原始内容和转换后的内容联系起来。例如在一个简化 url 的系统中 [Leetcdoe : 535. Encode and Decode TinyURL (Medium)](https://leetcode.com/problems/encode-and-decode-tinyurl/description/)，利用 HashMap 就可以存储精简后的 url 到原始 url 的映射，使得不仅可以显示简化的 url，也可以根据简化的 url 得到原始 url 从而定位到正确的资源。
+- Java 中的  **HashMap**  主要用於映射關係，從而把兩個元素聯繫起來。HashMap 也可以用來對元素進行計數統計，此時鍵為元素，值為計數。和 HashSet 類似，如果元素有窮並且範圍不大，可以用整型數組來進行統計。在對一個內容進行壓縮或者其它轉換時，利用 HashMap 可以把原始內容和轉換後的內容聯繫起來。例如在一個簡化 url 的系統中 [Leetcdoe : 535. Encode and Decode TinyURL (Medium)](https://leetcode.com/problems/encode-and-decode-tinyurl/description/)，利用 HashMap 就可以存儲精簡後的 url 到原始 url 的映射，使得不僅可以顯示簡化的 url，也可以根據簡化的 url 得到原始 url 從而定位到正確的資源。
 
 
-# 1. 数组中两个数的和为给定值
+# 1. 數組中兩個數的和為給定值
 
 [1. Two Sum (Easy)](https://leetcode.com/problems/two-sum/description/)
 
-可以先对数组进行排序，然后使用双指针方法或者二分查找方法。这样做的时间复杂度为 O(NlogN)，空间复杂度为 O(1)。
+可以先對數組進行排序，然後使用雙指針方法或者二分查找方法。這樣做的時間複雜度為 O(NlogN)，空間複雜度為 O(1)。
 
-用 HashMap 存储数组元素和索引的映射，在访问到 nums[i] 时，判断 HashMap 中是否存在 target - nums[i]，如果存在说明 target - nums[i] 所在的索引和 i 就是要找的两个数。该方法的时间复杂度为 O(N)，空间复杂度为 O(N)，使用空间来换取时间。
+用 HashMap 存儲數組元素和索引的映射，在訪問到 nums[i] 時，判斷 HashMap 中是否存在 target - nums[i]，如果存在說明 target - nums[i] 所在的索引和 i 就是要找的兩個數。該方法的時間複雜度為 O(N)，空間複雜度為 O(N)，使用空間來換取時間。
 
 ```java
 public int[] twoSum(int[] nums, int target) {
@@ -35,7 +35,7 @@ public int[] twoSum(int[] nums, int target) {
 }
 ```
 
-# 2. 判断数组是否含有重复元素
+# 2. 判斷數組是否含有重複元素
 
 [217. Contains Duplicate (Easy)](https://leetcode.com/problems/contains-duplicate/description/)
 
@@ -49,7 +49,7 @@ public boolean containsDuplicate(int[] nums) {
 }
 ```
 
-# 3. 最长和谐序列
+# 3. 最長和諧序列
 
 [594. Longest Harmonious Subsequence (Easy)](https://leetcode.com/problems/longest-harmonious-subsequence/description/)
 
@@ -59,7 +59,7 @@ Output: 5
 Explanation: The longest harmonious subsequence is [3,2,2,2,3].
 ```
 
-和谐序列中最大数和最小数之差正好为 1，应该注意的是序列的元素不一定是数组的连续元素。
+和諧序列中最大數和最小數之差正好為 1，應該注意的是序列的元素不一定是數組的連續元素。
 
 ```java
 public int findLHS(int[] nums) {
@@ -77,7 +77,7 @@ public int findLHS(int[] nums) {
 }
 ```
 
-# 4. 最长连续序列
+# 4. 最長連續序列
 
 [128. Longest Consecutive Sequence (Hard)](https://leetcode.com/problems/longest-consecutive-sequence/description/)
 
@@ -86,7 +86,7 @@ Given [100, 4, 200, 1, 3, 2],
 The longest consecutive elements sequence is [1, 2, 3, 4]. Return its length: 4.
 ```
 
-要求以 O(N) 的时间复杂度求解。
+要求以 O(N) 的時間複雜度求解。
 
 ```java
 public int longestConsecutive(int[] nums) {
@@ -125,10 +125,10 @@ private int maxCount(Map<Integer, Integer> countForNum) {
 
 
 
-# 微信公众号
+# 微信公眾號
 
 
-更多精彩内容将发布在微信公众号 CyC2018 上，你也可以在公众号后台和我交流学习和求职相关的问题。另外，公众号提供了该项目的 PDF 等离线阅读版本，后台回复 "下载" 即可领取。公众号也提供了一份技术面试复习大纲，不仅系统整理了面试知识点，而且标注了各个知识点的重要程度，从而帮你理清多而杂的面试知识点，后台回复 "大纲" 即可领取。我基本是按照这个大纲来进行复习的，对我拿到了 BAT 头条等 Offer 起到很大的帮助。你们完全可以和我一样根据大纲上列的知识点来进行复习，就不用看很多不重要的内容，也可以知道哪些内容很重要从而多安排一些复习时间。
+更多精彩內容將發佈在微信公眾號 CyC2018 上，你也可以在公眾號後臺和我交流學習和求職相關的問題。另外，公眾號提供了該項目的 PDF 等離線閱讀版本，後臺回覆 "下載" 即可領取。公眾號也提供了一份技術面試複習大綱，不僅系統整理了面試知識點，而且標註了各個知識點的重要程度，從而幫你理清多而雜的面試知識點，後臺回覆 "大綱" 即可領取。我基本是按照這個大綱來進行復習的，對我拿到了 BAT 頭條等 Offer 起到很大的幫助。你們完全可以和我一樣根據大綱上列的知識點來進行復習，就不用看很多不重要的內容，也可以知道哪些內容很重要從而多安排一些複習時間。
 
 
-<br><div align="center"><img width="320px" src="https://cs-notes-1256109796.cos.ap-guangzhou.myqcloud.com/other/公众号海报6.png"></img></div>
+<br><div align="center"><img width="320px" src="https://cs-notes-1256109796.cos.ap-guangzhou.myqcloud.com/other/公眾號海報6.png"></img></div>

@@ -1,21 +1,21 @@
 <!-- GFM-TOC -->
-* [3. 数组中重复的数字](#3-数组中重复的数字)
-* [4. 二维数组中的查找](#4-二维数组中的查找)
-* [5. 替换空格](#5-替换空格)
-* [6. 从尾到头打印链表](#6-从尾到头打印链表)
-* [7. 重建二叉树](#7-重建二叉树)
-* [8. 二叉树的下一个结点](#8-二叉树的下一个结点)
-* [9. 用两个栈实现队列](#9-用两个栈实现队列)
+* [3. 數組中重複的數字](#3-數組中重複的數字)
+* [4. 二維數組中的查找](#4-二維數組中的查找)
+* [5. 替換空格](#5-替換空格)
+* [6. 從尾到頭打印鏈表](#6-從尾到頭打印鏈表)
+* [7. 重建二叉樹](#7-重建二叉樹)
+* [8. 二叉樹的下一個結點](#8-二叉樹的下一個結點)
+* [9. 用兩個棧實現隊列](#9-用兩個棧實現隊列)
 <!-- GFM-TOC -->
 
 
-# 3. 数组中重复的数字
+# 3. 數組中重複的數字
 
 [NowCoder](https://www.nowcoder.com/practice/623a5ac0ea5b4e5f95552655361ae0a8?tpId=13&tqId=11203&tPage=1&rp=1&ru=/ta/coding-interviews&qru=/ta/coding-interviews/question-ranking)
 
-## 题目描述
+## 題目描述
 
-在一个长度为 n 的数组里的所有数字都在 0 到 n-1 的范围内。数组中某些数字是重复的，但不知道有几个数字是重复的，也不知道每个数字重复几次。请找出数组中任意一个重复的数字。
+在一個長度為 n 的數組裡的所有數字都在 0 到 n-1 的範圍內。數組中某些數字是重複的，但不知道有幾個數字是重複的，也不知道每個數字重複幾次。請找出數組中任意一個重複的數字。
 
 ```html
 Input:
@@ -25,13 +25,13 @@ Output:
 2
 ```
 
-## 解题思路
+## 解題思路
 
-要求时间复杂度 O(N)，空间复杂度 O(1)。因此不能使用排序的方法，也不能使用额外的标记数组。
+要求時間複雜度 O(N)，空間複雜度 O(1)。因此不能使用排序的方法，也不能使用額外的標記數組。
 
-对于这种数组元素在 [0, n-1] 范围内的问题，可以将值为 i 的元素调整到第 i 个位置上进行求解。
+對於這種數組元素在 [0, n-1] 範圍內的問題，可以將值為 i 的元素調整到第 i 個位置上進行求解。
 
-以 (2, 3, 1, 0, 2, 5) 为例，遍历到位置 4 时，该位置上的数为 2，但是第 2 个位置上已经有一个 2 的值了，因此可以知道 2 重复：
+以 (2, 3, 1, 0, 2, 5) 為例，遍歷到位置 4 時，該位置上的數為 2，但是第 2 個位置上已經有一個 2 的值了，因此可以知道 2 重複：
 
 <div align="center"> <img src="pics/49d2adc1-b28a-44bf-babb-d44993f4a2e3.gif" width="250px"> </div><br>
 
@@ -59,13 +59,13 @@ private void swap(int[] nums, int i, int j) {
 }
 ```
 
-# 4. 二维数组中的查找
+# 4. 二維數組中的查找
 
 [NowCoder](https://www.nowcoder.com/practice/abc3fe2ce8e146608e868a70efebf62e?tpId=13&tqId=11154&tPage=1&rp=1&ru=/ta/coding-interviews&qru=/ta/coding-interviews/question-ranking)
 
-## 题目描述
+## 題目描述
 
-给定一个二维数组，其每一行从左到右递增排序，从上到下也是递增排序。给定一个数，判断这个数是否在该二维数组中。
+給定一個二維數組，其每一行從左到右遞增排序，從上到下也是遞增排序。給定一個數，判斷這個數是否在該二維數組中。
 
 ```html
 Consider the following matrix:
@@ -81,11 +81,11 @@ Given target = 5, return true.
 Given target = 20, return false.
 ```
 
-## 解题思路
+## 解題思路
 
-要求时间复杂度 O(M + N)，空间复杂度 O(1)。其中 M 为行数，N 为 列数。
+要求時間複雜度 O(M + N)，空間複雜度 O(1)。其中 M 為行數，N 為 列數。
 
-该二维数组中的一个数，小于它的数一定在其左边，大于它的数一定在其下边。因此，从右上角开始查找，就可以根据 target 和当前元素的大小关系来缩小查找区间，当前元素的查找区间为左下角的所有元素。
+該二維數組中的一個數，小於它的數一定在其左邊，大於它的數一定在其下邊。因此，從右上角開始查找，就可以根據 target 和當前元素的大小關係來縮小查找區間，當前元素的查找區間為左下角的所有元素。
 
 <div align="center"> <img src="pics/0ad9f7ba-f408-4999-a77a-9b73562c9088.gif" width="200px"> </div><br>
 
@@ -94,7 +94,7 @@ public boolean Find(int target, int[][] matrix) {
     if (matrix == null || matrix.length == 0 || matrix[0].length == 0)
         return false;
     int rows = matrix.length, cols = matrix[0].length;
-    int r = 0, c = cols - 1; // 从右上角开始
+    int r = 0, c = cols - 1; // 從右上角開始
     while (r <= rows - 1 && c >= 0) {
         if (target == matrix[r][c])
             return true;
@@ -107,14 +107,14 @@ public boolean Find(int target, int[][] matrix) {
 }
 ```
 
-# 5. 替换空格
+# 5. 替換空格
 
 [NowCoder](https://www.nowcoder.com/practice/4060ac7e3e404ad1a894ef3e17650423?tpId=13&tqId=11155&tPage=1&rp=1&ru=/ta/coding-interviews&qru=/ta/coding-interviews/question-ranking)
 
-## 题目描述
+## 題目描述
 
 
-将一个字符串中的空格替换成 "%20"。
+將一個字符串中的空格替換成 "%20"。
 
 ```text
 Input:
@@ -124,13 +124,13 @@ Output:
 "A%20B"
 ```
 
-## 解题思路
+## 解題思路
 
-在字符串尾部填充任意字符，使得字符串的长度等于替换之后的长度。因为一个空格要替换成三个字符（%20），因此当遍历到一个空格时，需要在尾部填充两个任意字符。
+在字符串尾部填充任意字符，使得字符串的長度等於替換之後的長度。因為一個空格要替換成三個字符（%20），因此當遍歷到一個空格時，需要在尾部填充兩個任意字符。
 
-令 P1 指向字符串原来的末尾位置，P2 指向字符串现在的末尾位置。P1 和 P2 从后向前遍历，当 P1 遍历到一个空格时，就需要令 P2 指向的位置依次填充 02%（注意是逆序的），否则就填充上 P1 指向字符的值。
+令 P1 指向字符串原來的末尾位置，P2 指向字符串現在的末尾位置。P1 和 P2 從後向前遍歷，當 P1 遍歷到一個空格時，就需要令 P2 指向的位置依次填充 02%（注意是逆序的），否則就填充上 P1 指向字符的值。
 
-从后向前遍是为了在改变 P2 所指向的内容时，不会影响到 P1 遍历原来字符串的内容。
+從後向前遍是為了在改變 P2 所指向的內容時，不會影響到 P1 遍歷原來字符串的內容。
 
 <div align="center"> <img src="pics/6980aef0-debe-4b4b-8da5-8b1befbc1408.gif" width="230px"> </div><br>
 
@@ -156,21 +156,21 @@ public String replaceSpace(StringBuffer str) {
 }
 ```
 
-# 6. 从尾到头打印链表
+# 6. 從尾到頭打印鏈表
 
 [NowCoder](https://www.nowcoder.com/practice/d0267f7f55b3412ba93bd35cfa8e8035?tpId=13&tqId=11156&tPage=1&rp=1&ru=/ta/coding-interviews&qru=/ta/coding-interviews/question-ranking)
 
-## 题目描述
+## 題目描述
 
-从尾到头反过来打印出每个结点的值。
+從尾到頭反過來打印出每個結點的值。
 
 <div align="center"> <img src="pics/f5792051-d9b2-4ca4-a234-a4a2de3d5a57.png" width="280px"> </div><br>
 
-## 解题思路
+## 解題思路
 
-### 使用递归
+### 使用遞歸
 
-要逆序打印链表 1->2->3（3,2,1)，可以先逆序打印链表 2->3(3,2)，最后再打印第一个节点 1。而链表 2->3 可以看成一个新的链表，要逆序打印该链表可以继续使用求解函数，也就是在求解函数中调用自己，这就是递归函数。
+要逆序打印鏈表 1->2->3（3,2,1)，可以先逆序打印鏈表 2->3(3,2)，最後再打印第一個節點 1。而鏈表 2->3 可以看成一個新的鏈表，要逆序打印該鏈表可以繼續使用求解函數，也就是在求解函數中調用自己，這就是遞歸函數。
 
 ```java
 public ArrayList<Integer> printListFromTailToHead(ListNode listNode) {
@@ -183,20 +183,20 @@ public ArrayList<Integer> printListFromTailToHead(ListNode listNode) {
 }
 ```
 
-### 使用头插法
+### 使用頭插法
 
-使用头插法可以得到一个逆序的链表。
+使用頭插法可以得到一個逆序的鏈表。
 
-头结点和第一个节点的区别：
+頭結點和第一個節點的區別：
 
-- 头结点是在头插法中使用的一个额外节点，这个节点不存储值；
-- 第一个节点就是链表的第一个真正存储值的节点。
+- 頭結點是在頭插法中使用的一個額外節點，這個節點不存儲值；
+- 第一個節點就是鏈表的第一個真正存儲值的節點。
 
 <div align="center"> <img src="pics/0dae7e93-cfd1-4bd3-97e8-325b032b716f.gif" width="370px"> </div><br>
 
 ```java
 public ArrayList<Integer> printListFromTailToHead(ListNode listNode) {
-    // 头插法构建逆序链表
+    // 頭插法構建逆序鏈表
     ListNode head = new ListNode(-1);
     while (listNode != null) {
         ListNode memo = listNode.next;
@@ -204,7 +204,7 @@ public ArrayList<Integer> printListFromTailToHead(ListNode listNode) {
         head.next = listNode;
         listNode = memo;
     }
-    // 构建 ArrayList
+    // 構建 ArrayList
     ArrayList<Integer> ret = new ArrayList<>();
     head = head.next;
     while (head != null) {
@@ -215,9 +215,9 @@ public ArrayList<Integer> printListFromTailToHead(ListNode listNode) {
 }
 ```
 
-### 使用栈
+### 使用棧
 
-栈具有后进先出的特点，在遍历链表时将值按顺序放入栈中，最后出栈的顺序即为逆序。
+棧具有後進先出的特點，在遍歷鏈表時將值按順序放入棧中，最後出棧的順序即為逆序。
 
 <div align="center"> <img src="pics/9d1deeba-4ae1-41dc-98f4-47d85b9831bc.gif" width="300px"> </div><br>
 
@@ -235,25 +235,25 @@ public ArrayList<Integer> printListFromTailToHead(ListNode listNode) {
 }
 ```
 
-# 7. 重建二叉树
+# 7. 重建二叉樹
 
 [NowCoder](https://www.nowcoder.com/practice/8a19cbe657394eeaac2f6ea9b0f6fcf6?tpId=13&tqId=11157&tPage=1&rp=1&ru=/ta/coding-interviews&qru=/ta/coding-interviews/question-ranking)
 
-## 题目描述
+## 題目描述
 
-根据二叉树的前序遍历和中序遍历的结果，重建出该二叉树。假设输入的前序遍历和中序遍历的结果中都不含重复的数字。
+根據二叉樹的前序遍歷和中序遍歷的結果，重建出該二叉樹。假設輸入的前序遍歷和中序遍歷的結果中都不含重複的數字。
 
 
 <div align="center"> <img src="pics/31d9adce-2af8-4754-8386-0aabb4e500b0.png" width="300"/> </div><br>
 
-## 解题思路
+## 解題思路
 
-前序遍历的第一个值为根节点的值，使用这个值将中序遍历结果分成两部分，左部分为树的左子树中序遍历结果，右部分为树的右子树中序遍历的结果。
+前序遍歷的第一個值為根節點的值，使用這個值將中序遍歷結果分成兩部分，左部分為樹的左子樹中序遍歷結果，右部分為樹的右子樹中序遍歷的結果。
 
 <div align="center"> <img src="pics/c269e362-1128-4212-9cf3-d4c12b363b2f.gif" width="330px"> </div><br>
 
 ```java
-// 缓存中序遍历数组每个值对应的索引
+// 緩存中序遍歷數組每個值對應的索引
 private Map<Integer, Integer> indexForInOrders = new HashMap<>();
 
 public TreeNode reConstructBinaryTree(int[] pre, int[] in) {
@@ -274,13 +274,13 @@ private TreeNode reConstructBinaryTree(int[] pre, int preL, int preR, int inL) {
 }
 ```
 
-# 8. 二叉树的下一个结点
+# 8. 二叉樹的下一個結點
 
 [NowCoder](https://www.nowcoder.com/practice/9023a0c988684a53960365b889ceaf5e?tpId=13&tqId=11210&tPage=1&rp=1&ru=/ta/coding-interviews&qru=/ta/coding-interviews/question-ranking)
 
-## 题目描述
+## 題目描述
 
-给定一个二叉树和其中的一个结点，请找出中序遍历顺序的下一个结点并且返回。注意，树中的结点不仅包含左右子结点，同时包含指向父结点的指针。
+給定一個二叉樹和其中的一個結點，請找出中序遍歷順序的下一個結點並且返回。注意，樹中的結點不僅包含左右子結點，同時包含指向父結點的指針。
 
 ```java
 public class TreeLinkNode {
@@ -296,13 +296,13 @@ public class TreeLinkNode {
 }
 ```
 
-## 解题思路
+## 解題思路
 
-① 如果一个节点的右子树不为空，那么该节点的下一个节点是右子树的最左节点；
+① 如果一個節點的右子樹不為空，那麼該節點的下一個節點是右子樹的最左節點；
 
 <div align="center"> <img src="pics/b0611f89-1e5f-4494-a795-3544bf65042a.gif" width="220px"/> </div><br>
 
-② 否则，向上找第一个左链接指向的树包含该节点的祖先节点。
+② 否則，向上找第一個左鏈接指向的樹包含該節點的祖先節點。
 
 <div align="center"> <img src="pics/95080fae-de40-463d-a76e-783a0c677fec.gif" width="200px"/> </div><br>
 
@@ -325,17 +325,17 @@ public TreeLinkNode GetNext(TreeLinkNode pNode) {
 }
 ```
 
-# 9. 用两个栈实现队列
+# 9. 用兩個棧實現隊列
 
 [NowCoder](https://www.nowcoder.com/practice/54275ddae22f475981afa2244dd448c6?tpId=13&tqId=11158&tPage=1&rp=1&ru=/ta/coding-interviews&qru=/ta/coding-interviews/question-ranking)
 
-## 题目描述
+## 題目描述
 
-用两个栈来实现一个队列，完成队列的 Push 和 Pop 操作。
+用兩個棧來實現一個隊列，完成隊列的 Push 和 Pop 操作。
 
-## 解题思路
+## 解題思路
 
-in 栈用来处理入栈（push）操作，out 栈用来处理出栈（pop）操作。一个元素进入 in 栈之后，出栈的顺序被反转。当元素要出栈时，需要先进入 out 栈，此时元素出栈顺序再一次被反转，因此出栈顺序就和最开始入栈顺序是相同的，先进入的元素先退出，这就是队列的顺序。
+in 棧用來處理入棧（push）操作，out 棧用來處理出棧（pop）操作。一個元素進入 in 棧之後，出棧的順序被反轉。當元素要出棧時，需要先進入 out 棧，此時元素出棧順序再一次被反轉，因此出棧順序就和最開始入棧順序是相同的，先進入的元素先退出，這就是隊列的順序。
 
 <div align="center"> <img src="pics/3ea280b5-be7d-471b-ac76-ff020384357c.gif" width="350"/> </div><br>
 
@@ -363,10 +363,10 @@ public int pop() throws Exception {
 
 
 
-# 微信公众号
+# 微信公眾號
 
 
-更多精彩内容将发布在微信公众号 CyC2018 上，你也可以在公众号后台和我交流学习和求职相关的问题。另外，公众号提供了该项目的 PDF 等离线阅读版本，后台回复 "下载" 即可领取。公众号也提供了一份技术面试复习大纲，不仅系统整理了面试知识点，而且标注了各个知识点的重要程度，从而帮你理清多而杂的面试知识点，后台回复 "大纲" 即可领取。我基本是按照这个大纲来进行复习的，对我拿到了 BAT 头条等 Offer 起到很大的帮助。你们完全可以和我一样根据大纲上列的知识点来进行复习，就不用看很多不重要的内容，也可以知道哪些内容很重要从而多安排一些复习时间。
+更多精彩內容將發佈在微信公眾號 CyC2018 上，你也可以在公眾號後臺和我交流學習和求職相關的問題。另外，公眾號提供了該項目的 PDF 等離線閱讀版本，後臺回覆 "下載" 即可領取。公眾號也提供了一份技術面試複習大綱，不僅系統整理了面試知識點，而且標註了各個知識點的重要程度，從而幫你理清多而雜的面試知識點，後臺回覆 "大綱" 即可領取。我基本是按照這個大綱來進行復習的，對我拿到了 BAT 頭條等 Offer 起到很大的幫助。你們完全可以和我一樣根據大綱上列的知識點來進行復習，就不用看很多不重要的內容，也可以知道哪些內容很重要從而多安排一些複習時間。
 
 
-<br><div align="center"><img width="320px" src="https://cs-notes-1256109796.cos.ap-guangzhou.myqcloud.com/other/公众号海报6.png"></img></div>
+<br><div align="center"><img width="320px" src="https://cs-notes-1256109796.cos.ap-guangzhou.myqcloud.com/other/公眾號海報6.png"></img></div>

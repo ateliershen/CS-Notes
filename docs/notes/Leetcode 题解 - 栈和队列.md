@@ -1,18 +1,18 @@
 <!-- GFM-TOC -->
-* [1. 用栈实现队列](#1-用栈实现队列)
-* [2. 用队列实现栈](#2-用队列实现栈)
-* [3. 最小值栈](#3-最小值栈)
-* [4. 用栈实现括号匹配](#4-用栈实现括号匹配)
-* [5. 数组中元素与下一个比它大的元素之间的距离](#5-数组中元素与下一个比它大的元素之间的距离)
-* [6. 循环数组中比当前元素大的下一个元素](#6-循环数组中比当前元素大的下一个元素)
+* [1. 用棧實現隊列](#1-用棧實現隊列)
+* [2. 用隊列實現棧](#2-用隊列實現棧)
+* [3. 最小值棧](#3-最小值棧)
+* [4. 用棧實現括號匹配](#4-用棧實現括號匹配)
+* [5. 數組中元素與下一個比它大的元素之間的距離](#5-數組中元素與下一個比它大的元素之間的距離)
+* [6. 循環數組中比當前元素大的下一個元素](#6-循環數組中比當前元素大的下一個元素)
 <!-- GFM-TOC -->
 
 
-# 1. 用栈实现队列
+# 1. 用棧實現隊列
 
 [232. Implement Queue using Stacks (Easy)](https://leetcode.com/problems/implement-queue-using-stacks/description/)
 
-栈的顺序为后进先出，而队列的顺序为先进先出。使用两个栈实现队列，一个元素需要经过两个栈才能出队列，在经过第一个栈时元素顺序被反转，经过第二个栈时再次被反转，此时就是先进先出顺序。
+棧的順序為後進先出，而隊列的順序為先進先出。使用兩個棧實現隊列，一個元素需要經過兩個棧才能出隊列，在經過第一個棧時元素順序被反轉，經過第二個棧時再次被反轉，此時就是先進先出順序。
 
 ```java
 class MyQueue {
@@ -48,11 +48,11 @@ class MyQueue {
 }
 ```
 
-# 2. 用队列实现栈
+# 2. 用隊列實現棧
 
 [225. Implement Stack using Queues (Easy)](https://leetcode.com/problems/implement-stack-using-queues/description/)
 
-在将一个元素 x 插入队列时，为了维护原来的后进先出顺序，需要让 x 插入队列首部。而队列的默认插入顺序是队列尾部，因此在将 x 插入队列尾部之后，需要让除了 x 之外的所有元素出队列，再入队列。
+在將一個元素 x 插入隊列時，為了維護原來的後進先出順序，需要讓 x 插入隊列首部。而隊列的默認插入順序是隊列尾部，因此在將 x 插入隊列尾部之後，需要讓除了 x 之外的所有元素出隊列，再入隊列。
 
 ```java
 class MyStack {
@@ -85,7 +85,7 @@ class MyStack {
 }
 ```
 
-# 3. 最小值栈
+# 3. 最小值棧
 
 [155. Min Stack (Easy)](https://leetcode.com/problems/min-stack/description/)
 
@@ -124,9 +124,9 @@ class MinStack {
 }
 ```
 
-对于实现最小值队列问题，可以先将队列使用栈来实现，然后就将问题转换为最小值栈，这个问题出现在 编程之美：3.7。
+對於實現最小值隊列問題，可以先將隊列使用棧來實現，然後就將問題轉換為最小值棧，這個問題出現在 編程之美：3.7。
 
-# 4. 用栈实现括号匹配
+# 4. 用棧實現括號匹配
 
 [20. Valid Parentheses (Easy)](https://leetcode.com/problems/valid-parentheses/description/)
 
@@ -159,7 +159,7 @@ public boolean isValid(String s) {
 }
 ```
 
-# 5. 数组中元素与下一个比它大的元素之间的距离
+# 5. 數組中元素與下一個比它大的元素之間的距離
 
 [739. Daily Temperatures (Medium)](https://leetcode.com/problems/daily-temperatures/description/)
 
@@ -168,7 +168,7 @@ Input: [73, 74, 75, 71, 69, 72, 76, 73]
 Output: [1, 1, 4, 2, 1, 1, 0, 0]
 ```
 
-在遍历数组时用栈把数组中的数存起来，如果当前遍历的数比栈顶元素来的大，说明栈顶元素的下一个比它大的数就是当前元素。
+在遍歷數組時用棧把數組中的數存起來，如果當前遍歷的數比棧頂元素來的大，說明棧頂元素的下一個比它大的數就是當前元素。
 
 ```java
 public int[] dailyTemperatures(int[] temperatures) {
@@ -186,7 +186,7 @@ public int[] dailyTemperatures(int[] temperatures) {
 }
 ```
 
-# 6. 循环数组中比当前元素大的下一个元素
+# 6. 循環數組中比當前元素大的下一個元素
 
 [503. Next Greater Element II (Medium)](https://leetcode.com/problems/next-greater-element-ii/description/)
 
@@ -198,7 +198,7 @@ The number 2 can't find next greater number;
 The second 1's next greater number needs to search circularly, which is also 2.
 ```
 
-与 739. Daily Temperatures (Medium) 不同的是，数组是循环数组，并且最后要求的不是距离而是下一个元素。
+與 739. Daily Temperatures (Medium) 不同的是，數組是循環數組，並且最後要求的不是距離而是下一個元素。
 
 ```java
 public int[] nextGreaterElements(int[] nums) {
@@ -222,10 +222,10 @@ public int[] nextGreaterElements(int[] nums) {
 
 
 
-# 微信公众号
+# 微信公眾號
 
 
-更多精彩内容将发布在微信公众号 CyC2018 上，你也可以在公众号后台和我交流学习和求职相关的问题。另外，公众号提供了该项目的 PDF 等离线阅读版本，后台回复 "下载" 即可领取。公众号也提供了一份技术面试复习大纲，不仅系统整理了面试知识点，而且标注了各个知识点的重要程度，从而帮你理清多而杂的面试知识点，后台回复 "大纲" 即可领取。我基本是按照这个大纲来进行复习的，对我拿到了 BAT 头条等 Offer 起到很大的帮助。你们完全可以和我一样根据大纲上列的知识点来进行复习，就不用看很多不重要的内容，也可以知道哪些内容很重要从而多安排一些复习时间。
+更多精彩內容將發佈在微信公眾號 CyC2018 上，你也可以在公眾號後臺和我交流學習和求職相關的問題。另外，公眾號提供了該項目的 PDF 等離線閱讀版本，後臺回覆 "下載" 即可領取。公眾號也提供了一份技術面試複習大綱，不僅系統整理了面試知識點，而且標註了各個知識點的重要程度，從而幫你理清多而雜的面試知識點，後臺回覆 "大綱" 即可領取。我基本是按照這個大綱來進行復習的，對我拿到了 BAT 頭條等 Offer 起到很大的幫助。你們完全可以和我一樣根據大綱上列的知識點來進行復習，就不用看很多不重要的內容，也可以知道哪些內容很重要從而多安排一些複習時間。
 
 
-<br><div align="center"><img width="320px" src="https://cs-notes-1256109796.cos.ap-guangzhou.myqcloud.com/other/公众号海报6.png"></img></div>
+<br><div align="center"><img width="320px" src="https://cs-notes-1256109796.cos.ap-guangzhou.myqcloud.com/other/公眾號海報6.png"></img></div>

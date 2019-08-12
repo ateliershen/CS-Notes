@@ -1,28 +1,28 @@
 <!-- GFM-TOC -->
-* [30. 包含 min 函数的栈](#30-包含-min-函数的栈)
-* [31. 栈的压入、弹出序列](#31-栈的压入弹出序列)
-* [32.1 从上往下打印二叉树](#321-从上往下打印二叉树)
-* [32.2 把二叉树打印成多行](#322-把二叉树打印成多行)
-* [32.3 按之字形顺序打印二叉树](#323-按之字形顺序打印二叉树)
-* [33. 二叉搜索树的后序遍历序列](#33-二叉搜索树的后序遍历序列)
-* [34. 二叉树中和为某一值的路径](#34-二叉树中和为某一值的路径)
-* [35. 复杂链表的复制](#35-复杂链表的复制)
-* [36. 二叉搜索树与双向链表](#36-二叉搜索树与双向链表)
-* [37. 序列化二叉树](#37-序列化二叉树)
+* [30. 包含 min 函數的棧](#30-包含-min-函數的棧)
+* [31. 棧的壓入、彈出序列](#31-棧的壓入彈出序列)
+* [32.1 從上往下打印二叉樹](#321-從上往下打印二叉樹)
+* [32.2 把二叉樹打印成多行](#322-把二叉樹打印成多行)
+* [32.3 按之字形順序打印二叉樹](#323-按之字形順序打印二叉樹)
+* [33. 二叉搜索樹的後序遍歷序列](#33-二叉搜索樹的後序遍歷序列)
+* [34. 二叉樹中和為某一值的路徑](#34-二叉樹中和為某一值的路徑)
+* [35. 複雜鏈表的複製](#35-複雜鏈表的複製)
+* [36. 二叉搜索樹與雙向鏈表](#36-二叉搜索樹與雙向鏈表)
+* [37. 序列化二叉樹](#37-序列化二叉樹)
 * [38. 字符串的排列](#38-字符串的排列)
-* [39. 数组中出现次数超过一半的数字](#39-数组中出现次数超过一半的数字)
+* [39. 數組中出現次數超過一半的數字](#39-數組中出現次數超過一半的數字)
 <!-- GFM-TOC -->
 
 
-# 30. 包含 min 函数的栈
+# 30. 包含 min 函數的棧
 
 [NowCoder](https://www.nowcoder.com/practice/4c776177d2c04c2494f2555c9fcc1e49?tpId=13&tqId=11173&tPage=1&rp=1&ru=/ta/coding-interviews&qru=/ta/coding-interviews/question-ranking)
 
-## 题目描述
+## 題目描述
 
-定义栈的数据结构，请在该类型中实现一个能够得到栈最小元素的 min 函数。
+定義棧的數據結構，請在該類型中實現一個能夠得到棧最小元素的 min 函數。
 
-## 解题思路
+## 解題思路
 
 ```java
 private Stack<Integer> dataStack = new Stack<>();
@@ -47,19 +47,19 @@ public int min() {
 }
 ```
 
-# 31. 栈的压入、弹出序列
+# 31. 棧的壓入、彈出序列
 
 [NowCoder](https://www.nowcoder.com/practice/d77d11405cc7470d82554cb392585106?tpId=13&tqId=11174&tPage=1&rp=1&ru=/ta/coding-interviews&qru=/ta/coding-interviews/question-ranking)
 
-## 题目描述
+## 題目描述
 
-输入两个整数序列，第一个序列表示栈的压入顺序，请判断第二个序列是否为该栈的弹出顺序。假设压入栈的所有数字均不相等。
+輸入兩個整數序列，第一個序列表示棧的壓入順序，請判斷第二個序列是否為該棧的彈出順序。假設壓入棧的所有數字均不相等。
 
-例如序列 1,2,3,4,5 是某栈的压入顺序，序列 4,5,3,2,1 是该压栈序列对应的一个弹出序列，但 4,3,5,1,2 就不可能是该压栈序列的弹出序列。
+例如序列 1,2,3,4,5 是某棧的壓入順序，序列 4,5,3,2,1 是該壓棧序列對應的一個彈出序列，但 4,3,5,1,2 就不可能是該壓棧序列的彈出序列。
 
-## 解题思路
+## 解題思路
 
-使用一个栈来模拟压入弹出操作。
+使用一個棧來模擬壓入彈出操作。
 
 ```java
 public boolean IsPopOrder(int[] pushSequence, int[] popSequence) {
@@ -77,23 +77,23 @@ public boolean IsPopOrder(int[] pushSequence, int[] popSequence) {
 }
 ```
 
-# 32.1 从上往下打印二叉树
+# 32.1 從上往下打印二叉樹
 
 [NowCoder](https://www.nowcoder.com/practice/7fe2212963db4790b57431d9ed259701?tpId=13&tqId=11175&tPage=1&rp=1&ru=/ta/coding-interviews&qru=/ta/coding-interviews/question-ranking)
 
-## 题目描述
+## 題目描述
 
-从上往下打印出二叉树的每个节点，同层节点从左至右打印。
+從上往下打印出二叉樹的每個節點，同層節點從左至右打印。
 
-例如，以下二叉树层次遍历的结果为：1,2,3,4,5,6,7
+例如，以下二叉樹層次遍歷的結果為：1,2,3,4,5,6,7
 
 <div align="center"> <img src="pics/d5e838cf-d8a2-49af-90df-1b2a714ee676.jpg" width="250"/> </div><br>
 
-## 解题思路
+## 解題思路
 
-使用队列来进行层次遍历。
+使用隊列來進行層次遍歷。
 
-不需要使用两个队列分别存储当前层的节点和下一层的节点，因为在开始遍历一层的节点时，当前队列中的节点数就是当前层的节点数，只要控制遍历这么多节点数，就能保证这次遍历的都是当前层的节点。
+不需要使用兩個隊列分別存儲當前層的節點和下一層的節點，因為在開始遍歷一層的節點時，當前隊列中的節點數就是當前層的節點數，只要控制遍歷這麼多節點數，就能保證這次遍歷的都是當前層的節點。
 
 ```java
 public ArrayList<Integer> PrintFromTopToBottom(TreeNode root) {
@@ -115,15 +115,15 @@ public ArrayList<Integer> PrintFromTopToBottom(TreeNode root) {
 }
 ```
 
-# 32.2 把二叉树打印成多行
+# 32.2 把二叉樹打印成多行
 
 [NowCoder](https://www.nowcoder.com/practice/445c44d982d04483b04a54f298796288?tpId=13&tqId=11213&tPage=1&rp=1&ru=/ta/coding-interviews&qru=/ta/coding-interviews/question-ranking)
 
-## 题目描述
+## 題目描述
 
-和上题几乎一样。
+和上題幾乎一樣。
 
-## 解题思路
+## 解題思路
 
 ```java
 ArrayList<ArrayList<Integer>> Print(TreeNode pRoot) {
@@ -148,15 +148,15 @@ ArrayList<ArrayList<Integer>> Print(TreeNode pRoot) {
 }
 ```
 
-# 32.3 按之字形顺序打印二叉树
+# 32.3 按之字形順序打印二叉樹
 
 [NowCoder](https://www.nowcoder.com/practice/91b69814117f4e8097390d107d2efbe0?tpId=13&tqId=11212&tPage=1&rp=1&ru=/ta/coding-interviews&qru=/ta/coding-interviews/question-ranking)
 
-## 题目描述
+## 題目描述
 
-请实现一个函数按照之字形打印二叉树，即第一行按照从左到右的顺序打印，第二层按照从右至左的顺序打印，第三行按照从左到右的顺序打印，其他行以此类推。
+請實現一個函數按照之字形打印二叉樹，即第一行按照從左到右的順序打印，第二層按照從右至左的順序打印，第三行按照從左到右的順序打印，其他行以此類推。
 
-## 解题思路
+## 解題思路
 
 ```java
 public ArrayList<ArrayList<Integer>> Print(TreeNode pRoot) {
@@ -185,19 +185,19 @@ public ArrayList<ArrayList<Integer>> Print(TreeNode pRoot) {
 }
 ```
 
-# 33. 二叉搜索树的后序遍历序列
+# 33. 二叉搜索樹的後序遍歷序列
 
 [NowCoder](https://www.nowcoder.com/practice/a861533d45854474ac791d90e447bafd?tpId=13&tqId=11176&tPage=1&rp=1&ru=/ta/coding-interviews&qru=/ta/coding-interviews/question-ranking)
 
-## 题目描述
+## 題目描述
 
-输入一个整数数组，判断该数组是不是某二叉搜索树的后序遍历的结果。假设输入的数组的任意两个数字都互不相同。
+輸入一個整數數組，判斷該數組是不是某二叉搜索樹的後序遍歷的結果。假設輸入的數組的任意兩個數字都互不相同。
 
-例如，下图是后序遍历序列 1,3,2 所对应的二叉搜索树。
+例如，下圖是後序遍歷序列 1,3,2 所對應的二叉搜索樹。
 
 <div align="center"> <img src="pics/13454fa1-23a8-4578-9663-2b13a6af564a.jpg" width="150"/> </div><br>
 
-## 解题思路
+## 解題思路
 
 ```java
 public boolean VerifySquenceOfBST(int[] sequence) {
@@ -220,19 +220,19 @@ private boolean verify(int[] sequence, int first, int last) {
 }
 ```
 
-# 34. 二叉树中和为某一值的路径
+# 34. 二叉樹中和為某一值的路徑
 
 [NowCoder](https://www.nowcoder.com/practice/b736e784e3e34731af99065031301bca?tpId=13&tqId=11177&tPage=1&rp=1&ru=/ta/coding-interviews&qru=/ta/coding-interviews/question-ranking)
 
-## 题目描述
+## 題目描述
 
-输入一颗二叉树和一个整数，打印出二叉树中结点值的和为输入整数的所有路径。路径定义为从树的根结点开始往下一直到叶结点所经过的结点形成一条路径。
+輸入一顆二叉樹和一個整數，打印出二叉樹中結點值的和為輸入整數的所有路徑。路徑定義為從樹的根結點開始往下一直到葉結點所經過的結點形成一條路徑。
 
-下图的二叉树有两条和为 22 的路径：10, 5, 7 和 10, 12
+下圖的二叉樹有兩條和為 22 的路徑：10, 5, 7 和 10, 12
 
 <div align="center"> <img src="pics/ed77b0e6-38d9-4a34-844f-724f3ffa2c12.jpg" width="200"/> </div><br>
 
-## 解题思路
+## 解題思路
 
 ```java
 private ArrayList<ArrayList<Integer>> ret = new ArrayList<>();
@@ -257,13 +257,13 @@ private void backtracking(TreeNode node, int target, ArrayList<Integer> path) {
 }
 ```
 
-# 35. 复杂链表的复制
+# 35. 複雜鏈表的複製
 
 [NowCoder](https://www.nowcoder.com/practice/f836b2c43afc4b35ad6adc41ec941dba?tpId=13&tqId=11178&tPage=1&rp=1&ru=/ta/coding-interviews&qru=/ta/coding-interviews/question-ranking)
 
-## 题目描述
+## 題目描述
 
-输入一个复杂链表（每个节点中有节点值，以及两个指针，一个指向下一个节点，另一个特殊指针指向任意一个节点），返回结果为复制后复杂链表的 head。
+輸入一個複雜鏈表（每個節點中有節點值，以及兩個指針，一個指向下一個節點，另一個特殊指針指向任意一個節點），返回結果為複製後複雜鏈表的 head。
 
 ```java
 public class RandomListNode {
@@ -279,13 +279,13 @@ public class RandomListNode {
 
 <div align="center"> <img src="pics/66a01953-5303-43b1-8646-0c77b825e980.png" width="300"/> </div><br>
 
-## 解题思路
+## 解題思路
 
-第一步，在每个节点的后面插入复制的节点。
+第一步，在每個節點的後面插入複製的節點。
 
 <div align="center"> <img src="pics/dfd5d3f8-673c-486b-8ecf-d2082107b67b.png" width="600"/> </div><br>
 
-第二步，对复制节点的 random 链接进行赋值。
+第二步，對複製節點的 random 鏈接進行賦值。
 
 <div align="center"> <img src="pics/cafbfeb8-7dfe-4c0a-a3c9-750eeb824068.png" width="600"/> </div><br>
 
@@ -297,7 +297,7 @@ public class RandomListNode {
 public RandomListNode Clone(RandomListNode pHead) {
     if (pHead == null)
         return null;
-    // 插入新节点
+    // 插入新節點
     RandomListNode cur = pHead;
     while (cur != null) {
         RandomListNode clone = new RandomListNode(cur.label);
@@ -305,7 +305,7 @@ public RandomListNode Clone(RandomListNode pHead) {
         cur.next = clone;
         cur = clone.next;
     }
-    // 建立 random 链接
+    // 建立 random 鏈接
     cur = pHead;
     while (cur != null) {
         RandomListNode clone = cur.next;
@@ -325,17 +325,17 @@ public RandomListNode Clone(RandomListNode pHead) {
 }
 ```
 
-# 36. 二叉搜索树与双向链表
+# 36. 二叉搜索樹與雙向鏈表
 
 [NowCoder](https://www.nowcoder.com/practice/947f6eb80d944a84850b0538bf0ec3a5?tpId=13&tqId=11179&tPage=1&rp=1&ru=/ta/coding-interviews&qru=/ta/coding-interviews/question-ranking)
 
-## 题目描述
+## 題目描述
 
-输入一棵二叉搜索树，将该二叉搜索树转换成一个排序的双向链表。要求不能创建任何新的结点，只能调整树中结点指针的指向。
+輸入一棵二叉搜索樹，將該二叉搜索樹轉換成一個排序的雙向鏈表。要求不能創建任何新的結點，只能調整樹中結點指針的指向。
 
 <div align="center"> <img src="pics/05a08f2e-9914-4a77-92ef-aebeaecf4f66.jpg" width="400"/> </div><br>
 
-## 解题思路
+## 解題思路
 
 ```java
 private TreeNode pre = null;
@@ -360,15 +360,15 @@ private void inOrder(TreeNode node) {
 }
 ```
 
-# 37. 序列化二叉树
+# 37. 序列化二叉樹
 
 [NowCoder](https://www.nowcoder.com/practice/cf7e25aa97c04cc1a68c8f040e71fb84?tpId=13&tqId=11214&tPage=1&rp=1&ru=/ta/coding-interviews&qru=/ta/coding-interviews/question-ranking)
 
-## 题目描述
+## 題目描述
 
-请实现两个函数，分别用来序列化和反序列化二叉树。
+請實現兩個函數，分別用來序列化和反序列化二叉樹。
 
-## 解题思路
+## 解題思路
 
 ```java
 private String deserializeStr;
@@ -404,11 +404,11 @@ private TreeNode Deserialize() {
 
 [NowCoder](https://www.nowcoder.com/practice/fe6b651b66ae47d7acce78ffdd9a96c7?tpId=13&tqId=11180&tPage=1&rp=1&ru=/ta/coding-interviews&qru=/ta/coding-interviews/question-ranking)
 
-## 题目描述
+## 題目描述
 
-输入一个字符串，按字典序打印出该字符串中字符的所有排列。例如输入字符串 abc，则打印出由字符 a, b, c 所能排列出来的所有字符串 abc, acb, bac, bca, cab 和 cba。
+輸入一個字符串，按字典序打印出該字符串中字符的所有排列。例如輸入字符串 abc，則打印出由字符 a, b, c 所能排列出來的所有字符串 abc, acb, bac, bca, cab 和 cba。
 
-## 解题思路
+## 解題思路
 
 ```java
 private ArrayList<String> ret = new ArrayList<>();
@@ -430,7 +430,7 @@ private void backtracking(char[] chars, boolean[] hasUsed, StringBuilder s) {
     for (int i = 0; i < chars.length; i++) {
         if (hasUsed[i])
             continue;
-        if (i != 0 && chars[i] == chars[i - 1] && !hasUsed[i - 1]) /* 保证不重复 */
+        if (i != 0 && chars[i] == chars[i - 1] && !hasUsed[i - 1]) /* 保證不重複 */
             continue;
         hasUsed[i] = true;
         s.append(chars[i]);
@@ -441,15 +441,15 @@ private void backtracking(char[] chars, boolean[] hasUsed, StringBuilder s) {
 }
 ```
 
-# 39. 数组中出现次数超过一半的数字
+# 39. 數組中出現次數超過一半的數字
 
 [NowCoder](https://www.nowcoder.com/practice/e8a1b01a2df14cb2b228b30ee6a92163?tpId=13&tqId=11181&tPage=1&rp=1&ru=/ta/coding-interviews&qru=/ta/coding-interviews/question-ranking)
 
-## 解题思路
+## 解題思路
 
-多数投票问题，可以利用 Boyer-Moore Majority Vote Algorithm 来解决这个问题，使得时间复杂度为 O(N)。
+多數投票問題，可以利用 Boyer-Moore Majority Vote Algorithm 來解決這個問題，使得時間複雜度為 O(N)。
 
-使用 cnt 来统计一个元素出现的次数，当遍历到的元素和统计元素相等时，令 cnt++，否则令 cnt--。如果前面查找了 i 个元素，且 cnt == 0，说明前 i 个元素没有 majority，或者有 majority，但是出现的次数少于 i / 2 ，因为如果多于 i / 2 的话 cnt 就一定不会为 0 。此时剩下的 n - i 个元素中，majority 的数目依然多于 (n - i) / 2，因此继续查找就能找出 majority。
+使用 cnt 來統計一個元素出現的次數，當遍歷到的元素和統計元素相等時，令 cnt++，否則令 cnt--。如果前面查找了 i 個元素，且 cnt == 0，說明前 i 個元素沒有 majority，或者有 majority，但是出現的次數少於 i / 2 ，因為如果多於 i / 2 的話 cnt 就一定不會為 0 。此時剩下的 n - i 個元素中，majority 的數目依然多於 (n - i) / 2，因此繼續查找就能找出 majority。
 
 ```java
 public int MoreThanHalfNum_Solution(int[] nums) {
@@ -472,10 +472,10 @@ public int MoreThanHalfNum_Solution(int[] nums) {
 
 
 
-# 微信公众号
+# 微信公眾號
 
 
-更多精彩内容将发布在微信公众号 CyC2018 上，你也可以在公众号后台和我交流学习和求职相关的问题。另外，公众号提供了该项目的 PDF 等离线阅读版本，后台回复 "下载" 即可领取。公众号也提供了一份技术面试复习大纲，不仅系统整理了面试知识点，而且标注了各个知识点的重要程度，从而帮你理清多而杂的面试知识点，后台回复 "大纲" 即可领取。我基本是按照这个大纲来进行复习的，对我拿到了 BAT 头条等 Offer 起到很大的帮助。你们完全可以和我一样根据大纲上列的知识点来进行复习，就不用看很多不重要的内容，也可以知道哪些内容很重要从而多安排一些复习时间。
+更多精彩內容將發佈在微信公眾號 CyC2018 上，你也可以在公眾號後臺和我交流學習和求職相關的問題。另外，公眾號提供了該項目的 PDF 等離線閱讀版本，後臺回覆 "下載" 即可領取。公眾號也提供了一份技術面試複習大綱，不僅系統整理了面試知識點，而且標註了各個知識點的重要程度，從而幫你理清多而雜的面試知識點，後臺回覆 "大綱" 即可領取。我基本是按照這個大綱來進行復習的，對我拿到了 BAT 頭條等 Offer 起到很大的幫助。你們完全可以和我一樣根據大綱上列的知識點來進行復習，就不用看很多不重要的內容，也可以知道哪些內容很重要從而多安排一些複習時間。
 
 
-<br><div align="center"><img width="320px" src="https://cs-notes-1256109796.cos.ap-guangzhou.myqcloud.com/other/公众号海报6.png"></img></div>
+<br><div align="center"><img width="320px" src="https://cs-notes-1256109796.cos.ap-guangzhou.myqcloud.com/other/公眾號海報6.png"></img></div>

@@ -1,21 +1,21 @@
 <!-- GFM-TOC -->
-* [1. 分配饼干](#1-分配饼干)
-* [2. 不重叠的区间个数](#2-不重叠的区间个数)
-* [3. 投飞镖刺破气球](#3-投飞镖刺破气球)
-* [4. 根据身高和序号重组队列](#4-根据身高和序号重组队列)
-* [5. 买卖股票最大的收益](#5-买卖股票最大的收益)
-* [6. 买卖股票的最大收益 II](#6-买卖股票的最大收益-ii)
-* [7. 种植花朵](#7-种植花朵)
-* [8. 判断是否为子序列](#8-判断是否为子序列)
-* [9. 修改一个数成为非递减数组](#9-修改一个数成为非递减数组)
-* [10. 子数组最大的和](#10-子数组最大的和)
-* [11. 分隔字符串使同种字符出现在一起](#11-分隔字符串使同种字符出现在一起)
+* [1. 分配餅乾](#1-分配餅乾)
+* [2. 不重疊的區間個數](#2-不重疊的區間個數)
+* [3. 投飛鏢刺破氣球](#3-投飛鏢刺破氣球)
+* [4. 根據身高和序號重組隊列](#4-根據身高和序號重組隊列)
+* [5. 買賣股票最大的收益](#5-買賣股票最大的收益)
+* [6. 買賣股票的最大收益 II](#6-買賣股票的最大收益-ii)
+* [7. 種植花朵](#7-種植花朵)
+* [8. 判斷是否為子序列](#8-判斷是否為子序列)
+* [9. 修改一個數成為非遞減數組](#9-修改一個數成為非遞減數組)
+* [10. 子數組最大的和](#10-子數組最大的和)
+* [11. 分隔字符串使同種字符出現在一起](#11-分隔字符串使同種字符出現在一起)
 <!-- GFM-TOC -->
 
 
-保证每次操作都是局部最优的，并且最后得到的结果是全局最优的。
+保證每次操作都是局部最優的，並且最後得到的結果是全局最優的。
 
-# 1. 分配饼干
+# 1. 分配餅乾
 
 [455. Assign Cookies (Easy)](https://leetcode.com/problems/assign-cookies/description/)
 
@@ -28,11 +28,11 @@ You have 3 cookies and their sizes are big enough to gratify all of the children
 You need to output 2.
 ```
 
-题目描述：每个孩子都有一个满足度，每个饼干都有一个大小，只有饼干的大小大于等于一个孩子的满足度，该孩子才会获得满足。求解最多可以获得满足的孩子数量。
+題目描述：每個孩子都有一個滿足度，每個餅乾都有一個大小，只有餅乾的大小大於等於一個孩子的滿足度，該孩子才會獲得滿足。求解最多可以獲得滿足的孩子數量。
 
-给一个孩子的饼干应当尽量小又能满足该孩子，这样大饼干就能拿来给满足度比较大的孩子。因为最小的孩子最容易得到满足，所以先满足最小的孩子。
+給一個孩子的餅乾應當儘量小又能滿足該孩子，這樣大餅乾就能拿來給滿足度比較大的孩子。因為最小的孩子最容易得到滿足，所以先滿足最小的孩子。
 
-证明：假设在某次选择中，贪心策略选择给当前满足度最小的孩子分配第 m 个饼干，第 m 个饼干为可以满足该孩子的最小饼干。假设存在一种最优策略，给该孩子分配第 n 个饼干，并且 m < n。我们可以发现，经过这一轮分配，贪心策略分配后剩下的饼干一定有一个比最优策略来得大。因此在后续的分配中，贪心策略一定能满足更多的孩子。也就是说不存在比贪心策略更优的策略，即贪心策略就是最优策略。
+證明：假設在某次選擇中，貪心策略選擇給當前滿足度最小的孩子分配第 m 個餅乾，第 m 個餅乾為可以滿足該孩子的最小餅乾。假設存在一種最優策略，給該孩子分配第 n 個餅乾，並且 m < n。我們可以發現，經過這一輪分配，貪心策略分配後剩下的餅乾一定有一個比最優策略來得大。因此在後續的分配中，貪心策略一定能滿足更多的孩子。也就是說不存在比貪心策略更優的策略，即貪心策略就是最優策略。
 
 ```java
 public int findContentChildren(int[] g, int[] s) {
@@ -49,7 +49,7 @@ public int findContentChildren(int[] g, int[] s) {
 }
 ```
 
-# 2. 不重叠的区间个数
+# 2. 不重疊的區間個數
 
 [435. Non-overlapping Intervals (Medium)](https://leetcode.com/problems/non-overlapping-intervals/description/)
 
@@ -69,13 +69,13 @@ Output: 0
 Explanation: You don't need to remove any of the intervals since they're already non-overlapping.
 ```
 
-题目描述：计算让一组区间不重叠所需要移除的区间个数。
+題目描述：計算讓一組區間不重疊所需要移除的區間個數。
 
-先计算最多能组成的不重叠区间个数，然后用区间总个数减去不重叠区间的个数。
+先計算最多能組成的不重疊區間個數，然後用區間總個數減去不重疊區間的個數。
 
-在每次选择中，区间的结尾最为重要，选择的区间结尾越小，留给后面的区间的空间越大，那么后面能够选择的区间个数也就越大。
+在每次選擇中，區間的結尾最為重要，選擇的區間結尾越小，留給後面的區間的空間越大，那麼後面能夠選擇的區間個數也就越大。
 
-按区间的结尾进行排序，每次选择结尾最小，并且和前一个区间不重叠的区间。
+按區間的結尾進行排序，每次選擇結尾最小，並且和前一個區間不重疊的區間。
 
 ```java
 public int eraseOverlapIntervals(int[][] intervals) {
@@ -96,7 +96,7 @@ public int eraseOverlapIntervals(int[][] intervals) {
 }
 ```
 
-使用 lambda 表示式创建 Comparator 会导致算法运行时间过长，如果注重运行时间，可以修改为普通创建 Comparator 语句：
+使用 lambda 表示式創建 Comparator 會導致算法運行時間過長，如果注重運行時間，可以修改為普通創建 Comparator 語句：
 
 ```java
 Arrays.sort(intervals, new Comparator<int[]>() {
@@ -107,7 +107,7 @@ Arrays.sort(intervals, new Comparator<int[]>() {
 });
 ```
 
-# 3. 投飞镖刺破气球
+# 3. 投飛鏢刺破氣球
 
 [452. Minimum Number of Arrows to Burst Balloons (Medium)](https://leetcode.com/problems/minimum-number-of-arrows-to-burst-balloons/description/)
 
@@ -119,9 +119,9 @@ Output:
 2
 ```
 
-题目描述：气球在一个水平数轴上摆放，可以重叠，飞镖垂直投向坐标轴，使得路径上的气球都被刺破。求解最小的投飞镖次数使所有气球都被刺破。
+題目描述：氣球在一個水平數軸上擺放，可以重疊，飛鏢垂直投向座標軸，使得路徑上的氣球都被刺破。求解最小的投飛鏢次數使所有氣球都被刺破。
 
-也是计算不重叠的区间个数，不过和 Non-overlapping Intervals 的区别在于，[1, 2] 和 [2, 3] 在本题中算是重叠区间。
+也是計算不重疊的區間個數，不過和 Non-overlapping Intervals 的區別在於，[1, 2] 和 [2, 3] 在本題中算是重疊區間。
 
 ```java
 public int findMinArrowShots(int[][] points) {
@@ -141,7 +141,7 @@ public int findMinArrowShots(int[][] points) {
 }
 ```
 
-# 4. 根据身高和序号重组队列
+# 4. 根據身高和序號重組隊列
 
 [406. Queue Reconstruction by Height(Medium)](https://leetcode.com/problems/queue-reconstruction-by-height/description/)
 
@@ -153,11 +153,11 @@ Output:
 [[5,0], [7,0], [5,2], [6,1], [4,4], [7,1]]
 ```
 
-题目描述：一个学生用两个分量 (h, k) 描述，h 表示身高，k 表示排在前面的有 k 个学生的身高比他高或者和他一样高。
+題目描述：一個學生用兩個分量 (h, k) 描述，h 表示身高，k 表示排在前面的有 k 個學生的身高比他高或者和他一樣高。
 
-为了使插入操作不影响后续的操作，身高较高的学生应该先做插入操作，否则身高较小的学生原先正确插入的第 k 个位置可能会变成第 k+1 个位置。
+為了使插入操作不影響後續的操作，身高較高的學生應該先做插入操作，否則身高較小的學生原先正確插入的第 k 個位置可能會變成第 k+1 個位置。
 
-身高 h 降序、个数 k 值升序，然后将某个学生插入队列的第 k 个位置中。
+身高 h 降序、個數 k 值升序，然後將某個學生插入隊列的第 k 個位置中。
 
 ```java
 public int[][] reconstructQueue(int[][] people) {
@@ -173,13 +173,13 @@ public int[][] reconstructQueue(int[][] people) {
 }
 ```
 
-# 5. 买卖股票最大的收益
+# 5. 買賣股票最大的收益
 
 [121. Best Time to Buy and Sell Stock (Easy)](https://leetcode.com/problems/best-time-to-buy-and-sell-stock/description/)
 
-题目描述：一次股票交易包含买入和卖出，只进行一次交易，求最大收益。
+題目描述：一次股票交易包含買入和賣出，只進行一次交易，求最大收益。
 
-只要记录前面的最小价格，将这个最小价格作为买入价格，然后将当前的价格作为售出价格，查看当前收益是不是最大收益。
+只要記錄前面的最小价格，將這個最小价格作為買入價格，然後將當前的價格作為售出價格，查看當前收益是不是最大收益。
 
 ```java
 public int maxProfit(int[] prices) {
@@ -196,13 +196,13 @@ public int maxProfit(int[] prices) {
 ```
 
 
-# 6. 买卖股票的最大收益 II
+# 6. 買賣股票的最大收益 II
 
 [122. Best Time to Buy and Sell Stock II (Easy)](https://leetcode.com/problems/best-time-to-buy-and-sell-stock-ii/description/)
 
-题目描述：可以进行多次交易，多次交易之间不能交叉进行，可以进行多次交易。
+題目描述：可以進行多次交易，多次交易之間不能交叉進行，可以進行多次交易。
 
-对于 [a, b, c, d]，如果有 a <= b <= c <= d ，那么最大收益为 d - a。而 d - a = (d - c) + (c - b) + (b - a) ，因此当访问到一个 prices[i] 且 prices[i] - prices[i-1] > 0，那么就把 prices[i] - prices[i-1] 添加到收益中。
+對於 [a, b, c, d]，如果有 a <= b <= c <= d ，那麼最大收益為 d - a。而 d - a = (d - c) + (c - b) + (b - a) ，因此當訪問到一個 prices[i] 且 prices[i] - prices[i-1] > 0，那麼就把 prices[i] - prices[i-1] 添加到收益中。
 
 ```java
 public int maxProfit(int[] prices) {
@@ -217,7 +217,7 @@ public int maxProfit(int[] prices) {
 ```
 
 
-# 7. 种植花朵
+# 7. 種植花朵
 
 [605. Can Place Flowers (Easy)](https://leetcode.com/problems/can-place-flowers/description/)
 
@@ -226,7 +226,7 @@ Input: flowerbed = [1,0,0,0,1], n = 1
 Output: True
 ```
 
-题目描述：flowerbed 数组中 1 表示已经种下了花朵。花朵之间至少需要一个单位的间隔，求解是否能种下 n 朵花。
+題目描述：flowerbed 數組中 1 表示已經種下了花朵。花朵之間至少需要一個單位的間隔，求解是否能種下 n 朵花。
 
 ```java
 public boolean canPlaceFlowers(int[] flowerbed, int n) {
@@ -247,7 +247,7 @@ public boolean canPlaceFlowers(int[] flowerbed, int n) {
 }
 ```
 
-# 8. 判断是否为子序列
+# 8. 判斷是否為子序列
 
 [392. Is Subsequence (Medium)](https://leetcode.com/problems/is-subsequence/description/)
 
@@ -269,7 +269,7 @@ public boolean isSubsequence(String s, String t) {
 }
 ```
 
-# 9. 修改一个数成为非递减数组
+# 9. 修改一個數成為非遞減數組
 
 [665. Non-decreasing Array (Easy)](https://leetcode.com/problems/non-decreasing-array/description/)
 
@@ -279,9 +279,9 @@ Output: True
 Explanation: You could modify the first 4 to 1 to get a non-decreasing array.
 ```
 
-题目描述：判断一个数组是否能只修改一个数就成为非递减数组。
+題目描述：判斷一個數組是否能只修改一個數就成為非遞減數組。
 
-在出现 nums[i] < nums[i - 1] 时，需要考虑的是应该修改数组的哪个数，使得本次修改能使 i 之前的数组成为非递减数组，并且  **不影响后续的操作** 。优先考虑令 nums[i - 1] = nums[i]，因为如果修改 nums[i] = nums[i - 1] 的话，那么 nums[i] 这个数会变大，就有可能比 nums[i + 1] 大，从而影响了后续操作。还有一个比较特别的情况就是 nums[i] < nums[i - 2]，修改 nums[i - 1] = nums[i] 不能使数组成为非递减数组，只能修改 nums[i] = nums[i - 1]。
+在出現 nums[i] < nums[i - 1] 時，需要考慮的是應該修改數組的哪個數，使得本次修改能使 i 之前的數組成為非遞減數組，並且  **不影響後續的操作** 。優先考慮令 nums[i - 1] = nums[i]，因為如果修改 nums[i] = nums[i - 1] 的話，那麼 nums[i] 這個數會變大，就有可能比 nums[i + 1] 大，從而影響了後續操作。還有一個比較特別的情況就是 nums[i] < nums[i - 2]，修改 nums[i - 1] = nums[i] 不能使數組成為非遞減數組，只能修改 nums[i] = nums[i - 1]。
 
 ```java
 public boolean checkPossibility(int[] nums) {
@@ -303,7 +303,7 @@ public boolean checkPossibility(int[] nums) {
 
 
 
-# 10. 子数组最大的和
+# 10. 子數組最大的和
 
 [53. Maximum Subarray (Easy)](https://leetcode.com/problems/maximum-subarray/description/)
 
@@ -327,7 +327,7 @@ public int maxSubArray(int[] nums) {
 }
 ```
 
-# 11. 分隔字符串使同种字符出现在一起
+# 11. 分隔字符串使同種字符出現在一起
 
 [763. Partition Labels (Medium)](https://leetcode.com/problems/partition-labels/description/)
 
@@ -370,10 +370,10 @@ private int char2Index(char c) {
 
 
 
-# 微信公众号
+# 微信公眾號
 
 
-更多精彩内容将发布在微信公众号 CyC2018 上，你也可以在公众号后台和我交流学习和求职相关的问题。另外，公众号提供了该项目的 PDF 等离线阅读版本，后台回复 "下载" 即可领取。公众号也提供了一份技术面试复习大纲，不仅系统整理了面试知识点，而且标注了各个知识点的重要程度，从而帮你理清多而杂的面试知识点，后台回复 "大纲" 即可领取。我基本是按照这个大纲来进行复习的，对我拿到了 BAT 头条等 Offer 起到很大的帮助。你们完全可以和我一样根据大纲上列的知识点来进行复习，就不用看很多不重要的内容，也可以知道哪些内容很重要从而多安排一些复习时间。
+更多精彩內容將發佈在微信公眾號 CyC2018 上，你也可以在公眾號後臺和我交流學習和求職相關的問題。另外，公眾號提供了該項目的 PDF 等離線閱讀版本，後臺回覆 "下載" 即可領取。公眾號也提供了一份技術面試複習大綱，不僅系統整理了面試知識點，而且標註了各個知識點的重要程度，從而幫你理清多而雜的面試知識點，後臺回覆 "大綱" 即可領取。我基本是按照這個大綱來進行復習的，對我拿到了 BAT 頭條等 Offer 起到很大的幫助。你們完全可以和我一樣根據大綱上列的知識點來進行復習，就不用看很多不重要的內容，也可以知道哪些內容很重要從而多安排一些複習時間。
 
 
-<br><div align="center"><img width="320px" src="https://cs-notes-1256109796.cos.ap-guangzhou.myqcloud.com/other/公众号海报6.png"></img></div>
+<br><div align="center"><img width="320px" src="https://cs-notes-1256109796.cos.ap-guangzhou.myqcloud.com/other/公眾號海報6.png"></img></div>

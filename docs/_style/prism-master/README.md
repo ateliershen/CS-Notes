@@ -27,4 +27,4 @@ Thank you so much for contributing!!
 
 ## Translations
 
-* [![中文说明](http://awesomes.oss-cn-beijing.aliyuncs.com/readme.png)](http://www.awesomes.cn/repo/PrismJS/prism)
+* [![中文說明](http://awesomes.oss-cn-beijing.aliyuncs.com/readme.png)](http://www.awesomes.cn/repo/PrismJS/prism)

@@ -35,7 +35,7 @@ https://leetcode.com/problems/big-countries/description/
 +-----------------+------------+------------+--------------+---------------+
 ```
 
-查找面积超过 3,000,000 或者人口数超过 25,000,000 的国家。
+查找面積超過 3,000,000 或者人口數超過 25,000,000 的國家。
 
 ```html
 +--------------+-------------+--------------+
@@ -48,7 +48,7 @@ https://leetcode.com/problems/big-countries/description/
 
 ## SQL Schema
 
-SQL Schema 用于在本地环境下创建表结构并导入数据，从而方便在本地环境解答。
+SQL Schema 用於在本地環境下創建表結構並導入數據，從而方便在本地環境解答。
 
 ```sql
 DROP TABLE
@@ -92,7 +92,7 @@ https://leetcode.com/problems/swap-salary/description/
 | 4  | D    | f   | 500    |
 ```
 
-只用一个 SQL 查询，将 sex 字段反转。
+只用一個 SQL 查詢，將 sex 字段反轉。
 
 ```html
 | id | name | sex | salary |
@@ -120,7 +120,7 @@ VALUES
 
 ## Solution
 
-使用异或操作，两个相等的数异或的结果为 0，而 0 与任何一个数异或的结果为这个数。
+使用異或操作，兩個相等的數異或的結果為 0，而 0 與任何一個數異或的結果為這個數。
 
 ```
 'f' ^ 'm' ^ 'f' = 'm'
@@ -153,7 +153,7 @@ https://leetcode.com/problems/not-boring-movies/description/
 +---------+-----------+--------------+-----------+
 ```
 
-查找 id 为奇数，并且 description 不是 boring 的电影，按 rating 降序。
+查找 id 為奇數，並且 description 不是 boring 的電影，按 rating 降序。
 
 ```html
 +---------+-----------+--------------+-----------+
@@ -248,7 +248,7 @@ VALUES
 
 ## Solution
 
-对 class 列进行分组之后，再使用 count 汇总函数统计数量，统计之后使用 having 进行过滤。
+對 class 列進行分組之後，再使用 count 彙總函數統計數量，統計之後使用 having 進行過濾。
 
 ```sql
 SELECT
@@ -267,7 +267,7 @@ https://leetcode.com/problems/duplicate-emails/description/
 
 ## Description
 
-邮件地址表：
+郵件地址表：
 
 ```html
 +----+---------+
@@ -279,7 +279,7 @@ https://leetcode.com/problems/duplicate-emails/description/
 +----+---------+
 ```
 
-查找重复的邮件地址：
+查找重複的郵件地址：
 
 ```html
 +---------+
@@ -305,7 +305,7 @@ VALUES
 
 ## Solution
 
-对 Email 进行分组，如果相同 Email 的数量大于等于 2，则表示该 Email 重复。
+對 Email 進行分組，如果相同 Email 的數量大於等於 2，則表示該 Email 重複。
 
 ```sql
 SELECT
@@ -324,7 +324,7 @@ https://leetcode.com/problems/delete-duplicate-emails/description/
 
 ## Description
 
-邮件地址表：
+郵件地址表：
 
 ```html
 +----+---------+
@@ -336,7 +336,7 @@ https://leetcode.com/problems/delete-duplicate-emails/description/
 +----+---------+
 ```
 
-删除重复的邮件地址：
+刪除重複的郵件地址：
 
 ```html
 +----+------------------+
@@ -349,13 +349,13 @@ https://leetcode.com/problems/delete-duplicate-emails/description/
 
 ## SQL Schema
 
-与 182 相同。
+與 182 相同。
 
 ## Solution
 
-只保留相同 Email 中 Id 最小的那一个，然后删除其它的。
+只保留相同 Email 中 Id 最小的那一個，然後刪除其它的。
 
-连接：
+連接：
 
 ```sql
 DELETE p1
@@ -367,7 +367,7 @@ WHERE
     AND p1.Id > p2.Id
 ```
 
-子查询：
+子查詢：
 
 ```sql
 DELETE
@@ -377,7 +377,7 @@ WHERE
     id NOT IN ( SELECT id FROM ( SELECT min( id ) AS id FROM Person GROUP BY email ) AS m );
 ```
 
-应该注意的是上述解法额外嵌套了一个 SELECT 语句，如果不这么做，会出现错误：You can't specify target table 'Person' for update in FROM clause。以下演示了这种错误解法。
+應該注意的是上述解法額外嵌套了一個 SELECT 語句，如果不這麼做，會出現錯誤：You can't specify target table 'Person' for update in FROM clause。以下演示了這種錯誤解法。
 
 ```sql
 DELETE
@@ -387,7 +387,7 @@ WHERE
     id NOT IN ( SELECT min( id ) AS id FROM Person GROUP BY email );
 ```
 
-参考：[pMySQL Error 1093 - Can't specify target table for update in FROM clause](https://stackoverflow.com/questions/45494/mysql-error-1093-cant-specify-target-table-for-update-in-from-clause)
+參考：[pMySQL Error 1093 - Can't specify target table for update in FROM clause](https://stackoverflow.com/questions/45494/mysql-error-1093-cant-specify-target-table-for-update-in-from-clause)
 
 # 175. Combine Two Tables
 
@@ -422,7 +422,7 @@ Address 表：
 AddressId is the primary key column for this table.
 ```
 
-查找 FirstName, LastName, City, State 数据，而不管一个用户有没有填地址信息。
+查找 FirstName, LastName, City, State 數據，而不管一個用戶有沒有填地址信息。
 
 ## SQL Schema
 
@@ -445,7 +445,7 @@ VALUES
 
 ## Solution
 
-涉及到 Person 和 Address 两个表，在对这两个表执行连接操作时，因为要保留 Person 表中的信息，即使在 Address 表中没有关联的信息也要保留。此时可以用左外连接，将 Person 表放在 LEFT JOIN 的左边。
+涉及到 Person 和 Address 兩個表，在對這兩個表執行連接操作時，因為要保留 Person 表中的信息，即使在 Address 表中沒有關聯的信息也要保留。此時可以用左外連接，將 Person 表放在 LEFT JOIN 的左邊。
 
 ```sql
 SELECT
@@ -478,7 +478,7 @@ Employee 表：
 +----+-------+--------+-----------+
 ```
 
-查找薪资大于其经理薪资的员工信息。
+查找薪資大於其經理薪資的員工信息。
 
 ## SQL Schema
 
@@ -537,7 +537,7 @@ Orders 表：
 +----+------------+
 ```
 
-查找没有订单的顾客信息：
+查找沒有訂單的顧客信息：
 
 ```html
 +-----------+
@@ -573,7 +573,7 @@ VALUES
 
 ## Solution
 
-左外链接
+左外鏈接
 
 ```sql
 SELECT
@@ -586,7 +586,7 @@ WHERE
     O.CustomerId IS NULL;
 ```
 
-子查询
+子查詢
 
 ```sql
 SELECT
@@ -627,7 +627,7 @@ Department 表：
 +----+----------+
 ```
 
-查找一个 Department 中收入最高者的信息：
+查找一個 Department 中收入最高者的信息：
 
 ```html
 +------------+----------+--------+
@@ -659,9 +659,9 @@ VALUES
 
 ## Solution
 
-创建一个临时表，包含了部门员工的最大薪资。可以对部门进行分组，然后使用 MAX() 汇总函数取得最大薪资。
+創建一個臨時表，包含了部門員工的最大薪資。可以對部門進行分組，然後使用 MAX() 彙總函數取得最大薪資。
 
-之后使用连接找到一个部门中薪资等于临时表中最大薪资的员工。
+之後使用連接找到一個部門中薪資等於臨時表中最大薪資的員工。
 
 ```sql
 SELECT
@@ -694,7 +694,7 @@ https://leetcode.com/problems/second-highest-salary/description/
 +----+--------+
 ```
 
-查找工资第二高的员工。
+查找工資第二高的員工。
 
 ```html
 +---------------------+
@@ -704,7 +704,7 @@ https://leetcode.com/problems/second-highest-salary/description/
 +---------------------+
 ```
 
-没有找到返回 null 而不是不返回数据。
+沒有找到返回 null 而不是不返回數據。
 
 ## SQL Schema
 
@@ -722,7 +722,7 @@ VALUES
 
 ## Solution
 
-为了在没有查找到数据时返回 null，需要在查询结果外面再套一层 SELECT。
+為了在沒有查找到數據時返回 null，需要在查詢結果外面再套一層 SELECT。
 
 ```sql
 SELECT
@@ -733,7 +733,7 @@ SELECT
 
 ## Description
 
-查找工资第 N 高的员工。
+查找工資第 N 高的員工。
 
 ## SQL Schema
 
@@ -771,7 +771,7 @@ https://leetcode.com/problems/rank-scores/description/
 +----+-------+
 ```
 
-将得分排序，并统计排名。
+將得分排序，並統計排名。
 
 ```html
 +-------+------+
@@ -805,15 +805,15 @@ VALUES
 
 ## Solution
 
-要统计某个 score 的排名，只要统计大于该 score 的 score 数量，然后加 1。
+要統計某個 score 的排名，只要統計大於該 score 的 score 數量，然後加 1。
 
-| score | 大于该 score 的 score 数量 | 排名 |
+| score | 大於該 score 的 score 數量 | 排名 |
 | :---: | :---: | :---: |
 | 4.1 | 2 | 3 |
 | 4.2 | 1 | 2 |
 | 4.3 | 0 | 1 |
 
-但是在本题中，相同的 score 只算一个排名：
+但是在本題中，相同的 score 只算一個排名：
 
 | score | 排名 |
 | :---: | :---: |
@@ -824,9 +824,9 @@ VALUES
 | 4.3 | 1 |
 | 4.3 | 1 |
 
-可以按 score 进行分组，将同一个分组中的 score 只当成一个。
+可以按 score 進行分組，將同一個分組中的 score 只當成一個。
 
-但是如果分组字段只有 score 的话，那么相同的 score 最后的结果只会有一个，例如上面的 6 个记录最后只取出 3 个。
+但是如果分組字段只有 score 的話，那麼相同的 score 最後的結果只會有一個，例如上面的 6 個記錄最後只取出 3 個。
 
 | score | 排名 |
 | :---: | :---: |
@@ -834,9 +834,9 @@ VALUES
 | 4.2 | 2 |
 | 4.3 | 1 |
 
-所以在分组中需要加入 Id，每个记录显示一个结果。综上，需要使用 score 和 id 两个分组字段。
+所以在分組中需要加入 Id，每個記錄顯示一個結果。綜上，需要使用 score 和 id 兩個分組字段。
 
-在下面的实现中，首先将 Scores 表根据 score 字段进行自连接，得到一个新表，然后在新表上对 id 和 score 进行分组。
+在下面的實現中，首先將 Scores 表根據 score 字段進行自連接，得到一個新表，然後在新表上對 id 和 score 進行分組。
 
 ```sql
 SELECT
@@ -858,7 +858,7 @@ https://leetcode.com/problems/consecutive-numbers/description/
 
 ## Description
 
-数字表：
+數字表：
 
 ```html
 +----+-----+
@@ -874,7 +874,7 @@ https://leetcode.com/problems/consecutive-numbers/description/
 +----+-----+
 ```
 
-查找连续出现三次的数字。
+查找連續出現三次的數字。
 
 ```html
 +-----------------+
@@ -923,7 +923,7 @@ https://leetcode.com/problems/exchange-seats/description/
 
 ## Description
 
-seat 表存储着座位对应的学生。
+seat 表存儲著座位對應的學生。
 
 ```html
 +---------+---------+
@@ -937,7 +937,7 @@ seat 表存储着座位对应的学生。
 +---------+---------+
 ```
 
-要求交换相邻座位的两个学生，如果最后一个座位是奇数，那么不交换这个座位上的学生。
+要求交換相鄰座位的兩個學生，如果最後一個座位是奇數，那麼不交換這個座位上的學生。
 
 ```html
 +---------+---------+
@@ -969,11 +969,11 @@ VALUES
 
 ## Solution
 
-使用多个 union。
+使用多個 union。
 
 ```sql
-# 处理偶数 id，让 id 减 1
-# 例如 2,4,6,... 变成 1,3,5,...
+# 處理偶數 id，讓 id 減 1
+# 例如 2,4,6,... 變成 1,3,5,...
 SELECT
     s1.id - 1 AS id,
     s1.student
@@ -981,8 +981,8 @@ FROM
     seat s1
 WHERE
     s1.id MOD 2 = 0 UNION
-# 处理奇数 id，让 id 加 1。但是如果最大的 id 为奇数，则不做处理
-# 例如 1,3,5,... 变成 2,4,6,...
+# 處理奇數 id，讓 id 加 1。但是如果最大的 id 為奇數，則不做處理
+# 例如 1,3,5,... 變成 2,4,6,...
 SELECT
     s2.id + 1 AS id,
     s2.student
@@ -991,7 +991,7 @@ FROM
 WHERE
     s2.id MOD 2 = 1
     AND s2.id != ( SELECT max( s3.id ) FROM seat s3 ) UNION
-# 如果最大的 id 为奇数，单独取出这个数
+# 如果最大的 id 為奇數，單獨取出這個數
 SELECT
     s4.id AS id,
     s4.student
@@ -1007,10 +1007,10 @@ ORDER BY
 
 
 
-# 微信公众号
+# 微信公眾號
 
 
-更多精彩内容将发布在微信公众号 CyC2018 上，你也可以在公众号后台和我交流学习和求职相关的问题。另外，公众号提供了该项目的 PDF 等离线阅读版本，后台回复 "下载" 即可领取。公众号也提供了一份技术面试复习大纲，不仅系统整理了面试知识点，而且标注了各个知识点的重要程度，从而帮你理清多而杂的面试知识点，后台回复 "大纲" 即可领取。我基本是按照这个大纲来进行复习的，对我拿到了 BAT 头条等 Offer 起到很大的帮助。你们完全可以和我一样根据大纲上列的知识点来进行复习，就不用看很多不重要的内容，也可以知道哪些内容很重要从而多安排一些复习时间。
+更多精彩內容將發佈在微信公眾號 CyC2018 上，你也可以在公眾號後臺和我交流學習和求職相關的問題。另外，公眾號提供了該項目的 PDF 等離線閱讀版本，後臺回覆 "下載" 即可領取。公眾號也提供了一份技術面試複習大綱，不僅系統整理了面試知識點，而且標註了各個知識點的重要程度，從而幫你理清多而雜的面試知識點，後臺回覆 "大綱" 即可領取。我基本是按照這個大綱來進行復習的，對我拿到了 BAT 頭條等 Offer 起到很大的幫助。你們完全可以和我一樣根據大綱上列的知識點來進行復習，就不用看很多不重要的內容，也可以知道哪些內容很重要從而多安排一些複習時間。
 
 
-<br><div align="center"><img width="320px" src="https://cs-notes-1256109796.cos.ap-guangzhou.myqcloud.com/other/公众号海报6.png"></img></div>
+<br><div align="center"><img width="320px" src="https://cs-notes-1256109796.cos.ap-guangzhou.myqcloud.com/other/公眾號海報6.png"></img></div>

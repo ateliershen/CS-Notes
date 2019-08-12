@@ -1,30 +1,30 @@
 <!-- GFM-TOC -->
-* [40. 最小的 K 个数](#40-最小的-k-个数)
-* [41.1 数据流中的中位数](#411-数据流中的中位数)
-* [41.2 字符流中第一个不重复的字符](#412-字符流中第一个不重复的字符)
-* [42. 连续子数组的最大和](#42-连续子数组的最大和)
-* [43. 从 1 到 n 整数中 1 出现的次数](#43-从-1-到-n-整数中-1-出现的次数)
-* [44. 数字序列中的某一位数字](#44-数字序列中的某一位数字)
-* [45. 把数组排成最小的数](#45-把数组排成最小的数)
-* [46. 把数字翻译成字符串](#46-把数字翻译成字符串)
-* [47. 礼物的最大价值](#47-礼物的最大价值)
-* [48. 最长不含重复字符的子字符串](#48-最长不含重复字符的子字符串)
-* [49. 丑数](#49-丑数)
+* [40. 最小的 K 個數](#40-最小的-k-個數)
+* [41.1 數據流中的中位數](#411-數據流中的中位數)
+* [41.2 字符流中第一個不重複的字符](#412-字符流中第一個不重複的字符)
+* [42. 連續子數組的最大和](#42-連續子數組的最大和)
+* [43. 從 1 到 n 整數中 1 出現的次數](#43-從-1-到-n-整數中-1-出現的次數)
+* [44. 數字序列中的某一位數字](#44-數字序列中的某一位數字)
+* [45. 把數組排成最小的數](#45-把數組排成最小的數)
+* [46. 把數字翻譯成字符串](#46-把數字翻譯成字符串)
+* [47. 禮物的最大價值](#47-禮物的最大價值)
+* [48. 最長不含重複字符的子字符串](#48-最長不含重複字符的子字符串)
+* [49. 醜數](#49-醜數)
 <!-- GFM-TOC -->
 
 
-# 40. 最小的 K 个数
+# 40. 最小的 K 個數
 
 [NowCoder](https://www.nowcoder.com/practice/6a296eb82cf844ca8539b57c23e6e9bf?tpId=13&tqId=11182&tPage=1&rp=1&ru=/ta/coding-interviews&qru=/ta/coding-interviews/question-ranking)
 
-## 解题思路
+## 解題思路
 
-### 快速选择
+### 快速選擇
 
-- 复杂度：O(N) + O(1)
-- 只有当允许修改数组元素时才可以使用
+- 複雜度：O(N) + O(1)
+- 只有當允許修改數組元素時才可以使用
 
-快速排序的 partition() 方法，会返回一个整数 j 使得 a[l..j-1] 小于等于 a[j]，且 a[j+1..h] 大于等于 a[j]，此时 a[j] 就是数组的第 j 大元素。可以利用这个特性找出数组的第 K 个元素，这种找第 K 个元素的算法称为快速选择算法。
+快速排序的 partition() 方法，會返回一個整數 j 使得 a[l..j-1] 小於等於 a[j]，且 a[j+1..h] 大於等於 a[j]，此時 a[j] 就是數組的第 j 大元素。可以利用這個特性找出數組的第 K 個元素，這種找第 K 個元素的算法稱為快速選擇算法。
 
 ```java
 public ArrayList<Integer> GetLeastNumbers_Solution(int[] nums, int k) {
@@ -32,7 +32,7 @@ public ArrayList<Integer> GetLeastNumbers_Solution(int[] nums, int k) {
     if (k > nums.length || k <= 0)
         return ret;
     findKthSmallest(nums, k - 1);
-    /* findKthSmallest 会改变数组，使得前 k 个数都是最小的 k 个数 */
+    /* findKthSmallest 會改變數組，使得前 k 個數都是最小的 k 個數 */
     for (int i = 0; i < k; i++)
         ret.add(nums[i]);
     return ret;
@@ -72,14 +72,14 @@ private void swap(int[] nums, int i, int j) {
 }
 ```
 
-### 大小为 K 的最小堆
+### 大小為 K 的最小堆
 
-- 复杂度：O(NlogK) + O(K)
-- 特别适合处理海量数据
+- 複雜度：O(NlogK) + O(K)
+- 特別適合處理海量數據
 
-应该使用大顶堆来维护最小堆，而不能直接创建一个小顶堆并设置一个大小，企图让小顶堆中的元素都是最小元素。
+應該使用大頂堆來維護最小堆，而不能直接創建一個小頂堆並設置一個大小，企圖讓小頂堆中的元素都是最小元素。
 
-维护一个大小为 K 的最小堆过程如下：在添加一个元素之后，如果大顶堆的大小大于 K，那么需要将大顶堆的堆顶元素去除。
+維護一個大小為 K 的最小堆過程如下：在添加一個元素之後，如果大頂堆的大小大於 K，那麼需要將大頂堆的堆頂元素去除。
 
 ```java
 public ArrayList<Integer> GetLeastNumbers_Solution(int[] nums, int k) {
@@ -95,30 +95,30 @@ public ArrayList<Integer> GetLeastNumbers_Solution(int[] nums, int k) {
 }
 ```
 
-# 41.1 数据流中的中位数
+# 41.1 數據流中的中位數
 
 [NowCoder](https://www.nowcoder.com/practice/9be0172896bd43948f8a32fb954e1be1?tpId=13&tqId=11216&tPage=1&rp=1&ru=/ta/coding-interviews&qru=/ta/coding-interviews/question-ranking)
 
-## 题目描述
+## 題目描述
 
-如何得到一个数据流中的中位数？如果从数据流中读出奇数个数值，那么中位数就是所有数值排序之后位于中间的数值。如果从数据流中读出偶数个数值，那么中位数就是所有数值排序之后中间两个数的平均值。
+如何得到一個數據流中的中位數？如果從數據流中讀出奇數個數值，那麼中位數就是所有數值排序之後位於中間的數值。如果從數據流中讀出偶數個數值，那麼中位數就是所有數值排序之後中間兩個數的平均值。
 
-## 解题思路
+## 解題思路
 
 ```java
-/* 大顶堆，存储左半边元素 */
+/* 大頂堆，存儲左半邊元素 */
 private PriorityQueue<Integer> left = new PriorityQueue<>((o1, o2) -> o2 - o1);
-/* 小顶堆，存储右半边元素，并且右半边元素都大于左半边 */
+/* 小頂堆，存儲右半邊元素，並且右半邊元素都大於左半邊 */
 private PriorityQueue<Integer> right = new PriorityQueue<>();
-/* 当前数据流读入的元素个数 */
+/* 當前數據流讀入的元素個數 */
 private int N = 0;
 
 public void Insert(Integer val) {
-    /* 插入要保证两个堆存于平衡状态 */
+    /* 插入要保證兩個堆存於平衡狀態 */
     if (N % 2 == 0) {
-        /* N 为偶数的情况下插入到右半边。
-         * 因为右半边元素都要大于左半边，但是新插入的元素不一定比左半边元素来的大，
-         * 因此需要先将元素插入左半边，然后利用左半边为大顶堆的特点，取出堆顶元素即为最大元素，此时插入右半边 */
+        /* N 為偶數的情況下插入到右半邊。
+         * 因為右半邊元素都要大於左半邊，但是新插入的元素不一定比左半邊元素來的大，
+         * 因此需要先將元素插入左半邊，然後利用左半邊為大頂堆的特點，取出堆頂元素即為最大元素，此時插入右半邊 */
         left.add(val);
         right.add(left.poll());
     } else {
@@ -136,15 +136,15 @@ public Double GetMedian() {
 }
 ```
 
-# 41.2 字符流中第一个不重复的字符
+# 41.2 字符流中第一個不重複的字符
 
 [NowCoder](https://www.nowcoder.com/practice/00de97733b8e4f97a3fb5c680ee10720?tpId=13&tqId=11207&tPage=1&rp=1&ru=/ta/coding-interviews&qru=/ta/coding-interviews/question-ranking)
 
-## 题目描述
+## 題目描述
 
-请实现一个函数用来找出字符流中第一个只出现一次的字符。例如，当从字符流中只读出前两个字符 "go" 时，第一个只出现一次的字符是 "g"。当从该字符流中读出前六个字符“google" 时，第一个只出现一次的字符是 "l"。
+請實現一個函數用來找出字符流中第一個只出現一次的字符。例如，當從字符流中只讀出前兩個字符 "go" 時，第一個只出現一次的字符是 "g"。當從該字符流中讀出前六個字符“google" 時，第一個只出現一次的字符是 "l"。
 
-## 解题思路
+## 解題思路
 
 ```java
 private int[] cnts = new int[256];
@@ -162,15 +162,15 @@ public char FirstAppearingOnce() {
 }
 ```
 
-# 42. 连续子数组的最大和
+# 42. 連續子數組的最大和
 
 [NowCoder](https://www.nowcoder.com/practice/459bd355da1549fa8a49e350bf3df484?tpId=13&tqId=11183&tPage=1&rp=1&ru=/ta/coding-interviews&qru=/ta/coding-interviews/question-ranking)
 
-## 题目描述
+## 題目描述
 
-{6, -3, -2, 7, -15, 1, 2, 2}，连续子数组的最大和为 8（从第 0 个开始，到第 3 个为止）。
+{6, -3, -2, 7, -15, 1, 2, 2}，連續子數組的最大和為 8（從第 0 個開始，到第 3 個為止）。
 
-## 解题思路
+## 解題思路
 
 ```java
 public int FindGreatestSumOfSubArray(int[] nums) {
@@ -186,11 +186,11 @@ public int FindGreatestSumOfSubArray(int[] nums) {
 }
 ```
 
-# 43. 从 1 到 n 整数中 1 出现的次数
+# 43. 從 1 到 n 整數中 1 出現的次數
 
 [NowCoder](https://www.nowcoder.com/practice/bd7f978302044eee894445e244c7eee6?tpId=13&tqId=11184&tPage=1&rp=1&ru=/ta/coding-interviews&qru=/ta/coding-interviews/question-ranking)
 
-## 解题思路
+## 解題思路
 
 ```java
 public int NumberOf1Between1AndN_Solution(int n) {
@@ -205,19 +205,19 @@ public int NumberOf1Between1AndN_Solution(int n) {
 
 > [Leetcode : 233. Number of Digit One](https://leetcode.com/problems/number-of-digit-one/discuss/64381/4+-lines-O(log-n)-C++JavaPython)
 
-# 44. 数字序列中的某一位数字
+# 44. 數字序列中的某一位數字
 
-## 题目描述
+## 題目描述
 
-数字以 0123456789101112131415... 的格式序列化到一个字符串中，求这个字符串的第 index 位。
+數字以 0123456789101112131415... 的格式序列化到一個字符串中，求這個字符串的第 index 位。
 
-## 解题思路
+## 解題思路
 
 ```java
 public int getDigitAtIndex(int index) {
     if (index < 0)
         return -1;
-    int place = 1;  // 1 表示个位，2 表示 十位...
+    int place = 1;  // 1 表示個位，2 表示 十位...
     while (true) {
         int amount = getAmountOfPlace(place);
         int totalAmount = amount * place;
@@ -229,7 +229,7 @@ public int getDigitAtIndex(int index) {
 }
 
 /**
- * place 位数的数字组成的字符串长度
+ * place 位數的數字組成的字符串長度
  * 10, 90, 900, ...
  */
 private int getAmountOfPlace(int place) {
@@ -239,7 +239,7 @@ private int getAmountOfPlace(int place) {
 }
 
 /**
- * place 位数的起始数字
+ * place 位數的起始數字
  * 0, 10, 100, ...
  */
 private int getBeginNumberOfPlace(int place) {
@@ -249,7 +249,7 @@ private int getBeginNumberOfPlace(int place) {
 }
 
 /**
- * 在 place 位数组成的字符串中，第 index 个数
+ * 在 place 位數組成的字符串中，第 index 個數
  */
 private int getDigitAtIndex(int index, int place) {
     int beginNumber = getBeginNumberOfPlace(place);
@@ -260,17 +260,17 @@ private int getDigitAtIndex(int index, int place) {
 }
 ```
 
-# 45. 把数组排成最小的数
+# 45. 把數組排成最小的數
 
 [NowCoder](https://www.nowcoder.com/practice/8fecd3f8ba334add803bf2a06af1b993?tpId=13&tqId=11185&tPage=1&rp=1&ru=/ta/coding-interviews&qru=/ta/coding-interviews/question-ranking)
 
-## 题目描述
+## 題目描述
 
-输入一个正整数数组，把数组里所有数字拼接起来排成一个数，打印能拼接出的所有数字中最小的一个。例如输入数组 {3，32，321}，则打印出这三个数字能排成的最小数字为 321323。
+輸入一個正整數數組，把數組裡所有數字拼接起來排成一個數，打印能拼接出的所有數字中最小的一個。例如輸入數組 {3，32，321}，則打印出這三個數字能排成的最小數字為 321323。
 
-## 解题思路
+## 解題思路
 
-可以看成是一个排序问题，在比较两个字符串 S1 和 S2 的大小时，应该比较的是 S1+S2 和 S2+S1 的大小，如果 S1+S2 < S2+S1，那么应该把 S1 排在前面，否则应该把 S2 排在前面。
+可以看成是一個排序問題，在比較兩個字符串 S1 和 S2 的大小時，應該比較的是 S1+S2 和 S2+S1 的大小，如果 S1+S2 < S2+S1，那麼應該把 S1 排在前面，否則應該把 S2 排在前面。
 
 ```java
 public String PrintMinNumber(int[] numbers) {
@@ -288,15 +288,15 @@ public String PrintMinNumber(int[] numbers) {
 }
 ```
 
-# 46. 把数字翻译成字符串
+# 46. 把數字翻譯成字符串
 
 [Leetcode](https://leetcode.com/problems/decode-ways/description/)
 
-## 题目描述
+## 題目描述
 
-给定一个数字，按照如下规则翻译成字符串：1 翻译成“a”，2 翻译成“b”... 26 翻译成“z”。一个数字有多种翻译可能，例如 12258 一共有 5 种，分别是 abbeh，lbeh，aveh，abyh，lyh。实现一个函数，用来计算一个数字有多少种不同的翻译方法。
+給定一個數字，按照如下規則翻譯成字符串：1 翻譯成“a”，2 翻譯成“b”... 26 翻譯成“z”。一個數字有多種翻譯可能，例如 12258 一共有 5 種，分別是 abbeh，lbeh，aveh，abyh，lyh。實現一個函數，用來計算一個數字有多少種不同的翻譯方法。
 
-## 解题思路
+## 解題思路
 
 ```java
 public int numDecodings(String s) {
@@ -320,13 +320,13 @@ public int numDecodings(String s) {
 }
 ```
 
-# 47. 礼物的最大价值
+# 47. 禮物的最大價值
 
 [NowCoder](https://www.nowcoder.com/questionTerminal/72a99e28381a407991f2c96d8cb238ab)
 
-## 题目描述
+## 題目描述
 
-在一个 m\*n 的棋盘的每一个格都放有一个礼物，每个礼物都有一定价值（大于 0）。从左上角开始拿礼物，每次向右或向下移动一格，直到右下角结束。给定一个棋盘，求拿到礼物的最大价值。例如，对于如下棋盘
+在一個 m\*n 的棋盤的每一個格都放有一個禮物，每個禮物都有一定價值（大於 0）。從左上角開始拿禮物，每次向右或向下移動一格，直到右下角結束。給定一個棋盤，求拿到禮物的最大價值。例如，對於如下棋盤
 
 ```
 1    10   3    8
@@ -335,11 +335,11 @@ public int numDecodings(String s) {
 3    7    16   5
 ```
 
-礼物的最大价值为 1+12+5+7+7+16+5=53。
+禮物的最大價值為 1+12+5+7+7+16+5=53。
 
-## 解题思路
+## 解題思路
 
-应该用动态规划求解，而不是深度优先搜索，深度优先搜索过于复杂，不是最优解。
+應該用動態規劃求解，而不是深度優先搜索，深度優先搜索過於複雜，不是最優解。
 
 ```java
 public int getMost(int[][] values) {
@@ -356,13 +356,13 @@ public int getMost(int[][] values) {
 }
 ```
 
-# 48. 最长不含重复字符的子字符串
+# 48. 最長不含重複字符的子字符串
 
-## 题目描述
+## 題目描述
 
-输入一个字符串（只包含 a\~z 的字符），求其最长不含重复字符的子字符串的长度。例如对于 arabcacfr，最长不含重复字符的子字符串为 acfr，长度为 4。
+輸入一個字符串（只包含 a\~z 的字符），求其最長不含重複字符的子字符串的長度。例如對於 arabcacfr，最長不含重複字符的子字符串為 acfr，長度為 4。
 
-## 解题思路
+## 解題思路
 
 ```java
 public int longestSubStringWithoutDuplication(String str) {
@@ -386,15 +386,15 @@ public int longestSubStringWithoutDuplication(String str) {
 }
 ```
 
-# 49. 丑数
+# 49. 醜數
 
 [NowCoder](https://www.nowcoder.com/practice/6aa9e04fc3794f68acf8778237ba065b?tpId=13&tqId=11186&tPage=1&rp=1&ru=/ta/coding-interviews&qru=/ta/coding-interviews/question-ranking)
 
-## 题目描述
+## 題目描述
 
-把只包含因子 2、3 和 5 的数称作丑数（Ugly Number）。例如 6、8 都是丑数，但 14 不是，因为它包含因子 7。习惯上我们把 1 当做是第一个丑数。求按从小到大的顺序的第 N 个丑数。
+把只包含因子 2、3 和 5 的數稱作醜數（Ugly Number）。例如 6、8 都是醜數，但 14 不是，因為它包含因子 7。習慣上我們把 1 當做是第一個醜數。求按從小到大的順序的第 N 個醜數。
 
-## 解题思路
+## 解題思路
 
 ```java
 public int GetUglyNumber_Solution(int N) {
@@ -420,10 +420,10 @@ public int GetUglyNumber_Solution(int N) {
 
 
 
-# 微信公众号
+# 微信公眾號
 
 
-更多精彩内容将发布在微信公众号 CyC2018 上，你也可以在公众号后台和我交流学习和求职相关的问题。另外，公众号提供了该项目的 PDF 等离线阅读版本，后台回复 "下载" 即可领取。公众号也提供了一份技术面试复习大纲，不仅系统整理了面试知识点，而且标注了各个知识点的重要程度，从而帮你理清多而杂的面试知识点，后台回复 "大纲" 即可领取。我基本是按照这个大纲来进行复习的，对我拿到了 BAT 头条等 Offer 起到很大的帮助。你们完全可以和我一样根据大纲上列的知识点来进行复习，就不用看很多不重要的内容，也可以知道哪些内容很重要从而多安排一些复习时间。
+更多精彩內容將發佈在微信公眾號 CyC2018 上，你也可以在公眾號後臺和我交流學習和求職相關的問題。另外，公眾號提供了該項目的 PDF 等離線閱讀版本，後臺回覆 "下載" 即可領取。公眾號也提供了一份技術面試複習大綱，不僅系統整理了面試知識點，而且標註了各個知識點的重要程度，從而幫你理清多而雜的面試知識點，後臺回覆 "大綱" 即可領取。我基本是按照這個大綱來進行復習的，對我拿到了 BAT 頭條等 Offer 起到很大的幫助。你們完全可以和我一樣根據大綱上列的知識點來進行復習，就不用看很多不重要的內容，也可以知道哪些內容很重要從而多安排一些複習時間。
 
 
-<br><div align="center"><img width="320px" src="https://cs-notes-1256109796.cos.ap-guangzhou.myqcloud.com/other/公众号海报6.png"></img></div>
+<br><div align="center"><img width="320px" src="https://cs-notes-1256109796.cos.ap-guangzhou.myqcloud.com/other/公眾號海報6.png"></img></div>

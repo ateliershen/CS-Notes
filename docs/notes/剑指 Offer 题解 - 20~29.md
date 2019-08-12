@@ -1,22 +1,22 @@
 <!-- GFM-TOC -->
-* [20. 表示数值的字符串](#20-表示数值的字符串)
-* [21. 调整数组顺序使奇数位于偶数前面](#21-调整数组顺序使奇数位于偶数前面)
-* [22. 链表中倒数第 K 个结点](#22-链表中倒数第-k-个结点)
-* [23. 链表中环的入口结点](#23-链表中环的入口结点)
-* [24. 反转链表](#24-反转链表)
-* [25. 合并两个排序的链表](#25-合并两个排序的链表)
-* [26. 树的子结构](#26-树的子结构)
-* [27. 二叉树的镜像](#27-二叉树的镜像)
-* [28 对称的二叉树](#28-对称的二叉树)
-* [29. 顺时针打印矩阵](#29-顺时针打印矩阵)
+* [20. 表示數值的字符串](#20-表示數值的字符串)
+* [21. 調整數組順序使奇數位於偶數前面](#21-調整數組順序使奇數位於偶數前面)
+* [22. 鏈表中倒數第 K 個結點](#22-鏈表中倒數第-k-個結點)
+* [23. 鏈表中環的入口結點](#23-鏈表中環的入口結點)
+* [24. 反轉鏈表](#24-反轉鏈表)
+* [25. 合併兩個排序的鏈表](#25-合併兩個排序的鏈表)
+* [26. 樹的子結構](#26-樹的子結構)
+* [27. 二叉樹的鏡像](#27-二叉樹的鏡像)
+* [28 對稱的二叉樹](#28-對稱的二叉樹)
+* [29. 順時針打印矩陣](#29-順時針打印矩陣)
 <!-- GFM-TOC -->
 
 
-# 20. 表示数值的字符串
+# 20. 表示數值的字符串
 
 [NowCoder](https://www.nowcoder.com/practice/6f8c901d091949a5837e24bb82a731f2?tpId=13&tqId=11206&tPage=1&rp=1&ru=/ta/coding-interviews&qru=/ta/coding-interviews/question-ranking)
 
-## 题目描述
+## 題目描述
 
 ```
 true
@@ -39,19 +39,19 @@ false
 ```
 
 
-## 解题思路
+## 解題思路
 
-使用正则表达式进行匹配。
+使用正則表達式進行匹配。
 
 ```html
 []  ： 字符集合
-()  ： 分组
-?   ： 重复 0 ~ 1 次
-+   ： 重复 1 ~ n 次
-*   ： 重复 0 ~ n 次
+()  ： 分組
+?   ： 重複 0 ~ 1 次
++   ： 重複 1 ~ n 次
+*   ： 重複 0 ~ n 次
 .   ： 任意字符
-\\. ： 转义后的 .
-\\d ： 数字
+\\. ： 轉義後的 .
+\\d ： 數字
 ```
 
 ```java
@@ -62,23 +62,23 @@ public boolean isNumeric(char[] str) {
 }
 ```
 
-# 21. 调整数组顺序使奇数位于偶数前面
+# 21. 調整數組順序使奇數位於偶數前面
 
 [NowCoder](https://www.nowcoder.com/practice/beb5aa231adc45b2a5dcc5b62c93f593?tpId=13&tqId=11166&tPage=1&rp=1&ru=/ta/coding-interviews&qru=/ta/coding-interviews/question-ranking)
 
-## 题目描述
+## 題目描述
 
-需要保证奇数和奇数，偶数和偶数之间的相对位置不变，这和书本不太一样。
+需要保證奇數和奇數，偶數和偶數之間的相對位置不變，這和書本不太一樣。
 
 <div align="center"> <img src="https://cs-notes-1256109796.cos.ap-guangzhou.myqcloud.com/d03a2efa-ef19-4c96-97e8-ff61df8061d3.png" width="200px"> </div><br>
 
-## 解题思路
+## 解題思路
 
-方法一：创建一个新数组，时间复杂度 O(N)，空间复杂度 O(N)。
+方法一：創建一個新數組，時間複雜度 O(N)，空間複雜度 O(N)。
 
 ```java
 public void reOrderArray(int[] nums) {
-    // 奇数个数
+    // 奇數個數
     int oddCnt = 0;
     for (int x : nums)
         if (!isEven(x))
@@ -98,7 +98,7 @@ private boolean isEven(int x) {
 }
 ```
 
-方法二：使用冒泡思想，每次都当前偶数上浮到当前最右边。时间复杂度 O(N<sup>2</sup>)，空间复杂度 O(1)，时间换空间。
+方法二：使用冒泡思想，每次都當前偶數上浮到當前最右邊。時間複雜度 O(N<sup>2</sup>)，空間複雜度 O(1)，時間換空間。
 
 ```java
 public void reOrderArray(int[] nums) {
@@ -123,13 +123,13 @@ private void swap(int[] nums, int i, int j) {
 }
 ```
 
-# 22. 链表中倒数第 K 个结点
+# 22. 鏈表中倒數第 K 個結點
 
 [NowCoder](https://www.nowcoder.com/practice/529d3ae5a407492994ad2a246518148a?tpId=13&tqId=11167&tPage=1&rp=1&ru=/ta/coding-interviews&qru=/ta/coding-interviews/question-ranking)
 
-## 解题思路
+## 解題思路
 
-设链表的长度为 N。设置两个指针 P1 和 P2，先让 P1 移动 K 个节点，则还有 N - K 个节点可以移动。此时让 P1 和 P2 同时移动，可以知道当 P1 移动到链表结尾时，P2 移动到第 N - K 个节点处，该位置就是倒数第 K 个节点。
+設鏈表的長度為 N。設置兩個指針 P1 和 P2，先讓 P1 移動 K 個節點，則還有 N - K 個節點可以移動。此時讓 P1 和 P2 同時移動，可以知道當 P1 移動到鏈表結尾時，P2 移動到第 N - K 個節點處，該位置就是倒數第 K 個節點。
 
 <div align="center"> <img src="https://cs-notes-1256109796.cos.ap-guangzhou.myqcloud.com/6b504f1f-bf76-4aab-a146-a9c7a58c2029.png" width="500"/> </div><br>
 
@@ -151,19 +151,19 @@ public ListNode FindKthToTail(ListNode head, int k) {
 }
 ```
 
-# 23. 链表中环的入口结点
+# 23. 鏈表中環的入口結點
 
 [NowCoder](https://www.nowcoder.com/practice/253d2c59ec3e4bc68da16833f79a38e4?tpId=13&tqId=11208&tPage=1&rp=1&ru=/ta/coding-interviews&qru=/ta/coding-interviews/question-ranking)
 
-## 题目描述
+## 題目描述
 
-一个链表中包含环，请找出该链表的环的入口结点。要求不能使用额外的空间。
+一個鏈表中包含環，請找出該鏈表的環的入口結點。要求不能使用額外的空間。
 
-## 解题思路
+## 解題思路
 
-使用双指针，一个指针 fast 每次移动两个节点，一个指针 slow 每次移动一个节点。因为存在环，所以两个指针必定相遇在环中的某个节点上。假设相遇点在下图的 z1 位置，此时 fast 移动的节点数为 x+2y+z，slow 为 x+y，由于 fast 速度比 slow 快一倍，因此 x+2y+z=2(x+y)，得到 x=z。
+使用雙指針，一個指針 fast 每次移動兩個節點，一個指針 slow 每次移動一個節點。因為存在環，所以兩個指針必定相遇在環中的某個節點上。假設相遇點在下圖的 z1 位置，此時 fast 移動的節點數為 x+2y+z，slow 為 x+y，由於 fast 速度比 slow 快一倍，因此 x+2y+z=2(x+y)，得到 x=z。
 
-在相遇点，slow 要到环的入口点还需要移动 z 个节点，如果让 fast 重新从头开始移动，并且速度变为每次移动一个节点，那么它到环入口点还需要移动 x 个节点。在上面已经推导出 x=z，因此 fast 和 slow 将在环入口点相遇。
+在相遇點，slow 要到環的入口點還需要移動 z 個節點，如果讓 fast 重新從頭開始移動，並且速度變為每次移動一個節點，那麼它到環入口點還需要移動 x 個節點。在上面已經推導出 x=z，因此 fast 和 slow 將在環入口點相遇。
 
 <div align="center"> <img src="https://cs-notes-1256109796.cos.ap-guangzhou.myqcloud.com/bb7fc182-98c2-4860-8ea3-630e27a5f29f.png" width="500"/> </div><br>
 
@@ -185,13 +185,13 @@ public ListNode EntryNodeOfLoop(ListNode pHead) {
 }
 ```
 
-# 24. 反转链表
+# 24. 反轉鏈表
 
 [NowCoder](https://www.nowcoder.com/practice/75e878df47f24fdc9dc3e400ec6058ca?tpId=13&tqId=11168&tPage=1&rp=1&ru=/ta/coding-interviews&qru=/ta/coding-interviews/question-ranking)
 
-## 解题思路
+## 解題思路
 
-### 递归
+### 遞歸
 
 ```java
 public ListNode ReverseList(ListNode head) {
@@ -207,7 +207,7 @@ public ListNode ReverseList(ListNode head) {
 
 ### 迭代
 
-使用头插法。
+使用頭插法。
 
 ```java
 public ListNode ReverseList(ListNode head) {
@@ -222,17 +222,17 @@ public ListNode ReverseList(ListNode head) {
 }
 ```
 
-# 25. 合并两个排序的链表
+# 25. 合併兩個排序的鏈表
 
 [NowCoder](https://www.nowcoder.com/practice/d8b6b4358f774294a89de2a6ac4d9337?tpId=13&tqId=11169&tPage=1&rp=1&ru=/ta/coding-interviews&qru=/ta/coding-interviews/question-ranking)
 
-## 题目描述
+## 題目描述
 
 <div align="center"> <img src="https://cs-notes-1256109796.cos.ap-guangzhou.myqcloud.com/c094d2bc-ec75-444b-af77-d369dfb6b3b4.png" width="400"/> </div><br>
 
-## 解题思路
+## 解題思路
 
-### 递归
+### 遞歸
 
 ```java
 public ListNode Merge(ListNode list1, ListNode list2) {
@@ -274,15 +274,15 @@ public ListNode Merge(ListNode list1, ListNode list2) {
 }
 ```
 
-# 26. 树的子结构
+# 26. 樹的子結構
 
 [NowCoder](https://www.nowcoder.com/practice/6e196c44c7004d15b1610b9afca8bd88?tpId=13&tqId=11170&tPage=1&rp=1&ru=/ta/coding-interviews&qru=/ta/coding-interviews/question-ranking)
 
-## 题目描述
+## 題目描述
 
 <div align="center"> <img src="https://cs-notes-1256109796.cos.ap-guangzhou.myqcloud.com/84a5b15a-86c5-4d8e-9439-d9fd5a4699a1.jpg" width="450"/> </div><br>
 
-## 解题思路
+## 解題思路
 
 ```java
 public boolean HasSubtree(TreeNode root1, TreeNode root2) {
@@ -302,15 +302,15 @@ private boolean isSubtreeWithRoot(TreeNode root1, TreeNode root2) {
 }
 ```
 
-# 27. 二叉树的镜像
+# 27. 二叉樹的鏡像
 
 [NowCoder](https://www.nowcoder.com/practice/564f4c26aa584921bc75623e48ca3011?tpId=13&tqId=11171&tPage=1&rp=1&ru=/ta/coding-interviews&qru=/ta/coding-interviews/question-ranking)
 
-## 题目描述
+## 題目描述
 
 <div align="center"> <img src="https://cs-notes-1256109796.cos.ap-guangzhou.myqcloud.com/0c12221f-729e-4c22-b0ba-0dfc909f8adf.jpg" width="300"/> </div><br>
 
-## 解题思路
+## 解題思路
 
 ```java
 public void Mirror(TreeNode root) {
@@ -328,15 +328,15 @@ private void swap(TreeNode root) {
 }
 ```
 
-# 28 对称的二叉树
+# 28 對稱的二叉樹
 
 [NowCoder](https://www.nowcoder.com/practice/ff05d44dfdb04e1d83bdbdab320efbcb?tpId=13&tqId=11211&tPage=1&rp=1&ru=/ta/coding-interviews&qru=/ta/coding-interviews/question-ranking)
 
-## 题目描述
+## 題目描述
 
 <div align="center"> <img src="https://cs-notes-1256109796.cos.ap-guangzhou.myqcloud.com/0c12221f-729e-4c22-b0ba-0dfc909f8adf.jpg" width="300"/> </div><br>
 
-## 解题思路
+## 解題思路
 
 ```java
 boolean isSymmetrical(TreeNode pRoot) {
@@ -356,17 +356,17 @@ boolean isSymmetrical(TreeNode t1, TreeNode t2) {
 }
 ```
 
-# 29. 顺时针打印矩阵
+# 29. 順時針打印矩陣
 
 [NowCoder](https://www.nowcoder.com/practice/9b4c81a02cd34f76be2659fa0d54342a?tpId=13&tqId=11172&tPage=1&rp=1&ru=/ta/coding-interviews&qru=/ta/coding-interviews/question-ranking)
 
-## 题目描述
+## 題目描述
 
-下图的矩阵顺时针打印结果为：1, 2, 3, 4, 8, 12, 16, 15, 14, 13, 9, 5, 6, 7, 11, 10
+下圖的矩陣順時針打印結果為：1, 2, 3, 4, 8, 12, 16, 15, 14, 13, 9, 5, 6, 7, 11, 10
 
 <div align="center"> <img src="https://cs-notes-1256109796.cos.ap-guangzhou.myqcloud.com/48517227-324c-4664-bd26-a2d2cffe2bfe.png" width="200px"> </div><br>
 
-## 解题思路
+## 解題思路
 
 ```java
 public ArrayList<Integer> printMatrix(int[][] matrix) {
@@ -392,10 +392,10 @@ public ArrayList<Integer> printMatrix(int[][] matrix) {
 
 
 
-# 微信公众号
+# 微信公眾號
 
 
-更多精彩内容将发布在微信公众号 CyC2018 上，你也可以在公众号后台和我交流学习和求职相关的问题。另外，公众号提供了该项目的 PDF 等离线阅读版本，后台回复 "下载" 即可领取。公众号也提供了一份技术面试复习大纲，不仅系统整理了面试知识点，而且标注了各个知识点的重要程度，从而帮你理清多而杂的面试知识点，后台回复 "大纲" 即可领取。我基本是按照这个大纲来进行复习的，对我拿到了 BAT 头条等 Offer 起到很大的帮助。你们完全可以和我一样根据大纲上列的知识点来进行复习，就不用看很多不重要的内容，也可以知道哪些内容很重要从而多安排一些复习时间。
+更多精彩內容將發佈在微信公眾號 CyC2018 上，你也可以在公眾號後臺和我交流學習和求職相關的問題。另外，公眾號提供了該項目的 PDF 等離線閱讀版本，後臺回覆 "下載" 即可領取。公眾號也提供了一份技術面試複習大綱，不僅系統整理了面試知識點，而且標註了各個知識點的重要程度，從而幫你理清多而雜的面試知識點，後臺回覆 "大綱" 即可領取。我基本是按照這個大綱來進行復習的，對我拿到了 BAT 頭條等 Offer 起到很大的幫助。你們完全可以和我一樣根據大綱上列的知識點來進行復習，就不用看很多不重要的內容，也可以知道哪些內容很重要從而多安排一些複習時間。
 
 
-<br><div align="center"><img width="320px" src="https://cs-notes-1256109796.cos.ap-guangzhou.myqcloud.com/other/公众号海报6.png"></img></div>
+<br><div align="center"><img width="320px" src="https://cs-notes-1256109796.cos.ap-guangzhou.myqcloud.com/other/公眾號海報6.png"></img></div>

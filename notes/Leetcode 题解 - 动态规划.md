@@ -1,64 +1,64 @@
 <!-- GFM-TOC -->
-* [斐波那契数列](#斐波那契数列)
-    * [1. 爬楼梯](#1-爬楼梯)
-    * [2. 强盗抢劫](#2-强盗抢劫)
-    * [3. 强盗在环形街区抢劫](#3-强盗在环形街区抢劫)
-    * [4. 信件错排](#4-信件错排)
-    * [5. 母牛生产](#5-母牛生产)
-* [矩阵路径](#矩阵路径)
-    * [1. 矩阵的最小路径和](#1-矩阵的最小路径和)
-    * [2. 矩阵的总路径数](#2-矩阵的总路径数)
-* [数组区间](#数组区间)
-    * [1. 数组区间和](#1-数组区间和)
-    * [2. 数组中等差递增子区间的个数](#2-数组中等差递增子区间的个数)
-* [分割整数](#分割整数)
-    * [1. 分割整数的最大乘积](#1-分割整数的最大乘积)
-    * [2. 按平方数来分割整数](#2-按平方数来分割整数)
-    * [3. 分割整数构成字母字符串](#3-分割整数构成字母字符串)
-* [最长递增子序列](#最长递增子序列)
-    * [1. 最长递增子序列](#1-最长递增子序列)
-    * [2. 一组整数对能够构成的最长链](#2-一组整数对能够构成的最长链)
-    * [3. 最长摆动子序列](#3-最长摆动子序列)
-* [最长公共子序列](#最长公共子序列)
-* [0-1 背包](#0-1-背包)
-    * [1. 划分数组为和相等的两部分](#1-划分数组为和相等的两部分)
-    * [2. 改变一组数的正负号使得它们的和为一给定数](#2-改变一组数的正负号使得它们的和为一给定数)
-    * [3. 01 字符构成最多的字符串](#3-01-字符构成最多的字符串)
-    * [4. 找零钱的最少硬币数](#4-找零钱的最少硬币数)
-    * [5. 找零钱的硬币数组合](#5-找零钱的硬币数组合)
-    * [6. 字符串按单词列表分割](#6-字符串按单词列表分割)
-    * [7. 组合总和](#7-组合总和)
+* [斐波那契數列](#斐波那契數列)
+    * [1. 爬樓梯](#1-爬樓梯)
+    * [2. 強盜搶劫](#2-強盜搶劫)
+    * [3. 強盜在環形街區搶劫](#3-強盜在環形街區搶劫)
+    * [4. 信件錯排](#4-信件錯排)
+    * [5. 母牛生產](#5-母牛生產)
+* [矩陣路徑](#矩陣路徑)
+    * [1. 矩陣的最小路徑和](#1-矩陣的最小路徑和)
+    * [2. 矩陣的總路徑數](#2-矩陣的總路徑數)
+* [數組區間](#數組區間)
+    * [1. 數組區間和](#1-數組區間和)
+    * [2. 數組中等差遞增子區間的個數](#2-數組中等差遞增子區間的個數)
+* [分割整數](#分割整數)
+    * [1. 分割整數的最大乘積](#1-分割整數的最大乘積)
+    * [2. 按平方數來分割整數](#2-按平方數來分割整數)
+    * [3. 分割整數構成字母字符串](#3-分割整數構成字母字符串)
+* [最長遞增子序列](#最長遞增子序列)
+    * [1. 最長遞增子序列](#1-最長遞增子序列)
+    * [2. 一組整數對能夠構成的最長鏈](#2-一組整數對能夠構成的最長鏈)
+    * [3. 最長擺動子序列](#3-最長擺動子序列)
+* [最長公共子序列](#最長公共子序列)
+* [0-1 揹包](#0-1-揹包)
+    * [1. 劃分數組為和相等的兩部分](#1-劃分數組為和相等的兩部分)
+    * [2. 改變一組數的正負號使得它們的和為一給定數](#2-改變一組數的正負號使得它們的和為一給定數)
+    * [3. 01 字符構成最多的字符串](#3-01-字符構成最多的字符串)
+    * [4. 找零錢的最少硬幣數](#4-找零錢的最少硬幣數)
+    * [5. 找零錢的硬幣數組合](#5-找零錢的硬幣數組合)
+    * [6. 字符串按單詞列表分割](#6-字符串按單詞列表分割)
+    * [7. 組合總和](#7-組合總和)
 * [股票交易](#股票交易)
-    * [1. 需要冷却期的股票交易](#1-需要冷却期的股票交易)
-    * [2. 需要交易费用的股票交易](#2-需要交易费用的股票交易)
-    * [3. 只能进行两次的股票交易](#3-只能进行两次的股票交易)
-    * [4. 只能进行 k 次的股票交易](#4-只能进行-k-次的股票交易)
-* [字符串编辑](#字符串编辑)
-    * [1. 删除两个字符串的字符使它们相等](#1-删除两个字符串的字符使它们相等)
-    * [2. 编辑距离](#2-编辑距离)
-    * [3. 复制粘贴字符](#3-复制粘贴字符)
+    * [1. 需要冷卻期的股票交易](#1-需要冷卻期的股票交易)
+    * [2. 需要交易費用的股票交易](#2-需要交易費用的股票交易)
+    * [3. 只能進行兩次的股票交易](#3-只能進行兩次的股票交易)
+    * [4. 只能進行 k 次的股票交易](#4-只能進行-k-次的股票交易)
+* [字符串編輯](#字符串編輯)
+    * [1. 刪除兩個字符串的字符使它們相等](#1-刪除兩個字符串的字符使它們相等)
+    * [2. 編輯距離](#2-編輯距離)
+    * [3. 複製粘貼字符](#3-複製粘貼字符)
 <!-- GFM-TOC -->
 
 
-递归和动态规划都是将原问题拆成多个子问题然后求解，他们之间最本质的区别是，动态规划保存了子问题的解，避免重复计算。
+遞歸和動態規劃都是將原問題拆成多個子問題然後求解，他們之間最本質的區別是，動態規劃保存了子問題的解，避免重複計算。
 
-# 斐波那契数列
+# 斐波那契數列
 
-## 1. 爬楼梯
+## 1. 爬樓梯
 
 [70. Climbing Stairs (Easy)](https://leetcode.com/problems/climbing-stairs/description/)
 
-题目描述：有 N 阶楼梯，每次可以上一阶或者两阶，求有多少种上楼梯的方法。
+題目描述：有 N 階樓梯，每次可以上一階或者兩階，求有多少種上樓梯的方法。
 
-定义一个数组 dp 存储上楼梯的方法数（为了方便讨论，数组下标从 1 开始），dp[i] 表示走到第 i 个楼梯的方法数目。
+定義一個數組 dp 存儲上樓梯的方法數（為了方便討論，數組下標從 1 開始），dp[i] 表示走到第 i 個樓梯的方法數目。
 
-第 i 个楼梯可以从第 i-1 和 i-2 个楼梯再走一步到达，走到第 i 个楼梯的方法数为走到第 i-1 和第 i-2 个楼梯的方法数之和。
+第 i 個樓梯可以從第 i-1 和 i-2 個樓梯再走一步到達，走到第 i 個樓梯的方法數為走到第 i-1 和第 i-2 個樓梯的方法數之和。
 
 <!--<div align="center"><img src="https://latex.codecogs.com/gif.latex?dp[i]=dp[i-1]+dp[i-2]" class="mathjax-pic"/></div> <br>-->
 
 <div align="center"> <img src="pics/14fe1e71-8518-458f-a220-116003061a83.png" width="200px"> </div><br>
 
-考虑到 dp[i] 只与 dp[i - 1] 和 dp[i - 2] 有关，因此可以只用两个变量来存储 dp[i - 1] 和 dp[i - 2]，使得原来的 O(N) 空间复杂度优化为 O(1) 复杂度。
+考慮到 dp[i] 只與 dp[i - 1] 和 dp[i - 2] 有關，因此可以只用兩個變量來存儲 dp[i - 1] 和 dp[i - 2]，使得原來的 O(N) 空間複雜度優化為 O(1) 複雜度。
 
 ```java
 public int climbStairs(int n) {
@@ -75,15 +75,15 @@ public int climbStairs(int n) {
 }
 ```
 
-## 2. 强盗抢劫
+## 2. 強盜搶劫
 
 [198. House Robber (Easy)](https://leetcode.com/problems/house-robber/description/)
 
-题目描述：抢劫一排住户，但是不能抢邻近的住户，求最大抢劫量。
+題目描述：搶劫一排住戶，但是不能搶鄰近的住戶，求最大搶劫量。
 
-定义 dp 数组用来存储最大的抢劫量，其中 dp[i] 表示抢到第 i 个住户时的最大抢劫量。
+定義 dp 數組用來存儲最大的搶劫量，其中 dp[i] 表示搶到第 i 個住戶時的最大搶劫量。
 
-由于不能抢劫邻近住户，如果抢劫了第 i -1 个住户，那么就不能再抢劫第 i 个住户，所以
+由於不能搶劫鄰近住戶，如果搶劫了第 i -1 個住戶，那麼就不能再搶劫第 i 個住戶，所以
 
 <!--<div align="center"><img src="https://latex.codecogs.com/gif.latex?dp[i]=max(dp[i-2]+nums[i],dp[i-1])" class="mathjax-pic"/></div> <br>-->
 
@@ -101,7 +101,7 @@ public int rob(int[] nums) {
 }
 ```
 
-## 3. 强盗在环形街区抢劫
+## 3. 強盜在環形街區搶劫
 
 [213. House Robber II (Medium)](https://leetcode.com/problems/house-robber-ii/description/)
 
@@ -128,36 +128,36 @@ private int rob(int[] nums, int first, int last) {
 }
 ```
 
-## 4. 信件错排
+## 4. 信件錯排
 
-题目描述：有 N 个 信 和 信封，它们被打乱，求错误装信方式的数量。
+題目描述：有 N 個 信 和 信封，它們被打亂，求錯誤裝信方式的數量。
 
-定义一个数组 dp 存储错误方式数量，dp[i] 表示前 i 个信和信封的错误方式数量。假设第 i 个信装到第 j 个信封里面，而第 j 个信装到第 k 个信封里面。根据 i 和 k 是否相等，有两种情况：
+定義一個數組 dp 存儲錯誤方式數量，dp[i] 表示前 i 個信和信封的錯誤方式數量。假設第 i 個信裝到第 j 個信封裡面，而第 j 個信裝到第 k 個信封裡面。根據 i 和 k 是否相等，有兩種情況：
 
-- i==k，交换 i 和 k 的信后，它们的信和信封在正确的位置，但是其余 i-2 封信有 dp[i-2] 种错误装信的方式。由于 j 有 i-1 种取值，因此共有 (i-1)\*dp[i-2] 种错误装信方式。
-- i != k，交换 i 和 j 的信后，第 i 个信和信封在正确的位置，其余 i-1 封信有 dp[i-1] 种错误装信方式。由于 j 有 i-1 种取值，因此共有 (i-1)\*dp[i-1] 种错误装信方式。
+- i==k，交換 i 和 k 的信後，它們的信和信封在正確的位置，但是其餘 i-2 封信有 dp[i-2] 種錯誤裝信的方式。由於 j 有 i-1 種取值，因此共有 (i-1)\*dp[i-2] 種錯誤裝信方式。
+- i != k，交換 i 和 j 的信後，第 i 個信和信封在正確的位置，其餘 i-1 封信有 dp[i-1] 種錯誤裝信方式。由於 j 有 i-1 種取值，因此共有 (i-1)\*dp[i-1] 種錯誤裝信方式。
 
-综上所述，错误装信数量方式数量为：
+綜上所述，錯誤裝信數量方式數量為：
 
 <!--<div align="center"><img src="https://latex.codecogs.com/gif.latex?dp[i]=(i-1)*dp[i-2]+(i-1)*dp[i-1]" class="mathjax-pic"/></div> <br>-->
 
 <div align="center"> <img src="pics/da1f96b9-fd4d-44ca-8925-fb14c5733388.png" width="350px"> </div><br>
 
-## 5. 母牛生产
+## 5. 母牛生產
 
-[程序员代码面试指南-P181](#)
+[程序員代碼面試指南-P181](#)
 
-题目描述：假设农场中成熟的母牛每年都会生 1 头小母牛，并且永远不会死。第一年有 1 只小母牛，从第二年开始，母牛开始生小母牛。每只小母牛 3 年之后成熟又可以生小母牛。给定整数 N，求 N 年后牛的数量。
+題目描述：假設農場中成熟的母牛每年都會生 1 頭小母牛，並且永遠不會死。第一年有 1 只小母牛，從第二年開始，母牛開始生小母牛。每隻小母牛 3 年之後成熟又可以生小母牛。給定整數 N，求 N 年後牛的數量。
 
-第 i 年成熟的牛的数量为：
+第 i 年成熟的牛的數量為：
 
 <!--<div align="center"><img src="https://latex.codecogs.com/gif.latex?dp[i]=dp[i-1]+dp[i-3]" class="mathjax-pic"/></div> <br>-->
 
 <div align="center"> <img src="pics/879814ee-48b5-4bcb-86f5-dcc400cb81ad.png" width="250px"> </div><br>
 
-# 矩阵路径
+# 矩陣路徑
 
-## 1. 矩阵的最小路径和
+## 1. 矩陣的最小路徑和
 
 [64. Minimum Path Sum (Medium)](https://leetcode.com/problems/minimum-path-sum/description/)
 
@@ -168,7 +168,7 @@ private int rob(int[] nums, int first, int last) {
 Given the above grid map, return 7. Because the path 1→3→1→1→1 minimizes the sum.
 ```
 
-题目描述：求从矩阵的左上角到右下角的最小路径和，每次只能向右和向下移动。
+題目描述：求從矩陣的左上角到右下角的最小路徑和，每次只能向右和向下移動。
 
 ```java
 public int minPathSum(int[][] grid) {
@@ -180,9 +180,9 @@ public int minPathSum(int[][] grid) {
     for (int i = 0; i < m; i++) {
         for (int j = 0; j < n; j++) {
             if (j == 0) {
-                dp[j] = dp[j];        // 只能从上侧走到该位置
+                dp[j] = dp[j];        // 只能從上側走到該位置
             } else if (i == 0) {
-                dp[j] = dp[j - 1];    // 只能从左侧走到该位置
+                dp[j] = dp[j - 1];    // 只能從左側走到該位置
             } else {
                 dp[j] = Math.min(dp[j - 1], dp[j]);
             }
@@ -193,11 +193,11 @@ public int minPathSum(int[][] grid) {
 }
 ```
 
-## 2. 矩阵的总路径数
+## 2. 矩陣的總路徑數
 
 [62. Unique Paths (Medium)](https://leetcode.com/problems/unique-paths/description/)
 
-题目描述：统计从矩阵左上角到右下角的路径总数，每次只能向右或者向下移动。
+題目描述：統計從矩陣左上角到右下角的路徑總數，每次只能向右或者向下移動。
 
 <div align="center"> <img src="pics/dc82f0f3-c1d4-4ac8-90ac-d5b32a9bd75a.jpg" width=""> </div><br>
 
@@ -214,12 +214,12 @@ public int uniquePaths(int m, int n) {
 }
 ```
 
-也可以直接用数学公式求解，这是一个组合问题。机器人总共移动的次数 S=m+n-2，向下移动的次数 D=m-1，那么问题可以看成从 S 中取出 D 个位置的组合数量，这个问题的解为 C(S, D)。
+也可以直接用數學公式求解，這是一個組合問題。機器人總共移動的次數 S=m+n-2，向下移動的次數 D=m-1，那麼問題可以看成從 S 中取出 D 個位置的組合數量，這個問題的解為 C(S, D)。
 
 ```java
 public int uniquePaths(int m, int n) {
-    int S = m + n - 2;  // 总共的移动次数
-    int D = m - 1;      // 向下的移动次数
+    int S = m + n - 2;  // 總共的移動次數
+    int D = m - 1;      // 向下的移動次數
     long ret = 1;
     for (int i = 1; i <= D; i++) {
         ret = ret * (S - D + i) / i;
@@ -228,9 +228,9 @@ public int uniquePaths(int m, int n) {
 }
 ```
 
-# 数组区间
+# 數組區間
 
-## 1. 数组区间和
+## 1. 數組區間和
 
 [303. Range Sum Query - Immutable (Easy)](https://leetcode.com/problems/range-sum-query-immutable/description/)
 
@@ -242,7 +242,7 @@ sumRange(2, 5) -> -1
 sumRange(0, 5) -> -3
 ```
 
-求区间 i \~ j 的和，可以转换为 sum[j + 1] - sum[i]，其中 sum[i] 为 0 \~ i - 1 的和。
+求區間 i \~ j 的和，可以轉換為 sum[j + 1] - sum[i]，其中 sum[i] 為 0 \~ i - 1 的和。
 
 ```java
 class NumArray {
@@ -262,7 +262,7 @@ class NumArray {
 }
 ```
 
-## 2. 数组中等差递增子区间的个数
+## 2. 數組中等差遞增子區間的個數
 
 [413. Arithmetic Slices (Medium)](https://leetcode.com/problems/arithmetic-slices/description/)
 
@@ -279,25 +279,25 @@ return: 6, for 3 arithmetic slices in A:
 [2, 3, 4]
 ```
 
-dp[i] 表示以 A[i] 为结尾的等差递增子区间的个数。
+dp[i] 表示以 A[i] 為結尾的等差遞增子區間的個數。
 
-当 A[i] - A[i-1] == A[i-1] - A[i-2]，那么 [A[i-2], A[i-1], A[i]] 构成一个等差递增子区间。而且在以 A[i-1] 为结尾的递增子区间的后面再加上一个 A[i]，一样可以构成新的递增子区间。
+當 A[i] - A[i-1] == A[i-1] - A[i-2]，那麼 [A[i-2], A[i-1], A[i]] 構成一個等差遞增子區間。而且在以 A[i-1] 為結尾的遞增子區間的後面再加上一個 A[i]，一樣可以構成新的遞增子區間。
 
 ```html
 dp[2] = 1
     [0, 1, 2]
 dp[3] = dp[2] + 1 = 2
-    [0, 1, 2, 3], // [0, 1, 2] 之后加一个 3
-    [1, 2, 3]     // 新的递增子区间
+    [0, 1, 2, 3], // [0, 1, 2] 之後加一個 3
+    [1, 2, 3]     // 新的遞增子區間
 dp[4] = dp[3] + 1 = 3
-    [0, 1, 2, 3, 4], // [0, 1, 2, 3] 之后加一个 4
-    [1, 2, 3, 4],    // [1, 2, 3] 之后加一个 4
-    [2, 3, 4]        // 新的递增子区间
+    [0, 1, 2, 3, 4], // [0, 1, 2, 3] 之後加一個 4
+    [1, 2, 3, 4],    // [1, 2, 3] 之後加一個 4
+    [2, 3, 4]        // 新的遞增子區間
 ```
 
-综上，在 A[i] - A[i-1] == A[i-1] - A[i-2] 时，dp[i] = dp[i-1] + 1。
+綜上，在 A[i] - A[i-1] == A[i-1] - A[i-2] 時，dp[i] = dp[i-1] + 1。
 
-因为递增子区间不一定以最后一个元素为结尾，可以是任意一个元素结尾，因此需要返回 dp 数组累加的结果。
+因為遞增子區間不一定以最後一個元素為結尾，可以是任意一個元素結尾，因此需要返回 dp 數組累加的結果。
 
 ```java
 public int numberOfArithmeticSlices(int[] A) {
@@ -319,13 +319,13 @@ public int numberOfArithmeticSlices(int[] A) {
 }
 ```
 
-# 分割整数
+# 分割整數
 
-## 1. 分割整数的最大乘积
+## 1. 分割整數的最大乘積
 
 [343. Integer Break (Medim)](https://leetcode.com/problems/integer-break/description/)
 
-题目描述：For example, given n = 2, return 1 (2 = 1 + 1); given n = 10, return 36 (10 = 3 + 3 + 4).
+題目描述：For example, given n = 2, return 1 (2 = 1 + 1); given n = 10, return 36 (10 = 3 + 3 + 4).
 
 ```java
 public int integerBreak(int n) {
@@ -340,11 +340,11 @@ public int integerBreak(int n) {
 }
 ```
 
-## 2. 按平方数来分割整数
+## 2. 按平方數來分割整數
 
 [279. Perfect Squares(Medium)](https://leetcode.com/problems/perfect-squares/description/)
 
-题目描述：For example, given n = 12, return 3 because 12 = 4 + 4 + 4; given n = 13, return 2 because 13 = 4 + 9.
+題目描述：For example, given n = 12, return 3 because 12 = 4 + 4 + 4; given n = 13, return 2 because 13 = 4 + 9.
 
 ```java
 public int numSquares(int n) {
@@ -376,11 +376,11 @@ private List<Integer> generateSquareList(int n) {
 }
 ```
 
-## 3. 分割整数构成字母字符串
+## 3. 分割整數構成字母字符串
 
 [91. Decode Ways (Medium)](https://leetcode.com/problems/decode-ways/description/)
 
-题目描述：Given encoded message "12", it could be decoded as "AB" (1 2) or "L" (12).
+題目描述：Given encoded message "12", it could be decoded as "AB" (1 2) or "L" (12).
 
 ```java
 public int numDecodings(String s) {
@@ -408,23 +408,23 @@ public int numDecodings(String s) {
 }
 ```
 
-# 最长递增子序列
+# 最長遞增子序列
 
-已知一个序列 {S<sub>1</sub>, S<sub>2</sub>,...,S<sub>n</sub>}，取出若干数组成新的序列 {S<sub>i1</sub>, S<sub>i2</sub>,..., S<sub>im</sub>}，其中 i1、i2 ... im 保持递增，即新序列中各个数仍然保持原数列中的先后顺序，称新序列为原序列的一个 **子序列** 。
+已知一個序列 {S<sub>1</sub>, S<sub>2</sub>,...,S<sub>n</sub>}，取出若干數組成新的序列 {S<sub>i1</sub>, S<sub>i2</sub>,..., S<sub>im</sub>}，其中 i1、i2 ... im 保持遞增，即新序列中各個數仍然保持原數列中的先後順序，稱新序列為原序列的一個 **子序列** 。
 
-如果在子序列中，当下标 ix > iy 时，S<sub>ix</sub> > S<sub>iy</sub>，称子序列为原序列的一个 **递增子序列** 。
+如果在子序列中，當下標 ix > iy 時，S<sub>ix</sub> > S<sub>iy</sub>，稱子序列為原序列的一個 **遞增子序列** 。
 
-定义一个数组 dp 存储最长递增子序列的长度，dp[n] 表示以 S<sub>n</sub> 结尾的序列的最长递增子序列长度。对于一个递增子序列 {S<sub>i1</sub>, S<sub>i2</sub>,...,S<sub>im</sub>}，如果 im < n 并且 S<sub>im</sub> < S<sub>n</sub>，此时 {S<sub>i1</sub>, S<sub>i2</sub>,..., S<sub>im</sub>, S<sub>n</sub>} 为一个递增子序列，递增子序列的长度增加 1。满足上述条件的递增子序列中，长度最长的那个递增子序列就是要找的，在长度最长的递增子序列上加上 S<sub>n</sub> 就构成了以 S<sub>n</sub> 为结尾的最长递增子序列。因此 dp[n] = max{ dp[i]+1 | S<sub>i</sub> < S<sub>n</sub> && i < n} 。
+定義一個數組 dp 存儲最長遞增子序列的長度，dp[n] 表示以 S<sub>n</sub> 結尾的序列的最長遞增子序列長度。對於一個遞增子序列 {S<sub>i1</sub>, S<sub>i2</sub>,...,S<sub>im</sub>}，如果 im < n 並且 S<sub>im</sub> < S<sub>n</sub>，此時 {S<sub>i1</sub>, S<sub>i2</sub>,..., S<sub>im</sub>, S<sub>n</sub>} 為一個遞增子序列，遞增子序列的長度增加 1。滿足上述條件的遞增子序列中，長度最長的那個遞增子序列就是要找的，在長度最長的遞增子序列上加上 S<sub>n</sub> 就構成了以 S<sub>n</sub> 為結尾的最長遞增子序列。因此 dp[n] = max{ dp[i]+1 | S<sub>i</sub> < S<sub>n</sub> && i < n} 。
 
-因为在求 dp[n] 时可能无法找到一个满足条件的递增子序列，此时 {S<sub>n</sub>} 就构成了递增子序列，需要对前面的求解方程做修改，令 dp[n] 最小为 1，即：
+因為在求 dp[n] 時可能無法找到一個滿足條件的遞增子序列，此時 {S<sub>n</sub>} 就構成了遞增子序列，需要對前面的求解方程做修改，令 dp[n] 最小為 1，即：
 
 <!--<div align="center"><img src="https://latex.codecogs.com/gif.latex?dp[n]=max\{1,dp[i]+1|S_i<S_n\&\&i<n\}" class="mathjax-pic"/></div> <br>-->
 
 <div align="center"> <img src="pics/ee994da4-0fc7-443d-ac56-c08caf00a204.jpg" width="350px"> </div><br>
 
-对于一个长度为 N 的序列，最长递增子序列并不一定会以 S<sub>N</sub> 为结尾，因此 dp[N] 不是序列的最长递增子序列的长度，需要遍历 dp 数组找出最大值才是所要的结果，max{ dp[i] | 1 <= i <= N} 即为所求。
+對於一個長度為 N 的序列，最長遞增子序列並不一定會以 S<sub>N</sub> 為結尾，因此 dp[N] 不是序列的最長遞增子序列的長度，需要遍歷 dp 數組找出最大值才是所要的結果，max{ dp[i] | 1 <= i <= N} 即為所求。
 
-## 1. 最长递增子序列
+## 1. 最長遞增子序列
 
 [300. Longest Increasing Subsequence (Medium)](https://leetcode.com/problems/longest-increasing-subsequence/description/)
 
@@ -445,7 +445,7 @@ public int lengthOfLIS(int[] nums) {
 }
 ```
 
-使用 Stream 求最大值会导致运行时间过长，可以改成以下形式：
+使用 Stream 求最大值會導致運行時間過長，可以改成以下形式：
 
 ```java
 int ret = 0;
@@ -455,14 +455,14 @@ for (int i = 0; i < n; i++) {
 return ret;
 ```
 
-以上解法的时间复杂度为 O(N<sup>2</sup>)，可以使用二分查找将时间复杂度降低为 O(NlogN)。
+以上解法的時間複雜度為 O(N<sup>2</sup>)，可以使用二分查找將時間複雜度降低為 O(NlogN)。
 
-定义一个 tails 数组，其中 tails[i] 存储长度为 i + 1 的最长递增子序列的最后一个元素。对于一个元素 x，
+定義一個 tails 數組，其中 tails[i] 存儲長度為 i + 1 的最長遞增子序列的最後一個元素。對於一個元素 x，
 
-- 如果它大于 tails 数组所有的值，那么把它添加到 tails 后面，表示最长递增子序列长度加 1；
-- 如果 tails[i-1] < x <= tails[i]，那么更新 tails[i] = x。
+- 如果它大於 tails 數組所有的值，那麼把它添加到 tails 後面，表示最長遞增子序列長度加 1；
+- 如果 tails[i-1] < x <= tails[i]，那麼更新 tails[i] = x。
 
-例如对于数组 [4,3,6,5]，有：
+例如對於數組 [4,3,6,5]，有：
 
 ```html
 tails      len      num
@@ -473,7 +473,7 @@ tails      len      num
 [3,5]      2        null
 ```
 
-可以看出 tails 数组保持有序，因此在查找 S<sub>i</sub> 位于 tails 数组的位置时就可以使用二分查找。
+可以看出 tails 數組保持有序，因此在查找 S<sub>i</sub> 位於 tails 數組的位置時就可以使用二分查找。
 
 ```java
 public int lengthOfLIS(int[] nums) {
@@ -506,7 +506,7 @@ private int binarySearch(int[] tails, int len, int key) {
 }
 ```
 
-## 2. 一组整数对能够构成的最长链
+## 2. 一組整數對能夠構成的最長鏈
 
 [646. Maximum Length of Pair Chain (Medium)](https://leetcode.com/problems/maximum-length-of-pair-chain/description/)
 
@@ -516,7 +516,7 @@ Output: 2
 Explanation: The longest chain is [1,2] -> [3,4]
 ```
 
-题目描述：对于 (a, b) 和 (c, d) ，如果 b < c，则它们可以构成一条链。
+題目描述：對於 (a, b) 和 (c, d) ，如果 b < c，則它們可以構成一條鏈。
 
 ```java
 public int findLongestChain(int[][] pairs) {
@@ -538,7 +538,7 @@ public int findLongestChain(int[][] pairs) {
 }
 ```
 
-## 3. 最长摆动子序列
+## 3. 最長擺動子序列
 
 [376. Wiggle Subsequence (Medium)](https://leetcode.com/problems/wiggle-subsequence/description/)
 
@@ -555,7 +555,7 @@ Input: [1,2,3,4,5,6,7,8,9]
 Output: 2
 ```
 
-要求：使用 O(N) 时间复杂度求解。
+要求：使用 O(N) 時間複雜度求解。
 
 ```java
 public int wiggleMaxLength(int[] nums) {
@@ -574,28 +574,28 @@ public int wiggleMaxLength(int[] nums) {
 }
 ```
 
-# 最长公共子序列
+# 最長公共子序列
 
-对于两个子序列 S1 和 S2，找出它们最长的公共子序列。
+對於兩個子序列 S1 和 S2，找出它們最長的公共子序列。
 
-定义一个二维数组 dp 用来存储最长公共子序列的长度，其中 dp[i][j] 表示 S1 的前 i 个字符与 S2 的前 j 个字符最长公共子序列的长度。考虑 S1<sub>i</sub> 与 S2<sub>j</sub> 值是否相等，分为两种情况：
+定義一個二維數組 dp 用來存儲最長公共子序列的長度，其中 dp[i][j] 表示 S1 的前 i 個字符與 S2 的前 j 個字符最長公共子序列的長度。考慮 S1<sub>i</sub> 與 S2<sub>j</sub> 值是否相等，分為兩種情況：
 
-- 当 S1<sub>i</sub>==S2<sub>j</sub> 时，那么就能在 S1 的前 i-1 个字符与 S2 的前 j-1 个字符最长公共子序列的基础上再加上 S1<sub>i</sub> 这个值，最长公共子序列长度加 1，即 dp[i][j] = dp[i-1][j-1] + 1。
-- 当 S1<sub>i</sub> != S2<sub>j</sub> 时，此时最长公共子序列为 S1 的前 i-1 个字符和 S2 的前 j 个字符最长公共子序列，或者 S1 的前 i 个字符和 S2 的前 j-1 个字符最长公共子序列，取它们的最大者，即 dp[i][j] = max{ dp[i-1][j], dp[i][j-1] }。
+- 當 S1<sub>i</sub>==S2<sub>j</sub> 時，那麼就能在 S1 的前 i-1 個字符與 S2 的前 j-1 個字符最長公共子序列的基礎上再加上 S1<sub>i</sub> 這個值，最長公共子序列長度加 1，即 dp[i][j] = dp[i-1][j-1] + 1。
+- 當 S1<sub>i</sub> != S2<sub>j</sub> 時，此時最長公共子序列為 S1 的前 i-1 個字符和 S2 的前 j 個字符最長公共子序列，或者 S1 的前 i 個字符和 S2 的前 j-1 個字符最長公共子序列，取它們的最大者，即 dp[i][j] = max{ dp[i-1][j], dp[i][j-1] }。
 
-综上，最长公共子序列的状态转移方程为：
+綜上，最長公共子序列的狀態轉移方程為：
 
 <!--<div align="center"><img src="https://latex.codecogs.com/gif.latex?dp[i][j]=\left\{\begin{array}{rcl}dp[i-1][j-1]&&{S1_i==S2_j}\\max(dp[i-1][j],dp[i][j-1])&&{S1_i<>S2_j}\end{array}\right." class="mathjax-pic"/></div> <br>-->
 
 <div align="center"> <img src="pics/ecd89a22-c075-4716-8423-e0ba89230e9a.jpg" width="450px"> </div><br>
 
-对于长度为 N 的序列 S<sub>1</sub> 和长度为 M 的序列 S<sub>2</sub>，dp[N][M] 就是序列 S<sub>1</sub> 和序列 S<sub>2</sub> 的最长公共子序列长度。
+對於長度為 N 的序列 S<sub>1</sub> 和長度為 M 的序列 S<sub>2</sub>，dp[N][M] 就是序列 S<sub>1</sub> 和序列 S<sub>2</sub> 的最長公共子序列長度。
 
-与最长递增子序列相比，最长公共子序列有以下不同点：
+與最長遞增子序列相比，最長公共子序列有以下不同點：
 
-- 针对的是两个序列，求它们的最长公共子序列。
-- 在最长递增子序列中，dp[i] 表示以 S<sub>i</sub> 为结尾的最长递增子序列长度，子序列必须包含 S<sub>i</sub> ；在最长公共子序列中，dp[i][j] 表示 S1 中前 i 个字符与 S2 中前 j 个字符的最长公共子序列长度，不一定包含 S1<sub>i</sub> 和 S2<sub>j</sub>。
-- 在求最终解时，最长公共子序列中 dp[N][M] 就是最终解，而最长递增子序列中 dp[N] 不是最终解，因为以 S<sub>N</sub> 为结尾的最长递增子序列不一定是整个序列最长递增子序列，需要遍历一遍 dp 数组找到最大者。
+- 針對的是兩個序列，求它們的最長公共子序列。
+- 在最長遞增子序列中，dp[i] 表示以 S<sub>i</sub> 為結尾的最長遞增子序列長度，子序列必須包含 S<sub>i</sub> ；在最長公共子序列中，dp[i][j] 表示 S1 中前 i 個字符與 S2 中前 j 個字符的最長公共子序列長度，不一定包含 S1<sub>i</sub> 和 S2<sub>j</sub>。
+- 在求最終解時，最長公共子序列中 dp[N][M] 就是最終解，而最長遞增子序列中 dp[N] 不是最終解，因為以 S<sub>N</sub> 為結尾的最長遞增子序列不一定是整個序列最長遞增子序列，需要遍歷一遍 dp 數組找到最大者。
 
 ```java
 public int lengthOfLCS(int[] nums1, int[] nums2) {
@@ -614,26 +614,26 @@ public int lengthOfLCS(int[] nums1, int[] nums2) {
 }
 ```
 
-# 0-1 背包
+# 0-1 揹包
 
-有一个容量为 N 的背包，要用这个背包装下物品的价值最大，这些物品有两个属性：体积 w 和价值 v。
+有一個容量為 N 的揹包，要用這個揹包裝下物品的價值最大，這些物品有兩個屬性：體積 w 和價值 v。
 
-定义一个二维数组 dp 存储最大价值，其中 dp[i][j] 表示前 i 件物品体积不超过 j 的情况下能达到的最大价值。设第 i 件物品体积为 w，价值为 v，根据第 i 件物品是否添加到背包中，可以分两种情况讨论：
+定義一個二維數組 dp 存儲最大價值，其中 dp[i][j] 表示前 i 件物品體積不超過 j 的情況下能達到的最大價值。設第 i 件物品體積為 w，價值為 v，根據第 i 件物品是否添加到揹包中，可以分兩種情況討論：
 
-- 第 i 件物品没添加到背包，总体积不超过 j 的前 i 件物品的最大价值就是总体积不超过 j 的前 i-1 件物品的最大价值，dp[i][j] = dp[i-1][j]。
-- 第 i 件物品添加到背包中，dp[i][j] = dp[i-1][j-w] + v。
+- 第 i 件物品沒添加到揹包，總體積不超過 j 的前 i 件物品的最大價值就是總體積不超過 j 的前 i-1 件物品的最大價值，dp[i][j] = dp[i-1][j]。
+- 第 i 件物品添加到揹包中，dp[i][j] = dp[i-1][j-w] + v。
 
-第 i 件物品可添加也可以不添加，取决于哪种情况下最大价值更大。因此，0-1 背包的状态转移方程为：
+第 i 件物品可添加也可以不添加，取決於哪種情況下最大價值更大。因此，0-1 揹包的狀態轉移方程為：
 
 <!--<div align="center"><img src="https://latex.codecogs.com/gif.latex?dp[i][j]=max(dp[i-1][j],dp[i-1][j-w]+v)" class="mathjax-pic"/></div> <br>-->
 
 <div align="center"> <img src="pics/8cb2be66-3d47-41ba-b55b-319fc68940d4.png" width="400px"> </div><br>
 
 ```java
-// W 为背包总体积
-// N 为物品数量
-// weights 数组存储 N 个物品的重量
-// values 数组存储 N 个物品的价值
+// W 為揹包總體積
+// N 為物品數量
+// weights 數組存儲 N 個物品的重量
+// values 數組存儲 N 個物品的價值
 public int knapsack(int W, int N, int[] weights, int[] values) {
     int[][] dp = new int[N + 1][W + 1];
     for (int i = 1; i <= N; i++) {
@@ -650,15 +650,15 @@ public int knapsack(int W, int N, int[] weights, int[] values) {
 }
 ```
 
-**空间优化** 
+**空間優化** 
 
-在程序实现时可以对 0-1 背包做优化。观察状态转移方程可以知道，前 i 件物品的状态仅与前 i-1 件物品的状态有关，因此可以将 dp 定义为一维数组，其中 dp[j] 既可以表示 dp[i-1][j] 也可以表示 dp[i][j]。此时，
+在程序實現時可以對 0-1 揹包做優化。觀察狀態轉移方程可以知道，前 i 件物品的狀態僅與前 i-1 件物品的狀態有關，因此可以將 dp 定義為一維數組，其中 dp[j] 既可以表示 dp[i-1][j] 也可以表示 dp[i][j]。此時，
 
 <!--<div align="center"><img src="https://latex.codecogs.com/gif.latex?dp[j]=max(dp[j],dp[j-w]+v)" class="mathjax-pic"/></div> <br>-->
 
 <div align="center"> <img src="pics/9ae89f16-7905-4a6f-88a2-874b4cac91f4.jpg" width="300px"> </div><br>
 
-因为 dp[j-w] 表示 dp[i-1][j-w]，因此不能先求 dp[i][j-w]，防止将 dp[i-1][j-w] 覆盖。也就是说要先计算 dp[i][j] 再计算 dp[i][j-w]，在程序实现时需要按倒序来循环求解。
+因為 dp[j-w] 表示 dp[i-1][j-w]，因此不能先求 dp[i][j-w]，防止將 dp[i-1][j-w] 覆蓋。也就是說要先計算 dp[i][j] 再計算 dp[i][j-w]，在程序實現時需要按倒序來循環求解。
 
 ```java
 public int knapsack(int W, int N, int[] weights, int[] values) {
@@ -675,9 +675,9 @@ public int knapsack(int W, int N, int[] weights, int[] values) {
 }
 ```
 
-**无法使用贪心算法的解释** 
+**無法使用貪心算法的解釋** 
 
-0-1 背包问题无法使用贪心算法来求解，也就是说不能按照先添加性价比最高的物品来达到最优，这是因为这种方式可能造成背包空间的浪费，从而无法达到最优。考虑下面的物品和一个容量为 5 的背包，如果先添加物品 0 再添加物品 1，那么只能存放的价值为 16，浪费了大小为 2 的空间。最优的方式是存放物品 1 和物品 2，价值为 22.
+0-1 揹包問題無法使用貪心算法來求解，也就是說不能按照先添加性價比最高的物品來達到最優，這是因為這種方式可能造成揹包空間的浪費，從而無法達到最優。考慮下面的物品和一個容量為 5 的揹包，如果先添加物品 0 再添加物品 1，那麼只能存放的價值為 16，浪費了大小為 2 的空間。最優的方式是存放物品 1 和物品 2，價值為 22.
 
 | id | w | v | v/w |
 | --- | --- | --- | --- |
@@ -685,17 +685,17 @@ public int knapsack(int W, int N, int[] weights, int[] values) {
 | 1 | 2 | 10 | 5 |
 | 2 | 3 | 12 | 4 |
 
-**变种** 
+**變種** 
 
-- 完全背包：物品数量为无限个
+- 完全揹包：物品數量為無限個
 
-- 多重背包：物品数量有限制
+- 多重揹包：物品數量有限制
 
-- 多维费用背包：物品不仅有重量，还有体积，同时考虑这两种限制
+- 多維費用揹包：物品不僅有重量，還有體積，同時考慮這兩種限制
 
-- 其它：物品之间相互约束或者依赖
+- 其它：物品之間相互約束或者依賴
 
-## 1. 划分数组为和相等的两部分
+## 1. 劃分數組為和相等的兩部分
 
 [416. Partition Equal Subset Sum (Medium)](https://leetcode.com/problems/partition-equal-subset-sum/description/)
 
@@ -707,7 +707,7 @@ Output: true
 Explanation: The array can be partitioned as [1, 5, 5] and [11].
 ```
 
-可以看成一个背包大小为 sum/2 的 0-1 背包问题。
+可以看成一個揹包大小為 sum/2 的 0-1 揹包問題。
 
 ```java
 public boolean canPartition(int[] nums) {
@@ -718,8 +718,8 @@ public boolean canPartition(int[] nums) {
     int W = sum / 2;
     boolean[] dp = new boolean[W + 1];
     dp[0] = true;
-    for (int num : nums) {                 // 0-1 背包一个物品只能用一次
-        for (int i = W; i >= num; i--) {   // 从后往前，先计算 dp[i] 再计算 dp[i-num]
+    for (int num : nums) {                 // 0-1 揹包一個物品只能用一次
+        for (int i = W; i >= num; i--) {   // 從後往前，先計算 dp[i] 再計算 dp[i-num]
             dp[i] = dp[i] || dp[i - num];
         }
     }
@@ -735,7 +735,7 @@ private int computeArraySum(int[] nums) {
 }
 ```
 
-## 2. 改变一组数的正负号使得它们的和为一给定数
+## 2. 改變一組數的正負號使得它們的和為一給定數
 
 [494. Target Sum (Medium)](https://leetcode.com/problems/target-sum/description/)
 
@@ -753,9 +753,9 @@ Explanation:
 There are 5 ways to assign symbols to make the sum of nums be target 3.
 ```
 
-该问题可以转换为 Subset Sum 问题，从而使用 0-1 背包的方法来求解。
+該問題可以轉換為 Subset Sum 問題，從而使用 0-1 揹包的方法來求解。
 
-可以将这组数看成两部分，P 和 N，其中 P 使用正号，N 使用负号，有以下推导：
+可以將這組數看成兩部分，P 和 N，其中 P 使用正號，N 使用負號，有以下推導：
 
 ```html
                   sum(P) - sum(N) = target
@@ -763,7 +763,7 @@ sum(P) + sum(N) + sum(P) - sum(N) = target + sum(P) + sum(N)
                        2 * sum(P) = target + sum(nums)
 ```
 
-因此只要找到一个子集，令它们都取正号，并且和等于 (target + sum(nums))/2，就证明存在解。
+因此只要找到一個子集，令它們都取正號，並且和等於 (target + sum(nums))/2，就證明存在解。
 
 ```java
 public int findTargetSumWays(int[] nums, int S) {
@@ -807,7 +807,7 @@ private int findTargetSumWays(int[] nums, int start, int S) {
 }
 ```
 
-## 3. 01 字符构成最多的字符串
+## 3. 01 字符構成最多的字符串
 
 [474. Ones and Zeroes (Medium)](https://leetcode.com/problems/ones-and-zeroes/description/)
 
@@ -818,7 +818,7 @@ Output: 4
 Explanation: There are totally 4 strings can be formed by the using of 5 0s and 3 1s, which are "10","0001","1","0"
 ```
 
-这是一个多维费用的 0-1 背包问题，有两个背包大小，0 的数量和 1 的数量。
+這是一個多維費用的 0-1 揹包問題，有兩個揹包大小，0 的數量和 1 的數量。
 
 ```java
 public int findMaxForm(String[] strs, int m, int n) {
@@ -826,7 +826,7 @@ public int findMaxForm(String[] strs, int m, int n) {
         return 0;
     }
     int[][] dp = new int[m + 1][n + 1];
-    for (String s : strs) {    // 每个字符串只能用一次
+    for (String s : strs) {    // 每個字符串只能用一次
         int ones = 0, zeros = 0;
         for (char c : s.toCharArray()) {
             if (c == '0') {
@@ -845,7 +845,7 @@ public int findMaxForm(String[] strs, int m, int n) {
 }
 ```
 
-## 4. 找零钱的最少硬币数
+## 4. 找零錢的最少硬幣數
 
 [322. Coin Change (Medium)](https://leetcode.com/problems/coin-change/description/)
 
@@ -859,13 +859,13 @@ coins = [2], amount = 3
 return -1.
 ```
 
-题目描述：给一些面额的硬币，要求用这些硬币来组成给定面额的钱数，并且使得硬币数量最少。硬币可以重复使用。
+題目描述：給一些面額的硬幣，要求用這些硬幣來組成給定面額的錢數，並且使得硬幣數量最少。硬幣可以重複使用。
 
-- 物品：硬币
-- 物品大小：面额
-- 物品价值：数量
+- 物品：硬幣
+- 物品大小：面額
+- 物品價值：數量
 
-因为硬币可以重复使用，因此这是一个完全背包问题。完全背包只需要将 0-1 背包的逆序遍历 dp 数组改为正序遍历即可。
+因為硬幣可以重複使用，因此這是一個完全揹包問題。完全揹包只需要將 0-1 揹包的逆序遍歷 dp 數組改為正序遍歷即可。
 
 ```java
 public int coinChange(int[] coins, int amount) {
@@ -874,7 +874,7 @@ public int coinChange(int[] coins, int amount) {
     }
     int[] dp = new int[amount + 1];
     for (int coin : coins) {
-        for (int i = coin; i <= amount; i++) { //将逆序遍历改为正序遍历
+        for (int i = coin; i <= amount; i++) { //將逆序遍歷改為正序遍歷
             if (i == coin) {
                 dp[i] = 1;
             } else if (dp[i] == 0 && dp[i - coin] != 0) {
@@ -888,7 +888,7 @@ public int coinChange(int[] coins, int amount) {
 }
 ```
 
-## 5. 找零钱的硬币数组合
+## 5. 找零錢的硬幣數組合
 
 [518\. Coin Change 2 (Medium)](https://leetcode.com/problems/coin-change-2/description/)
 
@@ -902,7 +902,7 @@ Explanation: there are four ways to make up the amount:
 5=1+1+1+1+1
 ```
 
-完全背包问题，使用 dp 记录可达成目标的组合数目。
+完全揹包問題，使用 dp 記錄可達成目標的組合數目。
 
 ```java
 public int change(int amount, int[] coins) {
@@ -920,7 +920,7 @@ public int change(int amount, int[] coins) {
 }
 ```
 
-## 6. 字符串按单词列表分割
+## 6. 字符串按單詞列表分割
 
 [139. Word Break (Medium)](https://leetcode.com/problems/word-break/description/)
 
@@ -930,15 +930,15 @@ dict = ["leet", "code"].
 Return true because "leetcode" can be segmented as "leet code".
 ```
 
-dict 中的单词没有使用次数的限制，因此这是一个完全背包问题。
+dict 中的單詞沒有使用次數的限制，因此這是一個完全揹包問題。
 
-该问题涉及到字典中单词的使用顺序，也就是说物品必须按一定顺序放入背包中，例如下面的 dict 就不够组成字符串 "leetcode"：
+該問題涉及到字典中單詞的使用順序，也就是說物品必須按一定順序放入揹包中，例如下面的 dict 就不夠組成字符串 "leetcode"：
 
 ```html
 ["lee", "tc", "cod"]
 ```
 
-求解顺序的完全背包问题时，对物品的迭代应该放在最里层，对背包的迭代放在外层，只有这样才能让物品按一定顺序放入背包中。
+求解順序的完全揹包問題時，對物品的迭代應該放在最裡層，對揹包的迭代放在外層，只有這樣才能讓物品按一定順序放入揹包中。
 
 ```java
 public boolean wordBreak(String s, List<String> wordDict) {
@@ -946,7 +946,7 @@ public boolean wordBreak(String s, List<String> wordDict) {
     boolean[] dp = new boolean[n + 1];
     dp[0] = true;
     for (int i = 1; i <= n; i++) {
-        for (String word : wordDict) {   // 对物品的迭代应该放在最里层
+        for (String word : wordDict) {   // 對物品的迭代應該放在最裡層
             int len = word.length();
             if (len <= i && word.equals(s.substring(i - len, i))) {
                 dp[i] = dp[i] || dp[i - len];
@@ -957,7 +957,7 @@ public boolean wordBreak(String s, List<String> wordDict) {
 }
 ```
 
-## 7. 组合总和
+## 7. 組合總和
 
 [377. Combination Sum IV (Medium)](https://leetcode.com/problems/combination-sum-iv/description/)
 
@@ -979,7 +979,7 @@ Note that different sequences are counted as different combinations.
 Therefore the output is 7.
 ```
 
-涉及顺序的完全背包。
+涉及順序的完全揹包。
 
 ```java
 public int combinationSum4(int[] nums, int target) {
@@ -1000,11 +1000,11 @@ public int combinationSum4(int[] nums, int target) {
 
 # 股票交易
 
-## 1. 需要冷却期的股票交易
+## 1. 需要冷卻期的股票交易
 
 [309. Best Time to Buy and Sell Stock with Cooldown(Medium)](https://leetcode.com/problems/best-time-to-buy-and-sell-stock-with-cooldown/description/)
 
-题目描述：交易之后需要有一天的冷却时间。
+題目描述：交易之後需要有一天的冷卻時間。
 
 <div align="center"> <img src="pics/83acbb02-872a-4178-b22a-c89c3cb60263.jpg" width="300px"> </div><br>
 
@@ -1031,7 +1031,7 @@ public int maxProfit(int[] prices) {
 }
 ```
 
-## 2. 需要交易费用的股票交易
+## 2. 需要交易費用的股票交易
 
 [714. Best Time to Buy and Sell Stock with Transaction Fee (Medium)](https://leetcode.com/problems/best-time-to-buy-and-sell-stock-with-transaction-fee/description/)
 
@@ -1046,7 +1046,7 @@ Selling at prices[5] = 9
 The total profit is ((8 - 1) - 2) + ((9 - 4) - 2) = 8.
 ```
 
-题目描述：每交易一次，都要支付一定的费用。
+題目描述：每交易一次，都要支付一定的費用。
 
 <div align="center"> <img src="pics/1e2c588c-72b7-445e-aacb-d55dc8a88c29.png" width="300px"> </div><br>
 
@@ -1070,7 +1070,7 @@ public int maxProfit(int[] prices, int fee) {
 ```
 
 
-## 3. 只能进行两次的股票交易
+## 3. 只能進行兩次的股票交易
 
 [123. Best Time to Buy and Sell Stock III (Hard)](https://leetcode.com/problems/best-time-to-buy-and-sell-stock-iii/description/)
 
@@ -1096,14 +1096,14 @@ public int maxProfit(int[] prices) {
 }
 ```
 
-## 4. 只能进行 k 次的股票交易
+## 4. 只能進行 k 次的股票交易
 
 [188. Best Time to Buy and Sell Stock IV (Hard)](https://leetcode.com/problems/best-time-to-buy-and-sell-stock-iv/description/)
 
 ```java
 public int maxProfit(int k, int[] prices) {
     int n = prices.length;
-    if (k >= n / 2) {   // 这种情况下该问题退化为普通的股票交易问题
+    if (k >= n / 2) {   // 這種情況下該問題退化為普通的股票交易問題
         int maxProfit = 0;
         for (int i = 1; i < n; i++) {
             if (prices[i] > prices[i - 1]) {
@@ -1124,9 +1124,9 @@ public int maxProfit(int k, int[] prices) {
 }
 ```
 
-# 字符串编辑
+# 字符串編輯
 
-## 1. 删除两个字符串的字符使它们相等
+## 1. 刪除兩個字符串的字符使它們相等
 
 [583. Delete Operation for Two Strings (Medium)](https://leetcode.com/problems/delete-operation-for-two-strings/description/)
 
@@ -1136,7 +1136,7 @@ Output: 2
 Explanation: You need one step to make "sea" to "ea" and another step to make "eat" to "ea".
 ```
 
-可以转换为求两个字符串的最长公共子序列问题。
+可以轉換為求兩個字符串的最長公共子序列問題。
 
 ```java
 public int minDistance(String word1, String word2) {
@@ -1155,7 +1155,7 @@ public int minDistance(String word1, String word2) {
 }
 ```
 
-## 2. 编辑距离
+## 2. 編輯距離
 
 [72. Edit Distance (Hard)](https://leetcode.com/problems/edit-distance/description/)
 
@@ -1180,7 +1180,7 @@ exention -> exection (replace 'n' with 'c')
 exection -> execution (insert 'u')
 ```
 
-题目描述：修改一个字符串成为另一个字符串，使得修改次数最少。一次修改操作包括：插入一个字符、删除一个字符、替换一个字符。
+題目描述：修改一個字符串成為另一個字符串，使得修改次數最少。一次修改操作包括：插入一個字符、刪除一個字符、替換一個字符。
 
 ```java
 public int minDistance(String word1, String word2) {
@@ -1208,11 +1208,11 @@ public int minDistance(String word1, String word2) {
 }
 ```
 
-## 3. 复制粘贴字符
+## 3. 複製粘貼字符
 
 [650. 2 Keys Keyboard (Medium)](https://leetcode.com/problems/2-keys-keyboard/description/)
 
-题目描述：最开始只有一个字符 A，问需要多少次操作能够得到 n 个字符 A，每次操作可以复制当前所有的字符，或者粘贴。
+題目描述：最開始只有一個字符 A，問需要多少次操作能夠得到 n 個字符 A，每次操作可以複製當前所有的字符，或者粘貼。
 
 ```
 Input: 3
@@ -1254,10 +1254,10 @@ public int minSteps(int n) {
 
 
 
-# 微信公众号
+# 微信公眾號
 
 
-更多精彩内容将发布在微信公众号 CyC2018 上，你也可以在公众号后台和我交流学习和求职相关的问题。另外，公众号提供了该项目的 PDF 等离线阅读版本，后台回复 "下载" 即可领取。公众号也提供了一份技术面试复习大纲，不仅系统整理了面试知识点，而且标注了各个知识点的重要程度，从而帮你理清多而杂的面试知识点，后台回复 "大纲" 即可领取。我基本是按照这个大纲来进行复习的，对我拿到了 BAT 头条等 Offer 起到很大的帮助。你们完全可以和我一样根据大纲上列的知识点来进行复习，就不用看很多不重要的内容，也可以知道哪些内容很重要从而多安排一些复习时间。
+更多精彩內容將發佈在微信公眾號 CyC2018 上，你也可以在公眾號後臺和我交流學習和求職相關的問題。另外，公眾號提供了該項目的 PDF 等離線閱讀版本，後臺回覆 "下載" 即可領取。公眾號也提供了一份技術面試複習大綱，不僅系統整理了面試知識點，而且標註了各個知識點的重要程度，從而幫你理清多而雜的面試知識點，後臺回覆 "大綱" 即可領取。我基本是按照這個大綱來進行復習的，對我拿到了 BAT 頭條等 Offer 起到很大的幫助。你們完全可以和我一樣根據大綱上列的知識點來進行復習，就不用看很多不重要的內容，也可以知道哪些內容很重要從而多安排一些複習時間。
 
 
-<br><div align="center"><img width="320px" src="https://cs-notes-1256109796.cos.ap-guangzhou.myqcloud.com/other/公众号海报6.png"></img></div>
+<br><div align="center"><img width="320px" src="https://cs-notes-1256109796.cos.ap-guangzhou.myqcloud.com/other/公眾號海報6.png"></img></div>

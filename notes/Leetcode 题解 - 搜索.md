@@ -1,65 +1,65 @@
 <!-- GFM-TOC -->
 * [BFS](#bfs)
-    * [1. 计算在网格中从原点到特定点的最短路径长度](#1-计算在网格中从原点到特定点的最短路径长度)
-    * [2. 组成整数的最小平方数数量](#2-组成整数的最小平方数数量)
-    * [3. 最短单词路径](#3-最短单词路径)
+    * [1. 計算在網格中從原點到特定點的最短路徑長度](#1-計算在網格中從原點到特定點的最短路徑長度)
+    * [2. 組成整數的最小平方數數量](#2-組成整數的最小平方數數量)
+    * [3. 最短單詞路徑](#3-最短單詞路徑)
 * [DFS](#dfs)
-    * [1. 查找最大的连通面积](#1-查找最大的连通面积)
-    * [2. 矩阵中的连通分量数目](#2-矩阵中的连通分量数目)
-    * [3. 好友关系的连通分量数目](#3-好友关系的连通分量数目)
-    * [4. 填充封闭区域](#4-填充封闭区域)
-    * [5. 能到达的太平洋和大西洋的区域](#5-能到达的太平洋和大西洋的区域)
+    * [1. 查找最大的連通面積](#1-查找最大的連通面積)
+    * [2. 矩陣中的連通分量數目](#2-矩陣中的連通分量數目)
+    * [3. 好友關係的連通分量數目](#3-好友關係的連通分量數目)
+    * [4. 填充封閉區域](#4-填充封閉區域)
+    * [5. 能到達的太平洋和大西洋的區域](#5-能到達的太平洋和大西洋的區域)
 * [Backtracking](#backtracking)
-    * [1. 数字键盘组合](#1-数字键盘组合)
-    * [2. IP 地址划分](#2-ip-地址划分)
-    * [3. 在矩阵中寻找字符串](#3-在矩阵中寻找字符串)
-    * [4. 输出二叉树中所有从根到叶子的路径](#4-输出二叉树中所有从根到叶子的路径)
+    * [1. 數字鍵盤組合](#1-數字鍵盤組合)
+    * [2. IP 地址劃分](#2-ip-地址劃分)
+    * [3. 在矩陣中尋找字符串](#3-在矩陣中尋找字符串)
+    * [4. 輸出二叉樹中所有從根到葉子的路徑](#4-輸出二叉樹中所有從根到葉子的路徑)
     * [5. 排列](#5-排列)
     * [6. 含有相同元素求排列](#6-含有相同元素求排列)
-    * [7. 组合](#7-组合)
-    * [8. 组合求和](#8-组合求和)
-    * [9. 含有相同元素的组合求和](#9-含有相同元素的组合求和)
-    * [10. 1-9 数字的组合求和](#10-1-9-数字的组合求和)
+    * [7. 組合](#7-組合)
+    * [8. 組合求和](#8-組合求和)
+    * [9. 含有相同元素的組合求和](#9-含有相同元素的組合求和)
+    * [10. 1-9 數字的組合求和](#10-1-9-數字的組合求和)
     * [11. 子集](#11-子集)
     * [12. 含有相同元素求子集](#12-含有相同元素求子集)
-    * [13. 分割字符串使得每个部分都是回文数](#13-分割字符串使得每个部分都是回文数)
-    * [14. 数独](#14-数独)
+    * [13. 分割字符串使得每個部分都是迴文數](#13-分割字符串使得每個部分都是迴文數)
+    * [14. 數獨](#14-數獨)
     * [15. N 皇后](#15-n-皇后)
 <!-- GFM-TOC -->
 
 
-深度优先搜索和广度优先搜索广泛运用于树和图中，但是它们的应用远远不止如此。
+深度優先搜索和廣度優先搜索廣泛運用於樹和圖中，但是它們的應用遠遠不止如此。
 
 # BFS
 
 <div align="center"> <img src="pics/95903878-725b-4ed9-bded-bc4aae0792a9.jpg"/> </div><br>
 
-广度优先搜索一层一层地进行遍历，每层遍历都以上一层遍历的结果作为起点，遍历一个距离能访问到的所有节点。需要注意的是，遍历过的节点不能再次被遍历。
+廣度優先搜索一層一層地進行遍歷，每層遍歷都以上一層遍歷的結果作為起點，遍歷一個距離能訪問到的所有節點。需要注意的是，遍歷過的節點不能再次被遍歷。
 
-第一层：
+第一層：
 
 - 0 -> {6,2,1,5}
 
-第二层：
+第二層：
 
 - 6 -> {4}
 - 2 -> {}
 - 1 -> {}
 - 5 -> {3}
 
-第三层：
+第三層：
 
 - 4 -> {}
 - 3 -> {}
 
-每一层遍历的节点都与根节点距离相同。设 d<sub>i</sub> 表示第 i 个节点与根节点的距离，推导出一个结论：对于先遍历的节点 i 与后遍历的节点 j，有 d<sub>i</sub> <= d<sub>j</sub>。利用这个结论，可以求解最短路径等  **最优解**  问题：第一次遍历到目的节点，其所经过的路径为最短路径。应该注意的是，使用 BFS 只能求解无权图的最短路径，无权图是指从一个节点到另一个节点的代价都记为 1。
+每一層遍歷的節點都與根節點距離相同。設 d<sub>i</sub> 表示第 i 個節點與根節點的距離，推導出一個結論：對於先遍歷的節點 i 與後遍歷的節點 j，有 d<sub>i</sub> <= d<sub>j</sub>。利用這個結論，可以求解最短路徑等  **最優解**  問題：第一次遍歷到目的節點，其所經過的路徑為最短路徑。應該注意的是，使用 BFS 只能求解無權圖的最短路徑，無權圖是指從一個節點到另一個節點的代價都記為 1。
 
-在程序实现 BFS 时需要考虑以下问题：
+在程序實現 BFS 時需要考慮以下問題：
 
-- 队列：用来存储每一轮遍历得到的节点；
-- 标记：对于遍历过的节点，应该将它标记，防止重复遍历。
+- 隊列：用來存儲每一輪遍歷得到的節點；
+- 標記：對於遍歷過的節點，應該將它標記，防止重複遍歷。
 
-## 1. 计算在网格中从原点到特定点的最短路径长度
+## 1. 計算在網格中從原點到特定點的最短路徑長度
 
 ```html
 [[1,1,0,1],
@@ -68,7 +68,7 @@
  [1,0,1,1]]
 ```
 
-题目描述：1 表示可以经过某个位置，求解从 (0, 0) 位置到 (tr, tc) 位置的最短路径长度。
+題目描述：1 表示可以經過某個位置，求解從 (0, 0) 位置到 (tr, tc) 位置的最短路徑長度。
 
 ```java
 public int minPathLength(int[][] grids, int tr, int tc) {
@@ -83,7 +83,7 @@ public int minPathLength(int[][] grids, int tr, int tc) {
         while (size-- > 0) {
             Pair<Integer, Integer> cur = queue.poll();
             int cr = cur.getKey(), cc = cur.getValue();
-            grids[cr][cc] = 0; // 标记
+            grids[cr][cc] = 0; // 標記
             for (int[] d : direction) {
                 int nr = cr + d[0], nc = cc + d[1];
                 if (nr < 0 || nr >= m || nc < 0 || nc >= n || grids[nr][nc] == 0) {
@@ -100,7 +100,7 @@ public int minPathLength(int[][] grids, int tr, int tc) {
 }
 ```
 
-## 2. 组成整数的最小平方数数量
+## 2. 組成整數的最小平方數數量
 
 [279. Perfect Squares (Medium)](https://leetcode.com/problems/perfect-squares/description/)
 
@@ -108,11 +108,11 @@ public int minPathLength(int[][] grids, int tr, int tc) {
 For example, given n = 12, return 3 because 12 = 4 + 4 + 4; given n = 13, return 2 because 13 = 4 + 9.
 ```
 
-可以将每个整数看成图中的一个节点，如果两个整数之差为一个平方数，那么这两个整数所在的节点就有一条边。
+可以將每個整數看成圖中的一個節點，如果兩個整數之差為一個平方數，那麼這兩個整數所在的節點就有一條邊。
 
-要求解最小的平方数数量，就是求解从节点 n 到节点 0 的最短路径。
+要求解最小的平方數數量，就是求解從節點 n 到節點 0 的最短路徑。
 
-本题也可以用动态规划求解，在之后动态规划部分中会再次出现。
+本題也可以用動態規劃求解，在之後動態規劃部分中會再次出現。
 
 ```java
 public int numSquares(int n) {
@@ -147,7 +147,7 @@ public int numSquares(int n) {
 }
 
 /**
- * 生成小于 n 的平方数序列
+ * 生成小於 n 的平方數序列
  * @return 1,4,9,...
  */
 private List<Integer> generateSquares(int n) {
@@ -163,7 +163,7 @@ private List<Integer> generateSquares(int n) {
 }
 ```
 
-## 3. 最短单词路径
+## 3. 最短單詞路徑
 
 [127. Word Ladder (Medium)](https://leetcode.com/problems/word-ladder/description/)
 
@@ -190,7 +190,7 @@ Output: 0
 Explanation: The endWord "cog" is not in wordList, therefore no possible transformation.
 ```
 
-题目描述：找出一条从 beginWord 到 endWord 的最短路径，每次移动规定为改变一个字符，并且改变之后的字符串必须在 wordList 中。
+題目描述：找出一條從 beginWord 到 endWord 的最短路徑，每次移動規定為改變一個字符，並且改變之後的字符串必須在 wordList 中。
 
 ```java
 public int ladderLength(String beginWord, String endWord, List<String> wordList) {
@@ -263,18 +263,18 @@ private int getShortestPath(List<Integer>[] graphic, int start, int end) {
 
 <div align="center"> <img src="pics/74dc31eb-6baa-47ea-ab1c-d27a0ca35093.png"/> </div><br>
 
-广度优先搜索一层一层遍历，每一层得到的所有新节点，要用队列存储起来以备下一层遍历的时候再遍历。
+廣度優先搜索一層一層遍歷，每一層得到的所有新節點，要用隊列存儲起來以備下一層遍歷的時候再遍歷。
 
-而深度优先搜索在得到一个新节点时立即对新节点进行遍历：从节点 0 出发开始遍历，得到到新节点 6 时，立马对新节点 6 进行遍历，得到新节点 4；如此反复以这种方式遍历新节点，直到没有新节点了，此时返回。返回到根节点 0 的情况是，继续对根节点 0 进行遍历，得到新节点 2，然后继续以上步骤。
+而深度優先搜索在得到一個新節點時立即對新節點進行遍歷：從節點 0 出發開始遍歷，得到到新節點 6 時，立馬對新節點 6 進行遍歷，得到新節點 4；如此反覆以這種方式遍歷新節點，直到沒有新節點了，此時返回。返回到根節點 0 的情況是，繼續對根節點 0 進行遍歷，得到新節點 2，然後繼續以上步驟。
 
-从一个节点出发，使用 DFS 对一个图进行遍历时，能够遍历到的节点都是从初始节点可达的，DFS 常用来求解这种  **可达性**  问题。
+從一個節點出發，使用 DFS 對一個圖進行遍歷時，能夠遍歷到的節點都是從初始節點可達的，DFS 常用來求解這種  **可達性**  問題。
 
-在程序实现 DFS 时需要考虑以下问题：
+在程序實現 DFS 時需要考慮以下問題：
 
-- 栈：用栈来保存当前节点信息，当遍历新节点返回时能够继续遍历当前节点。可以使用递归栈。
-- 标记：和 BFS 一样同样需要对已经遍历过的节点进行标记。
+- 棧：用棧來保存當前節點信息，當遍歷新節點返回時能夠繼續遍歷當前節點。可以使用遞歸棧。
+- 標記：和 BFS 一樣同樣需要對已經遍歷過的節點進行標記。
 
-## 1. 查找最大的连通面积
+## 1. 查找最大的連通面積
 
 [695. Max Area of Island (Medium)](https://leetcode.com/problems/max-area-of-island/description/)
 
@@ -321,7 +321,7 @@ private int dfs(int[][] grid, int r, int c) {
 }
 ```
 
-## 2. 矩阵中的连通分量数目
+## 2. 矩陣中的連通分量數目
 
 [200. Number of Islands (Medium)](https://leetcode.com/problems/number-of-islands/description/)
 
@@ -335,7 +335,7 @@ Input:
 Output: 3
 ```
 
-可以将矩阵表示看成一张有向图。
+可以將矩陣表示看成一張有向圖。
 
 ```java
 private int m, n;
@@ -370,7 +370,7 @@ private void dfs(char[][] grid, int i, int j) {
 }
 ```
 
-## 3. 好友关系的连通分量数目
+## 3. 好友關係的連通分量數目
 
 [547. Friend Circles (Medium)](https://leetcode.com/problems/friend-circles/description/)
 
@@ -386,7 +386,7 @@ Explanation:The 0th and 1st students are direct friends, so they are in a friend
 The 2nd student himself is in a friend circle. So return 2.
 ```
 
-题目描述：好友关系可以看成是一个无向图，例如第 0 个人与第 1 个人是好友，那么 M[0][1] 和 M[1][0] 的值都为 1。
+題目描述：好友關係可以看成是一個無向圖，例如第 0 個人與第 1 個人是好友，那麼 M[0][1] 和 M[1][0] 的值都為 1。
 
 ```java
 private int n;
@@ -414,7 +414,7 @@ private void dfs(int[][] M, int i, boolean[] hasVisited) {
 }
 ```
 
-## 4. 填充封闭区域
+## 4. 填充封閉區域
 
 [130. Surrounded Regions (Medium)](https://leetcode.com/problems/surrounded-regions/description/)
 
@@ -432,9 +432,9 @@ X X X X
 X O X X
 ```
 
-题目描述：使被 'X' 包围的 'O' 转换为 'X'。
+題目描述：使被 'X' 包圍的 'O' 轉換為 'X'。
 
-先填充最外侧，剩下的就是里侧了。
+先填充最外側，剩下的就是裡側了。
 
 ```java
 private int[][] direction = {{0, 1}, {0, -1}, {1, 0}, {-1, 0}};
@@ -479,7 +479,7 @@ private void dfs(char[][] board, int r, int c) {
 }
 ```
 
-## 5. 能到达的太平洋和大西洋的区域
+## 5. 能到達的太平洋和大西洋的區域
 
 [417. Pacific Atlantic Water Flow (Medium)](https://leetcode.com/problems/pacific-atlantic-water-flow/description/)
 
@@ -498,7 +498,7 @@ Return:
 [[0, 4], [1, 3], [1, 4], [2, 2], [3, 0], [3, 1], [4, 0]] (positions with parentheses in above matrix).
 ```
 
-左边和上边是太平洋，右边和下边是大西洋，内部的数字代表海拔，海拔高的地方的水能够流到低的地方，求解水能够流到太平洋和大西洋的所有位置。
+左邊和上邊是太平洋，右邊和下邊是大西洋，內部的數字代表海拔，海拔高的地方的水能夠流到低的地方，求解水能夠流到太平洋和大西洋的所有位置。
 
 ```java
 
@@ -558,17 +558,17 @@ private void dfs(int r, int c, boolean[][] canReach) {
 
 # Backtracking
 
-Backtracking（回溯）属于 DFS。
+Backtracking（回溯）屬於 DFS。
 
-- 普通 DFS 主要用在  **可达性问题** ，这种问题只需要执行到特点的位置然后返回即可。
-- 而 Backtracking 主要用于求解  **排列组合**  问题，例如有 { 'a','b','c' } 三个字符，求解所有由这三个字符排列得到的字符串，这种问题在执行到特定的位置返回之后还会继续执行求解过程。
+- 普通 DFS 主要用在  **可達性問題** ，這種問題只需要執行到特點的位置然後返回即可。
+- 而 Backtracking 主要用於求解  **排列組合**  問題，例如有 { 'a','b','c' } 三個字符，求解所有由這三個字符排列得到的字符串，這種問題在執行到特定的位置返回之後還會繼續執行求解過程。
 
-因为 Backtracking 不是立即返回，而要继续求解，因此在程序实现时，需要注意对元素的标记问题：
+因為 Backtracking 不是立即返回，而要繼續求解，因此在程序實現時，需要注意對元素的標記問題：
 
-- 在访问一个新元素进入新的递归调用时，需要将新元素标记为已经访问，这样才能在继续递归调用时不用重复访问该元素；
-- 但是在递归返回时，需要将元素标记为未访问，因为只需要保证在一个递归链中不同时访问一个元素，可以访问已经访问过但是不在当前递归链中的元素。
+- 在訪問一個新元素進入新的遞歸調用時，需要將新元素標記為已經訪問，這樣才能在繼續遞歸調用時不用重複訪問該元素；
+- 但是在遞歸返回時，需要將元素標記為未訪問，因為只需要保證在一個遞歸鏈中不同時訪問一個元素，可以訪問已經訪問過但是不在當前遞歸鏈中的元素。
 
-## 1. 数字键盘组合
+## 1. 數字鍵盤組合
 
 [17. Letter Combinations of a Phone Number (Medium)](https://leetcode.com/problems/letter-combinations-of-a-phone-number/description/)
 
@@ -601,12 +601,12 @@ private void doCombination(StringBuilder prefix, List<String> combinations, fina
     for (char c : letters.toCharArray()) {
         prefix.append(c);                         // 添加
         doCombination(prefix, combinations, digits);
-        prefix.deleteCharAt(prefix.length() - 1); // 删除
+        prefix.deleteCharAt(prefix.length() - 1); // 刪除
     }
 }
 ```
 
-## 2. IP 地址划分
+## 2. IP 地址劃分
 
 [93. Restore IP Addresses(Medium)](https://leetcode.com/problems/restore-ip-addresses/description/)
 
@@ -647,7 +647,7 @@ private void doRestore(int k, StringBuilder tempAddress, List<String> addresses,
 }
 ```
 
-## 3. 在矩阵中寻找字符串
+## 3. 在矩陣中尋找字符串
 
 [79. Word Search (Medium)](https://leetcode.com/problems/word-search/description/)
 
@@ -716,7 +716,7 @@ private boolean backtracking(int curLen, int r, int c, boolean[][] visited, fina
 }
 ```
 
-## 4. 输出二叉树中所有从根到叶子的路径
+## 4. 輸出二叉樹中所有從根到葉子的路徑
 
 [257. Binary Tree Paths (Easy)](https://leetcode.com/problems/binary-tree-paths/description/)
 
@@ -801,7 +801,7 @@ public List<List<Integer>> permute(int[] nums) {
 
 private void backtracking(List<Integer> permuteList, List<List<Integer>> permutes, boolean[] visited, final int[] nums) {
     if (permuteList.size() == nums.length) {
-        permutes.add(new ArrayList<>(permuteList)); // 重新构造一个 List
+        permutes.add(new ArrayList<>(permuteList)); // 重新構造一個 List
         return;
     }
     for (int i = 0; i < visited.length; i++) {
@@ -826,9 +826,9 @@ private void backtracking(List<Integer> permuteList, List<List<Integer>> permute
 [[1,1,2], [1,2,1], [2,1,1]]
 ```
 
-数组元素可能含有相同的元素，进行排列时就有可能出现重复的排列，要求重复的排列只返回一个。
+數組元素可能含有相同的元素，進行排列時就有可能出現重複的排列，要求重複的排列只返回一個。
 
-在实现上，和 Permutations 不同的是要先排序，然后在添加一个元素时，判断这个元素是否等于前一个元素，如果等于，并且前一个元素还未访问，那么就跳过这个元素。
+在實現上，和 Permutations 不同的是要先排序，然後在添加一個元素時，判斷這個元素是否等於前一個元素，如果等於，並且前一個元素還未訪問，那麼就跳過這個元素。
 
 ```java
 public List<List<Integer>> permuteUnique(int[] nums) {
@@ -848,7 +848,7 @@ private void backtracking(List<Integer> permuteList, List<List<Integer>> permute
 
     for (int i = 0; i < visited.length; i++) {
         if (i != 0 && nums[i] == nums[i - 1] && !visited[i - 1]) {
-            continue;  // 防止重复
+            continue;  // 防止重複
         }
         if (visited[i]){
             continue;
@@ -862,7 +862,7 @@ private void backtracking(List<Integer> permuteList, List<List<Integer>> permute
 }
 ```
 
-## 7. 组合
+## 7. 組合
 
 [77. Combinations (Medium)](https://leetcode.com/problems/combinations/description/)
 
@@ -899,7 +899,7 @@ private void backtracking(List<Integer> combineList, List<List<Integer>> combina
 }
 ```
 
-## 8. 组合求和
+## 8. 組合求和
 
 [39. Combination Sum (Medium)](https://leetcode.com/problems/combination-sum/description/)
 
@@ -933,7 +933,7 @@ private void backtracking(List<Integer> tempCombination, List<List<Integer>> com
 }
 ```
 
-## 9. 含有相同元素的组合求和
+## 9. 含有相同元素的組合求和
 
 [40. Combination Sum II (Medium)](https://leetcode.com/problems/combination-sum-ii/description/)
 
@@ -978,7 +978,7 @@ private void backtracking(List<Integer> tempCombination, List<List<Integer>> com
 }
 ```
 
-## 10. 1-9 数字的组合求和
+## 10. 1-9 數字的組合求和
 
 [216. Combination Sum III (Medium)](https://leetcode.com/problems/combination-sum-iii/description/)
 
@@ -990,7 +990,7 @@ Output:
 [[1,2,6], [1,3,5], [2,3,4]]
 ```
 
-从 1-9 数字中选出 k 个数不重复的数，使得它们的和为 n。
+從 1-9 數字中選出 k 個數不重複的數，使得它們的和為 n。
 
 ```java
 public List<List<Integer>> combinationSum3(int k, int n) {
@@ -1022,7 +1022,7 @@ private void backtracking(int k, int n, int start,
 
 [78. Subsets (Medium)](https://leetcode.com/problems/subsets/description/)
 
-找出集合的所有子集，子集不能重复，[1, 2] 和 [2, 1] 这种子集算重复
+找出集合的所有子集，子集不能重複，[1, 2] 和 [2, 1] 這種子集算重複
 
 ```java
 public List<List<Integer>> subsets(int[] nums) {
@@ -1099,7 +1099,7 @@ private void backtracking(int start, List<Integer> tempSubset, List<List<Integer
 }
 ```
 
-## 13. 分割字符串使得每个部分都是回文数
+## 13. 分割字符串使得每個部分都是迴文數
 
 [131. Palindrome Partitioning (Medium)](https://leetcode.com/problems/palindrome-partitioning/description/)
 
@@ -1145,7 +1145,7 @@ private boolean isPalindrome(String s, int begin, int end) {
 }
 ```
 
-## 14. 数独
+## 14. 數獨
 
 [37. Sudoku Solver (Hard)](https://leetcode.com/problems/sudoku-solver/description/)
 
@@ -1208,16 +1208,16 @@ private int cubeNum(int i, int j) {
 
 <div align="center"> <img src="pics/067b310c-6877-40fe-9dcf-10654e737485.jpg"/> </div><br>
 
-在 n\*n 的矩阵中摆放 n 个皇后，并且每个皇后不能在同一行，同一列，同一对角线上，求所有的 n 皇后的解。
+在 n\*n 的矩陣中擺放 n 個皇后，並且每個皇后不能在同一行，同一列，同一對角線上，求所有的 n 皇后的解。
 
-一行一行地摆放，在确定一行中的那个皇后应该摆在哪一列时，需要用三个标记数组来确定某一列是否合法，这三个标记数组分别为：列标记数组、45 度对角线标记数组和 135 度对角线标记数组。
+一行一行地擺放，在確定一行中的那個皇后應該擺在哪一列時，需要用三個標記數組來確定某一列是否合法，這三個標記數組分別為：列標記數組、45 度對角線標記數組和 135 度對角線標記數組。
 
-45 度对角线标记数组的长度为 2 \* n - 1，通过下图可以明确 (r, c) 的位置所在的数组下标为 r + c。
+45 度對角線標記數組的長度為 2 \* n - 1，通過下圖可以明確 (r, c) 的位置所在的數組下標為 r + c。
 
 <div align="center"> <img src="pics/9c422923-1447-4a3b-a4e1-97e663738187.jpg" width="300px"> </div><br>
 
 
-135 度对角线标记数组的长度也是 2 \* n - 1，(r, c) 的位置所在的数组下标为 n - 1 - (r - c)。
+135 度對角線標記數組的長度也是 2 \* n - 1，(r, c) 的位置所在的數組下標為 n - 1 - (r - c)。
 
 <div align="center"> <img src="pics/7a85e285-e152-4116-b6dc-3fab27ba9437.jpg" width="300px"> </div><br>
 
@@ -1271,10 +1271,10 @@ private void backtracking(int row) {
 
 
 
-# 微信公众号
+# 微信公眾號
 
 
-更多精彩内容将发布在微信公众号 CyC2018 上，你也可以在公众号后台和我交流学习和求职相关的问题。另外，公众号提供了该项目的 PDF 等离线阅读版本，后台回复 "下载" 即可领取。公众号也提供了一份技术面试复习大纲，不仅系统整理了面试知识点，而且标注了各个知识点的重要程度，从而帮你理清多而杂的面试知识点，后台回复 "大纲" 即可领取。我基本是按照这个大纲来进行复习的，对我拿到了 BAT 头条等 Offer 起到很大的帮助。你们完全可以和我一样根据大纲上列的知识点来进行复习，就不用看很多不重要的内容，也可以知道哪些内容很重要从而多安排一些复习时间。
+更多精彩內容將發佈在微信公眾號 CyC2018 上，你也可以在公眾號後臺和我交流學習和求職相關的問題。另外，公眾號提供了該項目的 PDF 等離線閱讀版本，後臺回覆 "下載" 即可領取。公眾號也提供了一份技術面試複習大綱，不僅系統整理了面試知識點，而且標註了各個知識點的重要程度，從而幫你理清多而雜的面試知識點，後臺回覆 "大綱" 即可領取。我基本是按照這個大綱來進行復習的，對我拿到了 BAT 頭條等 Offer 起到很大的幫助。你們完全可以和我一樣根據大綱上列的知識點來進行復習，就不用看很多不重要的內容，也可以知道哪些內容很重要從而多安排一些複習時間。
 
 
-<br><div align="center"><img width="320px" src="https://cs-notes-1256109796.cos.ap-guangzhou.myqcloud.com/other/公众号海报6.png"></img></div>
+<br><div align="center"><img width="320px" src="https://cs-notes-1256109796.cos.ap-guangzhou.myqcloud.com/other/公眾號海報6.png"></img></div>

@@ -1,33 +1,33 @@
 <!-- GFM-TOC -->
-* [60. n 个骰子的点数](#60-n-个骰子的点数)
-* [61. 扑克牌顺子](#61-扑克牌顺子)
-* [62. 圆圈中最后剩下的数](#62-圆圈中最后剩下的数)
-* [63. 股票的最大利润](#63-股票的最大利润)
+* [60. n 個骰子的點數](#60-n-個骰子的點數)
+* [61. 撲克牌順子](#61-撲克牌順子)
+* [62. 圓圈中最後剩下的數](#62-圓圈中最後剩下的數)
+* [63. 股票的最大利潤](#63-股票的最大利潤)
 * [64. 求 1+2+3+...+n](#64-求-123n)
-* [65. 不用加减乘除做加法](#65-不用加减乘除做加法)
-* [66. 构建乘积数组](#66-构建乘积数组)
-* [67. 把字符串转换成整数](#67-把字符串转换成整数)
-* [68. 树中两个节点的最低公共祖先](#68-树中两个节点的最低公共祖先)
+* [65. 不用加減乘除做加法](#65-不用加減乘除做加法)
+* [66. 構建乘積數組](#66-構建乘積數組)
+* [67. 把字符串轉換成整數](#67-把字符串轉換成整數)
+* [68. 樹中兩個節點的最低公共祖先](#68-樹中兩個節點的最低公共祖先)
 <!-- GFM-TOC -->
 
 
-# 60. n 个骰子的点数
+# 60. n 個骰子的點數
 
 [Lintcode](https://www.lintcode.com/en/problem/dices-sum/)
 
-## 题目描述
+## 題目描述
 
-把 n 个骰子扔在地上，求点数和为 s 的概率。
+把 n 個骰子扔在地上，求點數和為 s 的概率。
 
 <div align="center"> <img src="pics/195f8693-5ec4-4987-8560-f25e365879dd.png" width="300px"> </div><br>
 
-## 解题思路
+## 解題思路
 
-### 动态规划
+### 動態規劃
 
-使用一个二维数组 dp 存储点数出现的次数，其中 dp[i][j] 表示前 i 个骰子产生点数 j 的次数。
+使用一個二維數組 dp 存儲點數出現的次數，其中 dp[i][j] 表示前 i 個骰子產生點數 j 的次數。
 
-空间复杂度：O(N<sup>2</sup>)
+空間複雜度：O(N<sup>2</sup>)
 
 ```java
 public List<Map.Entry<Integer, Double>> dicesSum(int n) {
@@ -39,7 +39,7 @@ public List<Map.Entry<Integer, Double>> dicesSum(int n) {
         dp[1][i] = 1;
 
     for (int i = 2; i <= n; i++)
-        for (int j = i; j <= pointNum; j++)     /* 使用 i 个骰子最小点数为 i */
+        for (int j = i; j <= pointNum; j++)     /* 使用 i 個骰子最小點數為 i */
             for (int k = 1; k <= face && k <= j; k++)
                 dp[i][j] += dp[i - 1][j - k];
 
@@ -52,9 +52,9 @@ public List<Map.Entry<Integer, Double>> dicesSum(int n) {
 }
 ```
 
-### 动态规划 + 旋转数组
+### 動態規劃 + 旋轉數組
 
-空间复杂度：O(N)
+空間複雜度：O(N)
 
 ```java
 public List<Map.Entry<Integer, Double>> dicesSum(int n) {
@@ -65,10 +65,10 @@ public List<Map.Entry<Integer, Double>> dicesSum(int n) {
     for (int i = 1; i <= face; i++)
         dp[0][i] = 1;
 
-    int flag = 1;                                     /* 旋转标记 */
+    int flag = 1;                                     /* 旋轉標記 */
     for (int i = 2; i <= n; i++, flag = 1 - flag) {
         for (int j = 0; j <= pointNum; j++)
-            dp[flag][j] = 0;                          /* 旋转数组清零 */
+            dp[flag][j] = 0;                          /* 旋轉數組清零 */
 
         for (int j = i; j <= pointNum; j++)
             for (int k = 1; k <= face && k <= j; k++)
@@ -84,18 +84,18 @@ public List<Map.Entry<Integer, Double>> dicesSum(int n) {
 }
 ```
 
-# 61. 扑克牌顺子
+# 61. 撲克牌順子
 
 [NowCoder](https://www.nowcoder.com/practice/762836f4d43d43ca9deb273b3de8e1f4?tpId=13&tqId=11198&tPage=1&rp=1&ru=/ta/coding-interviews&qru=/ta/coding-interviews/question-ranking)
 
-## 题目描述
+## 題目描述
 
-五张牌，其中大小鬼为癞子，牌面为 0。判断这五张牌是否能组成顺子。
+五張牌，其中大小鬼為癩子，牌面為 0。判斷這五張牌是否能組成順子。
 
 <div align="center"> <img src="pics/eaa506b6-0747-4bee-81f8-3cda795d8154.png" width="350px"> </div><br>
 
 
-## 解题思路
+## 解題思路
 
 ```java
 public boolean isContinuous(int[] nums) {
@@ -105,13 +105,13 @@ public boolean isContinuous(int[] nums) {
 
     Arrays.sort(nums);
 
-    // 统计癞子数量
+    // 統計癩子數量
     int cnt = 0;
     for (int num : nums)
         if (num == 0)
             cnt++;
 
-    // 使用癞子去补全不连续的顺子
+    // 使用癩子去補全不連續的順子
     for (int i = cnt; i < nums.length - 1; i++) {
         if (nums[i + 1] == nums[i])
             return false;
@@ -122,41 +122,41 @@ public boolean isContinuous(int[] nums) {
 }
 ```
 
-# 62. 圆圈中最后剩下的数
+# 62. 圓圈中最後剩下的數
 
 [NowCoder](https://www.nowcoder.com/practice/f78a359491e64a50bce2d89cff857eb6?tpId=13&tqId=11199&tPage=1&rp=1&ru=/ta/coding-interviews&qru=/ta/coding-interviews/question-ranking)
 
-## 题目描述
+## 題目描述
 
-让小朋友们围成一个大圈。然后，随机指定一个数 m，让编号为 0 的小朋友开始报数。每次喊到 m-1 的那个小朋友要出列唱首歌，然后可以在礼品箱中任意的挑选礼物，并且不再回到圈中，从他的下一个小朋友开始，继续 0...m-1 报数 .... 这样下去 .... 直到剩下最后一个小朋友，可以不用表演。
+讓小朋友們圍成一個大圈。然後，隨機指定一個數 m，讓編號為 0 的小朋友開始報數。每次喊到 m-1 的那個小朋友要出列唱首歌，然後可以在禮品箱中任意的挑選禮物，並且不再回到圈中，從他的下一個小朋友開始，繼續 0...m-1 報數 .... 這樣下去 .... 直到剩下最後一個小朋友，可以不用表演。
 
-## 解题思路
+## 解題思路
 
-约瑟夫环，圆圈长度为 n 的解可以看成长度为 n-1 的解再加上报数的长度 m。因为是圆圈，所以最后需要对 n 取余。
+約瑟夫環，圓圈長度為 n 的解可以看成長度為 n-1 的解再加上報數的長度 m。因為是圓圈，所以最後需要對 n 取餘。
 
 ```java
 public int LastRemaining_Solution(int n, int m) {
-    if (n == 0)     /* 特殊输入的处理 */
+    if (n == 0)     /* 特殊輸入的處理 */
         return -1;
-    if (n == 1)     /* 递归返回条件 */
+    if (n == 1)     /* 遞歸返回條件 */
         return 0;
     return (LastRemaining_Solution(n - 1, m) + m) % n;
 }
 ```
 
-# 63. 股票的最大利润
+# 63. 股票的最大利潤
 
 [Leetcode](https://leetcode.com/problems/best-time-to-buy-and-sell-stock/description/)
 
-## 题目描述
+## 題目描述
 
-可以有一次买入和一次卖出，买入必须在前。求最大收益。
+可以有一次買入和一次賣出，買入必須在前。求最大收益。
 
 <div align="center"> <img src="pics/42661013-750f-420b-b3c1-437e9a11fb65.png" width="220px"> </div><br>
 
-## 解题思路
+## 解題思路
 
-使用贪心策略，假设第 i 轮进行卖出操作，买入操作价格应该在 i 之前并且价格最低。
+使用貪心策略，假設第 i 輪進行賣出操作，買入操作價格應該在 i 之前並且價格最低。
 
 ```java
 public int maxProfit(int[] prices) {
@@ -176,17 +176,17 @@ public int maxProfit(int[] prices) {
 
 [NowCoder](https://www.nowcoder.com/practice/7a0da8fc483247ff8800059e12d7caf1?tpId=13&tqId=11200&tPage=1&rp=1&ru=/ta/coding-interviews&qru=/ta/coding-interviews/question-ranking)
 
-## 题目描述
+## 題目描述
 
-要求不能使用乘除法、for、while、if、else、switch、case 等关键字及条件判断语句 A ? B : C。
+要求不能使用乘除法、for、while、if、else、switch、case 等關鍵字及條件判斷語句 A ? B : C。
 
-## 解题思路
+## 解題思路
 
-使用递归解法最重要的是指定返回条件，但是本题无法直接使用 if 语句来指定返回条件。
+使用遞歸解法最重要的是指定返回條件，但是本題無法直接使用 if 語句來指定返回條件。
 
-条件与 && 具有短路原则，即在第一个条件语句为 false 的情况下不会去执行第二个条件语句。利用这一特性，将递归的返回条件取非然后作为 && 的第一个条件语句，递归的主体转换为第二个条件语句，那么当递归的返回条件为 true 的情况下就不会执行递归的主体部分，递归返回。
+條件與 && 具有短路原則，即在第一個條件語句為 false 的情況下不會去執行第二個條件語句。利用這一特性，將遞歸的返回條件取非然後作為 && 的第一個條件語句，遞歸的主體轉換為第二個條件語句，那麼當遞歸的返回條件為 true 的情況下就不會執行遞歸的主體部分，遞歸返回。
 
-本题的递归返回条件为 n <= 0，取非后就是 n > 0；递归的主体部分为 sum += Sum_Solution(n - 1)，转换为条件语句后就是 (sum += Sum_Solution(n - 1)) > 0。
+本題的遞歸返回條件為 n <= 0，取非後就是 n > 0；遞歸的主體部分為 sum += Sum_Solution(n - 1)，轉換為條件語句後就是 (sum += Sum_Solution(n - 1)) > 0。
 
 ```java
 public int Sum_Solution(int n) {
@@ -196,19 +196,19 @@ public int Sum_Solution(int n) {
 }
 ```
 
-# 65. 不用加减乘除做加法
+# 65. 不用加減乘除做加法
 
 [NowCoder](https://www.nowcoder.com/practice/59ac416b4b944300b617d4f7f111b215?tpId=13&tqId=11201&tPage=1&rp=1&ru=/ta/coding-interviews&qru=/ta/coding-interviews/question-ranking)
 
-## 题目描述
+## 題目描述
 
-写一个函数，求两个整数之和，要求不得使用 +、-、\*、/ 四则运算符号。
+寫一個函數，求兩個整數之和，要求不得使用 +、-、\*、/ 四則運算符號。
 
-## 解题思路
+## 解題思路
 
-a ^ b 表示没有考虑进位的情况下两数的和，(a & b) << 1 就是进位。
+a ^ b 表示沒有考慮進位的情況下兩數的和，(a & b) << 1 就是進位。
 
-递归会终止的原因是 (a & b) << 1 最右边会多一个 0，那么继续递归，进位最右边的 0 会慢慢增多，最后进位会变为 0，递归终止。
+遞歸會終止的原因是 (a & b) << 1 最右邊會多一個 0，那麼繼續遞歸，進位最右邊的 0 會慢慢增多，最後進位會變為 0，遞歸終止。
 
 ```java
 public int Add(int a, int b) {
@@ -216,38 +216,38 @@ public int Add(int a, int b) {
 }
 ```
 
-# 66. 构建乘积数组
+# 66. 構建乘積數組
 
 [NowCoder](https://www.nowcoder.com/practice/94a4d381a68b47b7a8bed86f2975db46?tpId=13&tqId=11204&tPage=1&rp=1&ru=/ta/coding-interviews&qru=/ta/coding-interviews/question-ranking)
 
-## 题目描述
+## 題目描述
 
-给定一个数组 A[0, 1,..., n-1]，请构建一个数组 B[0, 1,..., n-1]，其中 B 中的元素 B[i]=A[0]\*A[1]\*...\*A[i-1]\*A[i+1]\*...\*A[n-1]。要求不能使用除法。
+給定一個數組 A[0, 1,..., n-1]，請構建一個數組 B[0, 1,..., n-1]，其中 B 中的元素 B[i]=A[0]\*A[1]\*...\*A[i-1]\*A[i+1]\*...\*A[n-1]。要求不能使用除法。
 
 <div align="center"> <img src="pics/4240a69f-4d51-4d16-b797-2dfe110f30bd.png" width="250px"> </div><br>
 
 
-## 解题思路
+## 解題思路
 
 ```java
 public int[] multiply(int[] A) {
     int n = A.length;
     int[] B = new int[n];
-    for (int i = 0, product = 1; i < n; product *= A[i], i++)       /* 从左往右累乘 */
+    for (int i = 0, product = 1; i < n; product *= A[i], i++)       /* 從左往右累乘 */
         B[i] = product;
-    for (int i = n - 1, product = 1; i >= 0; product *= A[i], i--)  /* 从右往左累乘 */
+    for (int i = n - 1, product = 1; i >= 0; product *= A[i], i--)  /* 從右往左累乘 */
         B[i] *= product;
     return B;
 }
 ```
 
-# 67. 把字符串转换成整数
+# 67. 把字符串轉換成整數
 
 [NowCoder](https://www.nowcoder.com/practice/1277c681251b4372bdef344468e4f26e?tpId=13&tqId=11202&tPage=1&rp=1&ru=/ta/coding-interviews&qru=/ta/coding-interviews/question-ranking)
 
-## 题目描述
+## 題目描述
 
-将一个字符串转换成一个整数，字符串不是一个合法的数值则返回 0，要求不能使用字符串转换整数的库函数。
+將一個字符串轉換成一個整數，字符串不是一個合法的數值則返回 0，要求不能使用字符串轉換整數的庫函數。
 
 ```html
 Iuput:
@@ -259,7 +259,7 @@ Output:
 0
 ```
 
-## 解题思路
+## 解題思路
 
 ```java
 public int StrToInt(String str) {
@@ -269,9 +269,9 @@ public int StrToInt(String str) {
     int ret = 0;
     for (int i = 0; i < str.length(); i++) {
         char c = str.charAt(i);
-        if (i == 0 && (c == '+' || c == '-'))  /* 符号判定 */
+        if (i == 0 && (c == '+' || c == '-'))  /* 符號判定 */
             continue;
-        if (c < '0' || c > '9')                /* 非法输入 */
+        if (c < '0' || c > '9')                /* 非法輸入 */
             return 0;
         ret = ret * 10 + (c - '0');
     }
@@ -279,15 +279,15 @@ public int StrToInt(String str) {
 }
 ```
 
-# 68. 树中两个节点的最低公共祖先
+# 68. 樹中兩個節點的最低公共祖先
 
-## 解题思路
+## 解題思路
 
-### 二叉查找树
+### 二叉查找樹
 
 [Leetcode : 235. Lowest Common Ancestor of a Binary Search Tree](https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-search-tree/description/)
 
-二叉查找树中，两个节点 p, q 的公共祖先 root 满足 root.val >= p.val && root.val <= q.val。
+二叉查找樹中，兩個節點 p, q 的公共祖先 root 滿足 root.val >= p.val && root.val <= q.val。
 
 <div align="center"> <img src="pics/047faac4-a368-4565-8331-2b66253080d3.jpg" width="220"/> </div><br>
 
@@ -303,11 +303,11 @@ public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
 }
 ```
 
-### 普通二叉树
+### 普通二叉樹
 
 [Leetcode : 236. Lowest Common Ancestor of a Binary Tree](https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-tree/description/)
 
-在左右子树中查找是否存在 p 或者 q，如果 p 和 q 分别在两个子树中，那么就说明根节点就是最低公共祖先。
+在左右子樹中查找是否存在 p 或者 q，如果 p 和 q 分別在兩個子樹中，那麼就說明根節點就是最低公共祖先。
 
 <div align="center"> <img src="pics/d27c99f0-7881-4f2d-9675-c75cbdee3acd.jpg" width="250"/> </div><br>
 
@@ -324,10 +324,10 @@ public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
 
 
 
-# 微信公众号
+# 微信公眾號
 
 
-更多精彩内容将发布在微信公众号 CyC2018 上，你也可以在公众号后台和我交流学习和求职相关的问题。另外，公众号提供了该项目的 PDF 等离线阅读版本，后台回复 "下载" 即可领取。公众号也提供了一份技术面试复习大纲，不仅系统整理了面试知识点，而且标注了各个知识点的重要程度，从而帮你理清多而杂的面试知识点，后台回复 "大纲" 即可领取。我基本是按照这个大纲来进行复习的，对我拿到了 BAT 头条等 Offer 起到很大的帮助。你们完全可以和我一样根据大纲上列的知识点来进行复习，就不用看很多不重要的内容，也可以知道哪些内容很重要从而多安排一些复习时间。
+更多精彩內容將發佈在微信公眾號 CyC2018 上，你也可以在公眾號後臺和我交流學習和求職相關的問題。另外，公眾號提供了該項目的 PDF 等離線閱讀版本，後臺回覆 "下載" 即可領取。公眾號也提供了一份技術面試複習大綱，不僅系統整理了面試知識點，而且標註了各個知識點的重要程度，從而幫你理清多而雜的面試知識點，後臺回覆 "大綱" 即可領取。我基本是按照這個大綱來進行復習的，對我拿到了 BAT 頭條等 Offer 起到很大的幫助。你們完全可以和我一樣根據大綱上列的知識點來進行復習，就不用看很多不重要的內容，也可以知道哪些內容很重要從而多安排一些複習時間。
 
 
-<br><div align="center"><img width="320px" src="https://cs-notes-1256109796.cos.ap-guangzhou.myqcloud.com/other/公众号海报6.png"></img></div>
+<br><div align="center"><img width="320px" src="https://cs-notes-1256109796.cos.ap-guangzhou.myqcloud.com/other/公眾號海報6.png"></img></div>
